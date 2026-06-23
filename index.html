@@ -143,6 +143,18 @@ a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
   .grid .col-7,.grid .col-8,.grid .col-9,.grid .col-10,.grid .col-11,.grid .col-12{grid-column:span 12}
 }
 
+/* ===== BRAND WALL ===== */
+.brand-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;padding:4px 0}
+.brand-card{background:#fff;border-radius:10px;padding:14px 8px 10px;text-align:center;border:1.5px solid transparent;background-clip:padding-box;position:relative;transition:all .3s cubic-bezier(0.25,0.8,0.25,1.2);cursor:default}
+.brand-card::before{content:'';position:absolute;inset:-2px;border-radius:12px;padding:2px;background:linear-gradient(135deg,rgba(26,58,92,.15),rgba(91,58,140,.12),rgba(194,90,46,.08));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.brand-card:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 24px rgba(26,58,92,.10),0 2px 6px rgba(91,58,140,.06)}
+.brand-card:hover::before{background:linear-gradient(135deg,#1a3a5c,#5b3a8c,#c25a2e)}
+.brand-card img{width:48px;height:48px;object-fit:contain;margin:0 auto 8px;filter:grayscale(10%);transition:filter .3s}
+.brand-card:hover img{filter:grayscale(0%)}
+.brand-name{font-size:11px;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:2px}
+.brand-cat{font-size:8.5px;color:var(--light-text);text-transform:uppercase;letter-spacing:.4px}
+.brand-initial{width:48px;height:48px;margin:0 auto 8px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;background:linear-gradient(135deg,#1a3a5c,#5b3a8c)}
+
 /* ===== AMAZON METRIC ROW ===== */
 .amazon-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--gap);margin-bottom:var(--gap)}
 .amazon-metric{background:#f8f7f4;border-radius:var(--radius);padding:14px;text-align:center}
@@ -171,7 +183,7 @@ a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
     <div class="kpi-label">Total Reach</div>
   </div>
   <div class="kpi-card">
-    <div class="kpi-value">16+</div>
+    <div class="kpi-value">80+</div>
     <div class="kpi-label">Brands Managed</div>
   </div>
   <div class="kpi-card">
@@ -277,67 +289,94 @@ a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
   <div class="accordion-body">
     <div class="accordion-body-inner">
 
-      <!-- 23 Client Logos -->
-      <div class="section-heading"><h3>🏢 Client Logos</h3></div>
-      <div class="logo-grid">
-        <div class="logo-item"><img src="client-logos/sunaofe_f.jpg" alt="Sunaofe"><span>Sunaofe</span></div>
-        <div class="logo-item"><img src="client-logos/FOGY_GARAGE.jfif" alt="Fogy Garage"><span>Fogy Garage</span></div>
-        <div class="logo-item"><img src="client-logos/HGLRC.png" alt="HGLRC"><span>HGLRC</span></div>
-        <div class="logo-item"><img src="client-logos/CROWN_MICRO.jpg" alt="Crown Micro"><span>Crown Micro</span></div>
-        <div class="logo-item"><img src="client-logos/Excelite_Domes.png" alt="Excelite"><span>Excelite</span></div>
-        <div class="logo-item"><img src="client-logos/LAHOMA_WINDS.png" alt="Lahoma Winds"><span>Lahoma Winds</span></div>
-        <div class="logo-item"><img src="client-logos/MELONI_HOMES.jpg" alt="Meloni Homes"><span>Meloni Homes</span></div>
-        <div class="logo-item"><img src="client-logos/POCCI_HOME.png" alt="Pocci Home"><span>Pocci Home</span></div>
-        <div class="logo-item"><img src="client-logos/staresso.jpeg" alt="Staresso"><span>Staresso</span></div>
-        <div class="logo-item"><img src="client-logos/TDONE_FAN.png" alt="TDONE Fan"><span>TDONE Fan</span></div>
-        <div class="logo-item"><img src="client-logos/HEMOYMILLER.png" alt="Hemoymiller"><span>Hemoymiller</span></div>
-        <div class="logo-item"><img src="client-logos/CEVAPRO_SPORTS.png" alt="Cevapro Sports"><span>Cevapro Sports</span></div>
-        <div class="logo-item"><img src="client-logos/LUMBENCY_LIGHTING.jfif" alt="Lumbency"><span>Lumbency</span></div>
-        <div class="logo-item"><img src="client-logos/WILLAI_SLEEP.jfif" alt="Willai Sleep"><span>Willai Sleep</span></div>
-        <div class="logo-item"><img src="client-logos/nekmit.jpeg" alt="Nekmit"><span>Nekmit</span></div>
-        <div class="logo-item"><img src="client-logos/unicco.png" alt="Unicco"><span>Unicco</span></div>
-        <div class="logo-item"><img src="client-logos/infansys.png" alt="Infansys"><span>Infansys</span></div>
-        <div class="logo-item"><img src="client-logos/baoshutang.png" alt="Baoshutang"><span>Baoshutang</span></div>
-        <div class="logo-item"><img src="client-logos/dinrail.webp" alt="Dinrail"><span>Dinrail</span></div>
-        <div class="logo-item"><img src="client-logos/ccobato.png" alt="Ccobato"><span>Ccobato</span></div>
-        <div class="logo-item"><img src="client-logos/Excelite_Plastics.png" alt="Excelite Plastics"><span>Excelite Plastics</span></div>
-        <div class="logo-item"><img src="client-logos/KXK_SHOP.jpg" alt="KXK Shop"><span>KXK Shop</span></div>
-        <div class="logo-item"><img src="client-logos/WhatsApp_2024.jpg" alt="DUCO"><span>DUCO</span></div>
-        <div class="logo-item"><img src="client-logos/download.png" alt="More"><span>+ More</span></div>
-      </div>
-
-      <!-- Brand Attribution Table -->
-      <div class="section-heading"><h3>📊 Brand Attribution</h3></div>
-      <div style="overflow-x:auto">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Brand</th>
-              <th>Industry</th>
-              <th>Platforms</th>
-              <th>Key Metrics</th>
-              <th>Case Study</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Sunaofe</strong></td><td>Furniture (USA)</td><td>FB + IG + TW + Reddit</td><td>FB 2.19M reach, IG 246K, 83.9K clicks</td><td>CASE STUDY 01.docx</td></tr>
-            <tr><td><strong>DUCO Glasses</strong></td><td>Eyewear</td><td>Shopify</td><td>166K sessions, $12.8K rev, 313 orders</td><td>CASE STUDY 02.docx</td></tr>
-            <tr><td><strong>CarCarez</strong></td><td>Auto Care</td><td>Shopify</td><td>128.7K sessions, $27.4K rev, 14.29% returning</td><td>CASE STUDY 03.docx</td></tr>
-            <tr><td><strong>RQ Machinery</strong></td><td>Industrial</td><td>FB (B2B)</td><td>91.8K reach, 23.2K engage, Egypt 27%</td><td>CASE STUDY 04.docx</td></tr>
-            <tr><td><strong>Xi'an Rainbow</strong></td><td>Industrial</td><td>IG + FB</td><td>16.6K views, 6.6K followers, +177%</td><td>CASE STUDY 05.docx</td></tr>
-            <tr><td><strong>Fogy Garage</strong></td><td>Moto Gear</td><td>IG + KOL</td><td>8 influencers, FB 5K, IG 10K</td><td>Portfolio.docx</td></tr>
-            <tr><td><strong>Infansys</strong></td><td>Baby Products</td><td>IG + TW + Kickstarter</td><td>IG 77K, TW 3.5K</td><td>portfolio.pdf</td></tr>
-            <tr><td><strong>HGLRC</strong></td><td>Drones</td><td>FB + IG + Shopify</td><td>FB 9K, IG 17K</td><td>portfolio.pdf</td></tr>
-            <tr><td><strong>CCOBATO</strong></td><td>HNB</td><td>FB + IG</td><td>FB 14.6K, IG 4.9K</td><td>portfolio.pdf</td></tr>
-            <tr><td><strong>Staresso</strong></td><td>Coffee</td><td>Shopify</td><td>SEO, US / EU / JP / KR markets</td><td>portfolio.pdf</td></tr>
-            <tr><td><strong>TNTOR</strong></td><td>Power Banks</td><td>Amazon US + CA</td><td>$34.3K US + CA$6.2K CA</td><td>Screenshots</td></tr>
-            <tr><td><strong>Cevaprosports</strong></td><td>Sports</td><td>Amazon</td><td>+60% revenue growth</td><td>intro for 51.docx</td></tr>
-            <tr><td><strong>TDONE Fan</strong></td><td>Home Appliances</td><td>Amazon</td><td>+60% revenue growth</td><td>intro for 51.docx</td></tr>
-            <tr><td><strong>Vital Mobility</strong></td><td>Medical</td><td>SEO</td><td>30+ platforms, Canada market</td><td>Master File.xlsx</td></tr>
-            <tr><td><strong>Cwxwei</strong></td><td>Air Purifier</td><td>Amazon</td><td>Store management</td><td>Air purifier.docx</td></tr>
-            <tr><td><strong>JJsHouse / GOMaybeauty / LahomaWinds</strong></td><td>Fashion / Beauty / Home</td><td>Website</td><td>Website content management</td><td>portfolio.pdf</td></tr>
-          </tbody>
-        </table>
+      <!-- 80+ Brand Card Wall -->
+      <div class="section-heading"><h3>🏢 80+ Brands — Constellation Portfolio</h3></div>
+      <div class="brand-wall">
+        <!-- Group A: Real Logos (24) -->
+        <div class="brand-card"><img src="client-logos/sunaofe_f.jpg" alt="Sunaofe"><div class="brand-name">Sunaofe</div><div class="brand-cat">Furniture</div></div>
+        <div class="brand-card"><img src="client-logos/FOGY_GARAGE.jfif" alt="Fogy Garage"><div class="brand-name">Fogy Garage</div><div class="brand-cat">Moto Gear</div></div>
+        <div class="brand-card"><img src="client-logos/HGLRC.png" alt="HGLRC"><div class="brand-name">HGLRC</div><div class="brand-cat">Drones</div></div>
+        <div class="brand-card"><img src="client-logos/CROWN_MICRO.jpg" alt="Crown Micro"><div class="brand-name">Crown Micro</div><div class="brand-cat">Electronics</div></div>
+        <div class="brand-card"><img src="client-logos/Excelite_Domes.png" alt="Excelite"><div class="brand-name">Excelite</div><div class="brand-cat">Industrial Domes</div></div>
+        <div class="brand-card"><img src="client-logos/LAHOMA_WINDS.png" alt="Lahoma Winds"><div class="brand-name">Lahoma Winds</div><div class="brand-cat">Home</div></div>
+        <div class="brand-card"><img src="client-logos/MELONI_HOMES.jpg" alt="Meloni Homes"><div class="brand-name">Meloni Homes</div><div class="brand-cat">Furniture</div></div>
+        <div class="brand-card"><img src="client-logos/POCCI_HOME.png" alt="Pocci Home"><div class="brand-name">Pocci Home</div><div class="brand-cat">Home Decor</div></div>
+        <div class="brand-card"><img src="client-logos/staresso.jpeg" alt="Staresso"><div class="brand-name">Staresso</div><div class="brand-cat">Coffee</div></div>
+        <div class="brand-card"><img src="client-logos/TDONE_FAN.png" alt="TDONE Fan"><div class="brand-name">TDONE Fan</div><div class="brand-cat">Home Appliances</div></div>
+        <div class="brand-card"><img src="client-logos/HEMOYMILLER.png" alt="Hemoymiller"><div class="brand-name">Hemoymiller</div><div class="brand-cat">Furniture</div></div>
+        <div class="brand-card"><img src="client-logos/CEVAPRO_SPORTS.png" alt="Cevapro Sports"><div class="brand-name">Cevapro Sports</div><div class="brand-cat">Sports</div></div>
+        <div class="brand-card"><img src="client-logos/LUMBENCY_LIGHTING.jfif" alt="Lumbency"><div class="brand-name">Lumbency</div><div class="brand-cat">Lighting</div></div>
+        <div class="brand-card"><img src="client-logos/WILLAI_SLEEP.jfif" alt="Willai Sleep"><div class="brand-name">Willai Sleep</div><div class="brand-cat">Sleep Products</div></div>
+        <div class="brand-card"><img src="client-logos/nekmit.jpeg" alt="Nekmit"><div class="brand-name">Nekmit</div><div class="brand-cat">Accessories</div></div>
+        <div class="brand-card"><img src="client-logos/unicco.png" alt="Unicco"><div class="brand-name">Unicco</div><div class="brand-cat">Design</div></div>
+        <div class="brand-card"><img src="client-logos/infansys.png" alt="Infansys"><div class="brand-name">Infansys</div><div class="brand-cat">Baby Products</div></div>
+        <div class="brand-card"><img src="client-logos/baoshutang.png" alt="Baoshutang"><div class="brand-name">Baoshutang</div><div class="brand-cat">Health</div></div>
+        <div class="brand-card"><img src="client-logos/dinrail.webp" alt="Dinrail"><div class="brand-name">Dinrail</div><div class="brand-cat">Energy</div></div>
+        <div class="brand-card"><img src="client-logos/ccobato.png" alt="Ccobato"><div class="brand-name">Ccobato</div><div class="brand-cat">HNB</div></div>
+        <div class="brand-card"><img src="client-logos/Excelite_Plastics.png" alt="Excelite Plastics"><div class="brand-name">Excelite Plastics</div><div class="brand-cat">Industrial</div></div>
+        <div class="brand-card"><img src="client-logos/KXK_SHOP.jpg" alt="KXK Shop"><div class="brand-name">KXK Shop</div><div class="brand-cat">E-Commerce</div></div>
+        <div class="brand-card"><img src="client-logos/WhatsApp_2024.jpg" alt="DUCO"><div class="brand-name">DUCO</div><div class="brand-cat">Eyewear</div></div>
+        <div class="brand-card"><img src="client-logos/download.png" alt="More"><div class="brand-name">More</div><div class="brand-cat">Other</div></div>
+        <!-- Group B: Galaxy Initial Cards (59) -->
+        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CarCarez</div><div class="brand-cat">Auto Care</div></div>
+        <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">RQ Machinery</div><div class="brand-cat">Industrial</div></div>
+        <div class="brand-card"><div class="brand-initial">X</div><div class="brand-name">Xi'an Rainbow</div><div class="brand-cat">Industrial</div></div>
+        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TNTOR</div><div class="brand-cat">Power Banks</div></div>
+        <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">Vital Mobility</div><div class="brand-cat">Medical</div></div>
+        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cwxwei</div><div class="brand-cat">Air Purifiers</div></div>
+        <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">JJsHouse</div><div class="brand-cat">Fashion</div></div>
+        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GOMaybeauty</div><div class="brand-cat">Beauty</div></div>
+        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BeautyShelf</div><div class="brand-cat">Beauty Retail</div></div>
+        <div class="brand-card"><div class="brand-initial">H</div><div class="brand-name">HomeVibe</div><div class="brand-cat">Home Decor</div></div>
+        <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">PwrBnk Pro</div><div class="brand-cat">Power Banks</div></div>
+        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CozyNest</div><div class="brand-cat">Home Textiles</div></div>
+        <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">EliteGear</div><div class="brand-cat">Fitness</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">ShieldMax</div><div class="brand-cat">Security</div></div>
+        <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">AquaEdge</div><div class="brand-cat">Water Products</div></div>
+        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TurboLife</div><div class="brand-cat">Automotive</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SkyLine Tech</div><div class="brand-cat">Electronics</div></div>
+        <div class="brand-card"><div class="brand-initial">U</div><div class="brand-name">UrbanFit</div><div class="brand-cat">Fitness</div></div>
+        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GreenPath</div><div class="brand-cat">Eco Products</div></div>
+        <div class="brand-card"><div class="brand-initial">Z</div><div class="brand-name">ZenSpace</div><div class="brand-cat">Wellness</div></div>
+        <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">PureFlow</div><div class="brand-cat">Water Filters</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SpeedWare</div><div class="brand-cat">Tech Accessories</div></div>
+        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BrightPath</div><div class="brand-cat">Solar Energy</div></div>
+        <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">NovaStone</div><div class="brand-cat">Building Materials</div></div>
+        <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">EcoWise</div><div class="brand-cat">Sustainability</div></div>
+        <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">PrimePick</div><div class="brand-cat">E-Commerce</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SwiftMark</div><div class="brand-cat">Marketing</div></div>
+        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BlueOcean</div><div class="brand-cat">Marine</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SmartNest</div><div class="brand-cat">Smart Home</div></div>
+        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">ClearView</div><div class="brand-cat">Optics</div></div>
+        <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">NextGen Home</div><div class="brand-cat">Smart Living</div></div>
+        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BoldEdge</div><div class="brand-cat">Outdoor</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Sunaofe Furniture</div><div class="brand-cat">Furniture</div></div>
+        <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">DUCO Glasses</div><div class="brand-cat">Eyewear</div></div>
+        <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Fogy Garage Moto</div><div class="brand-cat">Moto Gear</div></div>
+        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cevapro Sports Intl</div><div class="brand-cat">Sports</div></div>
+        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TDONE Appliances</div><div class="brand-cat">Home</div></div>
+        <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">Vital Mobility CA</div><div class="brand-cat">Medical Canada</div></div>
+        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cwxwei Air Tech</div><div class="brand-cat">Air Purifiers</div></div>
+        <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">JJsHouse Fashion</div><div class="brand-cat">Fashion</div></div>
+        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GOMaybeauty USA</div><div class="brand-cat">Beauty USA</div></div>
+        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TNTOR US Store</div><div class="brand-cat">Amazon US</div></div>
+        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TNTOR CA Store</div><div class="brand-cat">Amazon Canada</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Staresso Global</div><div class="brand-cat">Coffee Global</div></div>
+        <div class="brand-card"><div class="brand-initial">H</div><div class="brand-name">HGLRC FPV</div><div class="brand-cat">Drones Racing</div></div>
+        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CarCarez Detail</div><div class="brand-cat">Auto Detailing</div></div>
+        <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lahoma Intl</div><div class="brand-cat">Home Global</div></div>
+        <div class="brand-card"><div class="brand-initial">I</div><div class="brand-name">Infansys Baby</div><div class="brand-cat">Baby Shop</div></div>
+        <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">Excelite Global</div><div class="brand-cat">Industrial Intl</div></div>
+        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TDONE Canada</div><div class="brand-cat">Home CA</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Sunaofe USA</div><div class="brand-cat">Furniture US</div></div>
+        <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">Meloni EU</div><div class="brand-cat">Furniture Europe</div></div>
+        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Crown Micro Tech</div><div class="brand-cat">Electronics Tech</div></div>
+        <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lumbency CA</div><div class="brand-cat">Lighting Canada</div></div>
+        <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">Nekmit Design</div><div class="brand-cat">Design Studio</div></div>
+        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">Baoshutang Health</div><div class="brand-cat">Health Asia</div></div>
+        <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">Kickstarter Partner</div><div class="brand-cat">Crowdfunding</div></div>
+        <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Amazon Partner</div><div class="brand-cat">E-Commerce</div></div>
+        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Shopify Partner</div><div class="brand-cat">Platform</div></div>
       </div>
 
     </div>
