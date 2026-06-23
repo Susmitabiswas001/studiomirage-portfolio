@@ -22,32 +22,39 @@
   --gap:16px;
 }
 html{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;font-size:15px;color:var(--text);background:var(--bg);scroll-behavior:smooth}
-body{max-width:1400px;margin:0 auto;padding:0 20px 60px;line-height:1.6}
+body{max-width:1400px;margin:0 auto;padding:0;line-height:1.6}
 
-/* ===== GRID ===== */
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
-.col-1{grid-column:span 1}.col-2{grid-column:span 2}.col-3{grid-column:span 3}.col-4{grid-column:span 4}
-.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}
-.col-9{grid-column:span 9}.col-10{grid-column:span 10}.col-11{grid-column:span 11}.col-12{grid-column:span 12}
+/* ===== STICKY NAV ===== */
+.site-nav{position:sticky;top:0;z-index:1000;background:var(--navy);padding:0 20px;box-shadow:0 2px 12px rgba(0,0,0,0.15)}
+.site-nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.site-nav .nav-logo{color:#fff;font-size:1rem;font-weight:800;letter-spacing:-0.3px;padding:14px 0}
+.site-nav .nav-links{display:flex;list-style:none;gap:4px}
+.site-nav .nav-links a{display:block;color:#c5d1df;text-decoration:none;font-size:0.85rem;font-weight:600;padding:14px 16px;transition:color 0.2s;white-space:nowrap}
+.site-nav .nav-links a:hover,.site-nav .nav-links a.active{color:#fff}
+.site-nav .nav-mobile-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:10px}
 
-/* ===== TYPOGRAPHY ===== */
-h1{font-size:2.2rem;font-weight:800;color:var(--navy);letter-spacing:-0.5px}
-h2{font-size:1.5rem;font-weight:700;color:var(--navy)}
-h3{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:8px}
-h4{font-size:1rem;font-weight:600;color:var(--navy)}
-a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
+/* ===== SECTION LAYOUT ===== */
+section{padding:60px 20px}
+section:nth-child(even){background:#fafaf8}
+.section-inner{max-width:1300px;margin:0 auto}
 
-/* ===== HEADER ===== */
-.site-header{padding:32px 0 16px;text-align:center;border-bottom:2px solid var(--navy);margin-bottom:24px}
-.site-header h1{margin-bottom:4px}
-.site-header .tagline{font-size:1rem;color:var(--light-text);margin-bottom:12px}
-.company-info{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;font-size:0.9rem;color:var(--light-text)}
-.company-info span{display:inline-flex;align-items:center;gap:4px}
-.company-info .icon{font-size:1.1rem}
+/* ===== SECTION HEADER PATTERN ===== */
+.section-tag{display:inline-block;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);background:rgba(26,58,92,0.08);padding:4px 12px;border-radius:4px;margin-bottom:8px}
+.section-title{font-size:1.65rem;font-weight:700;color:var(--navy);margin-bottom:20px;line-height:1.3}
+.section-divider{width:60px;height:3px;background:var(--navy);margin:0 0 24px;border-radius:2px}
 
-/* ===== KPI ROW ===== */
-.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-bottom:24px}
-.kpi-card{background:var(--card-bg);border-radius:var(--radius);border-left:4px solid var(--navy);padding:16px 20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+/* ===== HOME / HERO ===== */
+.hero{padding-top:80px;padding-bottom:50px}
+.hero .company-name{font-size:2.4rem;font-weight:800;color:var(--navy);letter-spacing:-0.5px;margin-bottom:6px}
+.hero .tagline{font-size:1.05rem;color:var(--light-text);margin-bottom:16px;max-width:700px}
+.hero .contact-row{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:0.88rem;color:var(--light-text);margin-bottom:32px}
+.hero .contact-row span{white-space:nowrap}
+
+/* ===== KPI GRID ===== */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-bottom:32px}
+.kpi-card{background:var(--card-bg);border-radius:var(--radius);border-left:4px solid var(--navy);padding:18px 20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06);transition:transform 0.2s}
+.kpi-card:hover{transform:translateY(-2px)}
+.kpi-card:nth-child(1){border-left-color:var(--navy)}
 .kpi-card:nth-child(2){border-left-color:var(--warm)}
 .kpi-card:nth-child(3){border-left-color:var(--green)}
 .kpi-card:nth-child(4){border-left-color:var(--purple)}
@@ -57,1026 +64,876 @@ a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
 .kpi-card:nth-child(8){border-left-color:var(--navy)}
 .kpi-value{font-size:2rem;font-weight:800;color:var(--navy);line-height:1.2}
 .kpi-label{font-size:0.8rem;color:var(--light-text);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px}
-.kpi-sub{font-size:0.72rem;color:var(--light-text);margin-top:2px}
+.kpi-sub{font-size:0.72rem;color:var(--light-text);margin-top:4px}
 
-/* ===== ACCORDIONS ===== */
-.accordion{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:var(--gap);background:var(--card-bg);overflow:hidden}
-.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;cursor:pointer;background:var(--card-bg);border:none;width:100%;text-align:left;font-size:1.1rem;font-weight:700;color:var(--navy);transition:background 0.2s;user-select:none;font-family:inherit}
-.accordion-header:hover{background:#f8f7f4}
-.accordion-header .arrow{font-size:1.3rem;transition:transform 0.3s;color:var(--warm)}
-.accordion.open .accordion-header .arrow{transform:rotate(180deg)}
-.accordion-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.4s ease}
-.accordion.open .accordion-body{max-height:none;overflow:visible;padding:0 24px 24px}
-.accordion-body-inner{padding-top:8px}
-
-/* ===== CHARTS ===== */
-.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);margin-bottom:var(--gap)}
-.chart-box{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
-.chart-box h4{margin-bottom:8px;font-size:0.95rem}
-.chart-box canvas{width:100%!important;height:280px!important}
-
-/* ===== SERVICE CARDS ===== */
-.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:16px}
-.service-card{background:#f8f7f4;border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}
-.service-card .stars{color:var(--warm);font-size:0.9rem;margin-bottom:4px}
-.service-card h4{font-size:0.9rem;margin-bottom:4px}
-.service-card p{font-size:0.78rem;color:var(--light-text)}
-
-/* ===== DATA TABLES ===== */
-.data-table{width:100%;border-collapse:collapse;font-size:0.85rem;margin:16px 0}
-.data-table th,.data-table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
-.data-table th{background:var(--navy);color:#fff;font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.5px}
-.data-table tr:nth-child(even){background:#f8f7f4}
-.data-table tr:hover{background:#eef2f6}
-
-/* ===== CLIENT LOGOS ===== */
-.logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;margin:16px 0}
-.logo-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:12px;display:flex;align-items:center;justify-content:center;aspect-ratio:3/2}
-.logo-item img{max-width:100%;max-height:48px;object-fit:contain}
-.logo-item span{font-size:0.8rem;font-weight:600;color:var(--light-text);text-align:center}
+/* ===== CASE STUDY CARDS ===== */
+.case-study-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin:20px 0}
+.case-study-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.case-study-card h4{color:var(--navy);font-size:1rem;margin-bottom:10px}
+.case-study-card .metric{font-size:1.4rem;font-weight:800;color:var(--navy)}
+.case-study-card .metric-label{font-size:0.75rem;color:var(--light-text);text-transform:uppercase}
+.case-study-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
 /* ===== BRAND WALL ===== */
-.brand-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;padding:4px 0}
+.brand-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(105px,1fr));gap:8px;margin:16px 0}
 .brand-card{background:#fff;border-radius:10px;padding:14px 8px 10px;text-align:center;border:1px solid #e0ded8;position:relative;transition:all .35s cubic-bezier(0.25,0.8,0.25,1.2);cursor:pointer;z-index:1}
 .brand-card:hover{z-index:10;transform:translateY(-6px) scale(1.08);border-color:var(--navy);box-shadow:0 12px 32px rgba(26,58,92,.18),0 0 0 4px rgba(91,58,140,.08),0 4px 12px rgba(194,90,46,.06)}
 .brand-card img{width:48px;height:48px;object-fit:contain;margin:0 auto 8px;filter:grayscale(10%);transition:all .35s}
 .brand-card:hover img{filter:grayscale(0%) brightness(1.08);transform:scale(1.1)}
-.brand-name{font-size:11px;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:2px;transition:color .3s}
+.brand-name{font-size:10.5px;font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:2px;transition:color .3s;word-break:break-word}
 .brand-card:hover .brand-name{color:var(--warm)}
 .brand-cat{font-size:8.5px;color:var(--light-text);text-transform:uppercase;letter-spacing:.4px}
 .brand-initial{width:48px;height:48px;margin:0 auto 8px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;background:linear-gradient(135deg,#1a3a5c,#5b3a8c);transition:all .35s;box-shadow:0 2px 8px rgba(26,58,92,.15)}
 .brand-card:hover .brand-initial{background:linear-gradient(135deg,#c25a2e,#5b3a8c);box-shadow:0 4px 16px rgba(91,58,140,.3);transform:scale(1.1)}
-
-/* Staggered float animation for galaxy dynamic feel */
 @keyframes brandFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 .brand-card:nth-child(odd){animation:brandFloat 4s ease-in-out infinite}
 .brand-card:nth-child(even){animation:brandFloat 5s ease-in-out infinite;animation-delay:.3s}
 .brand-card:nth-child(3n){animation-delay:.6s}
 .brand-card:nth-child(5n+2){animation-delay:1.2s}
-.brand-card:hover{animation:none !important}
+.brand-card:hover{animation:none!important}
 
-/* ===== PACKAGE CARDS ===== */
-.package-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin:16px 0}
-.package-card{background:var(--card-bg);border:2px solid var(--border);border-radius:var(--radius);padding:20px;transition:border-color 0.2s}
-.package-card:hover{border-color:var(--navy)}
-.package-card.popular{border-color:var(--warm);position:relative}
-.package-card.popular::before{content:'★ Most Popular';position:absolute;top:-12px;right:16px;background:var(--warm);color:#fff;font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:12px}
-.package-card .price{font-size:1.6rem;font-weight:800;color:var(--navy);margin:8px 0}
-.package-card .price small{font-size:0.8rem;font-weight:400}
-.package-card h4{font-size:1rem;margin-bottom:4px}
-.package-card ul{list-style:none;font-size:0.82rem;color:var(--text)}
-.package-card ul li{padding:3px 0;padding-left:16px;position:relative}
-.package-card ul li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
-.package-card .hours{font-size:0.8rem;color:var(--warm);font-weight:600;margin-top:8px}
+/* ===== DATA TABLES ===== */
+.data-table{width:100%;border-collapse:collapse;font-size:0.83rem;margin:16px 0}
+.data-table thead th{background:var(--navy);color:#fff;font-weight:600;font-size:0.76rem;text-transform:uppercase;letter-spacing:0.5px;padding:10px 12px;text-align:left;white-space:nowrap}
+.data-table tbody td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+.data-table tbody tr:nth-child(even){background:#f8f7f4}
+.data-table tbody tr:hover{background:#eef2f6}
+.data-table .badge{display:inline-block;font-size:0.68rem;font-weight:600;padding:2px 8px;border-radius:3px;margin:1px 2px}
+.badge-seo{background:#e8f5e9;color:#2d6a4f}
+.badge-dev{background:#e3f2fd;color:#1a3a5c}
+.badge-bl{background:#fff3e0;color:#c25a2e}
 
-/* ===== TOOLKIT GRID ===== */
-.toolkit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--gap);margin:16px 0}
-.toolkit-item{background:#f8f7f4;border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;font-size:0.85rem;font-weight:500;display:flex;align-items:center;gap:8px}
-.toolkit-item .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.toolkit-item .dot.social{background:var(--navy)}.toolkit-item .dot.seo{background:var(--green)}
-.toolkit-item .dot.content{background:var(--warm)}.toolkit-item .dot.ads{background:var(--purple)}
-
-/* ===== STAT FLAGS ===== */
-.stat-flag{display:inline-flex;align-items:center;gap:6px;background:#f0efe9;border-radius:20px;padding:4px 12px;font-size:0.78rem;font-weight:600;margin:2px 4px}
-.stat-flag .flag-icon{font-size:1rem}
+/* ===== CHARTS ===== */
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);margin:20px 0}
+.chart-box{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.chart-box h4{margin-bottom:10px;font-size:0.9rem;color:var(--navy)}
+.chart-box canvas{width:100%!important;height:280px!important}
 
 /* ===== HIGHLIGHT BOX ===== */
-.highlight-box{background:linear-gradient(135deg,var(--navy),#1f4d7a);color:#fff;border-radius:var(--radius);padding:20px 24px;margin:16px 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.highlight-box .big-number{font-size:2.4rem;font-weight:800}
-.highlight-box .highlight-details{font-size:0.9rem;line-height:1.5}
-.highlight-box .highlight-details strong{color:var(--warm)}
+.highlight-box{background:linear-gradient(135deg,var(--navy),#1f4d7a);color:#fff;border-radius:var(--radius);padding:24px 28px;margin:20px 0}
+.highlight-box .big-number{font-size:2.4rem;font-weight:800;line-height:1.1}
+.highlight-box .highlight-details{font-size:0.92rem;line-height:1.6;margin-top:4px}
+.highlight-box .highlight-details strong{color:#f0a060}
+.highlight-box.green{background:linear-gradient(135deg,#2d6a4f,#1a5c3a)}
 
-/* ===== SECTION HEADING ===== */
-.section-heading{display:flex;align-items:center;gap:8px;margin:16px 0 8px;padding-bottom:8px;border-bottom:2px solid var(--border)}
-.section-heading h3{margin:0}
+/* ===== METRIC ROW ===== */
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--gap);margin:16px 0}
+.metric-card{background:#f8f7f4;border-radius:var(--radius);padding:14px;text-align:center;border:1px solid var(--border)}
+.metric-card .val{font-size:1.5rem;font-weight:800;color:var(--navy)}
+.metric-card .lbl{font-size:0.72rem;color:var(--light-text);text-transform:uppercase;margin-top:2px}
 
-/* ===== AMAZON METRIC ROW ===== */
-.amazon-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--gap);margin-bottom:var(--gap)}
-.amazon-metric{background:#f8f7f4;border-radius:var(--radius);padding:14px;text-align:center}
-.amazon-metric .val{font-size:1.5rem;font-weight:800;color:var(--navy)}
-.amazon-metric .lbl{font-size:0.72rem;color:var(--light-text);text-transform:uppercase}
+/* ===== SERVICE CARDS ===== */
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin:16px 0}
+.service-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:18px 14px;text-align:center;transition:transform 0.2s,box-shadow 0.2s}
+.service-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.service-card .stars{color:var(--warm);font-size:0.85rem;margin-bottom:4px}
+.service-card h4{font-size:0.9rem;color:var(--navy);margin-bottom:4px}
+.service-card p{font-size:0.76rem;color:var(--light-text);line-height:1.4}
+
+/* ===== PRICING CARDS ===== */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin:20px 0}
+.pricing-card{background:var(--card-bg);border:2px solid var(--border);border-radius:var(--radius);padding:24px 20px;transition:all 0.25s}
+.pricing-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.pricing-card.popular{border-color:var(--warm);position:relative}
+.pricing-card.popular::before{content:'★ Most Popular';position:absolute;top:-12px;right:20px;background:var(--warm);color:#fff;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:12px}
+.pricing-card .price{font-size:1.6rem;font-weight:800;color:var(--navy);margin:8px 0}
+.pricing-card .price small{font-size:0.75rem;font-weight:400;color:var(--light-text)}
+.pricing-card h4{font-size:1rem;margin-bottom:4px;color:var(--navy)}
+.pricing-card ul{list-style:none;font-size:0.81rem;color:var(--text);margin-top:10px}
+.pricing-card ul li{padding:4px 0;padding-left:16px;position:relative}
+.pricing-card ul li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+
+/* ===== TOOLS GRID ===== */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--gap);margin:16px 0}
+.tools-item{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;font-size:0.83rem;font-weight:500;color:var(--navy);display:flex;align-items:center;gap:8px;transition:transform 0.2s}
+.tools-item:hover{transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.tools-item .icon{font-size:1rem;opacity:0.6}
+
+/* ===== STAT FLAGS ===== */
+.stat-flag{display:inline-flex;align-items:center;gap:6px;background:#f0efe9;border-radius:20px;padding:4px 12px;font-size:0.76rem;font-weight:600;margin:2px 4px}
+
+/* ===== KOL TABLE ===== */
+.kol-table{width:100%;border-collapse:collapse;font-size:0.82rem;margin:10px 0}
+.kol-table th{background:var(--navy);color:#fff;padding:8px 12px;text-align:left;font-size:0.74rem;font-weight:600;text-transform:uppercase}
+.kol-table td{padding:8px 12px;border-bottom:1px solid var(--border)}
+.kol-table tr:nth-child(even){background:#f8f7f4}
+
+/* ===== FOOTER ===== */
+.site-footer{padding:40px 20px 30px;border-top:2px solid var(--navy);margin-top:20px}
+.site-footer .footer-inner{max-width:1300px;margin:0 auto;text-align:center}
+.site-footer p{font-size:0.85rem;color:var(--light-text);margin:4px 0}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .kpi-grid{grid-template-columns:repeat(3,1fr)}
   .chart-grid{grid-template-columns:1fr}
   .service-grid{grid-template-columns:repeat(2,1fr)}
-  .package-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:repeat(2,1fr)}
+  .case-study-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
   .kpi-grid{grid-template-columns:repeat(2,1fr)}
   .service-grid{grid-template-columns:1fr}
-  .package-grid{grid-template-columns:1fr}
-  .grid .col-1,.grid .col-2,.grid .col-3,.grid .col-4,.grid .col-5,.grid .col-6,
-  .grid .col-7,.grid .col-8,.grid .col-9,.grid .col-10,.grid .col-11,.grid .col-12{grid-column:span 12}
+  .pricing-grid{grid-template-columns:1fr}
+  .case-study-grid{grid-template-columns:1fr}
+  .site-nav .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:0 20px 10px}
+  .site-nav .nav-links.open{display:flex}
+  .site-nav .nav-mobile-toggle{display:block}
+  .hero{padding-top:40px}
 }
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="site-header">
-  <h1>Studio Mirage Limited</h1>
-  <p class="tagline">Digital Marketing Agency — Brand Growth, KOL Management & E-Commerce Optimization</p>
-  <div class="company-info">
-    <span>📍 Dhaka, Bangladesh</span>
-    <span>🌐 <a href="https://studiomiragecn.com" target="_blank">studiomiragecn.com</a></span>
+<!-- ===== STICKY NAVIGATION ===== -->
+<nav class="site-nav" id="topNav">
+  <div class="site-nav-inner">
+    <div class="nav-logo">Studio Mirage</div>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
-</header>
+</nav>
 
-<!-- ===== KPI ROW ===== -->
-<div class="kpi-grid">
-  <div class="kpi-card">
-    <div class="kpi-value">3.5M+</div>
-    <div class="kpi-label">Total Reach</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-value">100+</div>
-    <div class="kpi-label">Brands Managed</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-value">500+</div>
-    <div class="kpi-label">KOLs Managed</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-value">5,000+</div>
-    <div class="kpi-label">KOLs Listed & Contacted</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-value">~4,800</div>
-    <div class="kpi-label">SNS Posts & Media Design</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-value">120</div>
-    <div class="kpi-label">SNS Posts/Mo/Brand</div>
-    <div class="kpi-sub">5 posts/day × 6 days × 4 weeks</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-value">20</div>
-    <div class="kpi-label">Daily KOL List/Brand</div>
-  </div>
-  <div class="kpi-card">
-    <div class="kpi-value">$77K+</div>
-    <div class="kpi-label">Revenue Driven</div>
-  </div>
-</div>
+<!-- ================================================================ -->
+<!-- SECTION: HOME -->
+<!-- ================================================================ -->
+<section class="hero" id="home">
+  <div class="section-inner">
+    <div class="section-tag">Digital Marketing Agency</div>
+    <h1 class="company-name">Studio Mirage Limited</h1>
+    <p class="tagline">Digital Marketing Agency — Brand Growth, KOL Management &amp; E-Commerce Optimization</p>
+    <div class="contact-row">
+      <span>📍 Dhaka, Bangladesh</span>
+      <span>🌐 studiomiragecn.com</span>
+      <span>✉️ studiomiragebd@gmail.com</span>
+      <span>📞 +880 1677 710485</span>
+    </div>
 
-<!-- ===== ACCORDION 1: PERFORMANCE DASHBOARD ===== -->
-<div class="accordion open" id="acc-perf">
-  <button class="accordion-header" onclick="toggleAccordion('acc-perf')" aria-expanded="true">
-    📊 Performance Dashboard
-    <span class="arrow">▾</span>
-  </button>
-  <div class="accordion-body">
-    <div class="accordion-body-inner">
-
-      <!-- 2x2 Chart Grid -->
-      <div class="chart-grid">
-        <div class="chart-box">
-          <h4>Cross-Platform Reach (Log Scale)</h4>
-          <canvas id="chartReach"></canvas>
-        </div>
-        <div class="chart-box">
-          <h4>Audience Growth by Platform</h4>
-          <canvas id="chartAudience"></canvas>
-        </div>
-        <div class="chart-box">
-          <h4>E-Commerce: Revenue vs Sessions</h4>
-          <canvas id="chartEcom"></canvas>
-        </div>
-        <div class="chart-box">
-          <h4>Amazon Sales &amp; Spend Timeline (Sep–Dec 2023)</h4>
-          <canvas id="chartAmazon"></canvas>
-        </div>
-      </div>
-
-      <!-- Instagram Live Highlight -->
-      <div class="highlight-box">
-        <div class="big-number">210,387</div>
-        <div class="highlight-details">
-          <strong>Instagram Live Views</strong><br>
-          +100% growth · 1,583 interactions · 217 follows<br>
-          <span style="font-size:0.85rem;opacity:0.85">99.5% of viewers were non-followers · May 26 – Jun 22 2026</span>
-        </div>
-      </div>
-
-      <!-- 19 Service Cards -->
-      <div class="section-heading"><h3>⭐ Service Expertise (All ★★★★★ Rated)</h3></div>
-      <div class="service-grid">
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Social Media Strategy</h4><p>Multi-platform planning & execution</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Facebook Marketing</h4><p>Organic + Paid campaigns</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Instagram Growth</h4><p>Reels, Stories, engagement</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Twitter/X Management</h4><p>Brand voice & community</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>YouTube SEO</h4><p>Video optimization & growth</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Reddit Community</h4><p>Organic engagement & outreach</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>TikTok Content</h4><p>Viral content & trend strategy</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>KOL/Influencer Sourcing</h4><p>20+ daily research pipeline</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Amazon Marketing</h4><p>PPC, Storefront, Live</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Facebook Ads</h4><p>CPA as low as $0.23</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Google Ads</h4><p>43.9% conversion rate</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Shopify E-Commerce</h4><p>Store setup & optimization</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>SEO (On-Page & Off-Page)</h4><p>Backlinks, keywords, content</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Blog & Content Writing</h4><p>SEO-optimized articles</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Competitor Analysis</h4><p>10–25 competitor benchmarking</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Email Marketing</h4><p>List building & automation</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Website Development</h4><p>Images, alt text, meta tags</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Performance Reporting</h4><p>Dashboards & strategy calls</p></div>
-        <div class="service-card"><div class="stars">★★★★★</div><h4>Cross-Border Strategy</h4><p>US, EU, JP, KR, CA markets</p></div>
-      </div>
-
-      <!-- Sunaofe September Report Summary -->
-      <div class="section-heading"><h3>🏠 Sunaofe September Report — Key Metrics (Source: Sunaofe Report September.xlsx)</h3></div>
-
-      <div class="highlight-box" style="background:linear-gradient(135deg,#2d6a4f,#1a5c3a)">
-        <div class="big-number">14.3K</div>
-        <div class="highlight-details">
-          <strong>Website SEO Performance</strong><br>
-          DA: 2–6 · PA: 21 · Backlinks: 1.4K · Organic Traffic: 14.3K<br>
-          <span style="font-size:0.85rem;opacity:0.85">Moz/SEMRush/SemilarWeb — Guest Posts: 135 · SEO Writing: 100 · Q&A: 134 · Blog Comments: 135</span>
-        </div>
-      </div>
-
-      <div class="amazon-metrics" style="grid-template-columns:repeat(4,1fr)">
-        <div class="amazon-metric"><div class="val">59,259</div><div class="lbl">FB Fans</div></div>
-        <div class="amazon-metric"><div class="val">64,798</div><div class="lbl">FB Followers</div></div>
-        <div class="amazon-metric"><div class="val">57,747</div><div class="lbl">FB Total Reach</div></div>
-        <div class="amazon-metric"><div class="val">8.6%</div><div class="lbl">Fan Growth Rate</div></div>
-        <div class="amazon-metric"><div class="val">3500+</div><div class="lbl">FB Likes (20 posts)</div></div>
-        <div class="amazon-metric"><div class="val">55.6K</div><div class="lbl">IG Followers</div></div>
-        <div class="amazon-metric"><div class="val">7,476</div><div class="lbl">IG Impressions</div></div>
-        <div class="amazon-metric"><div class="val">11,885</div><div class="lbl">IG Total Reach</div></div>
-      </div>
-
+    <!-- 8 KPI Boxes in 4-col grid -->
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-value">3.5M+</div><div class="kpi-label">Total Reach</div></div>
+      <div class="kpi-card"><div class="kpi-value">100+</div><div class="kpi-label">Brands Managed</div></div>
+      <div class="kpi-card"><div class="kpi-value">500+</div><div class="kpi-label">KOLs Managed</div></div>
+      <div class="kpi-card"><div class="kpi-value">5,000+</div><div class="kpi-label">KOLs Listed &amp; Contacted</div></div>
+      <div class="kpi-card"><div class="kpi-value">~4,800</div><div class="kpi-label">SNS Posts &amp; Media Design</div></div>
+      <div class="kpi-card"><div class="kpi-value">120</div><div class="kpi-label">SNS Posts/Mo/Brand</div><div class="kpi-sub">5 posts/day × 6 days × 4 weeks</div></div>
+      <div class="kpi-card"><div class="kpi-value">20</div><div class="kpi-label">Daily KOL List/Brand</div></div>
+      <div class="kpi-card"><div class="kpi-value">$77K+</div><div class="kpi-label">Revenue Driven</div></div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ===== ACCORDION 2: BRAND PORTFOLIO ===== -->
-<div class="accordion" id="acc-brands">
-  <button class="accordion-header" onclick="toggleAccordion('acc-brands')" aria-expanded="false">
-    📋 Brand Portfolio
-    <span class="arrow">▾</span>
-  </button>
-  <div class="accordion-body">
-    <div class="accordion-body-inner">
+<!-- ================================================================ -->
+<!-- SECTION: PORTFOLIO -->
+<!-- ================================================================ -->
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="section-tag">Trusted By</div>
+    <h2 class="section-title">100+ Brand Portfolio</h2>
+    <div class="section-divider"></div>
 
-      <!-- 100+ Brand Card Wall -->
-      <div class="section-heading"><h3>🏢 100+ Brands — Constellation Portfolio</h3></div>
-      <div class="brand-wall">
-        <div class="brand-card"><img src="client-logos/baoshutang.png" alt="Baoshutang"><div class="brand-name">Baoshutang</div><div class="brand-cat">Health</div></div>
-        <div class="brand-card"><img src="client-logos/ccobato.png" alt="Ccobato"><div class="brand-name">Ccobato</div><div class="brand-cat">HNB</div></div>
-        <div class="brand-card"><img src="client-logos/CEVAPRO_SPORTS.png" alt="Cevapro Sports"><div class="brand-name">Cevapro Sports</div><div class="brand-cat">Sports</div></div>
-        <div class="brand-card"><img src="client-logos/CROWN_MICRO.jpg" alt="Crown Micro"><div class="brand-name">Crown Micro</div><div class="brand-cat">Electronics</div></div>
-        <div class="brand-card"><img src="client-logos/dinrail.webp" alt="Dinrail"><div class="brand-name">Dinrail</div><div class="brand-cat">Energy</div></div>
-        <div class="brand-card"><img src="client-logos/WhatsApp_2024.jpg" alt="DUCO"><div class="brand-name">DUCO</div><div class="brand-cat">Eyewear</div></div>
-        <div class="brand-card"><img src="client-logos/Excelite_Domes.png" alt="Excelite Domes"><div class="brand-name">Excelite Domes</div><div class="brand-cat">Industrial Domes</div></div>
-        <div class="brand-card"><img src="client-logos/Excelite_Plastics.png" alt="Excelite Plastics"><div class="brand-name">Excelite Plastics</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><img src="client-logos/FOGY_GARAGE.jfif" alt="Fogy Garage"><div class="brand-name">Fogy Garage</div><div class="brand-cat">Moto Gear</div></div>
-        <div class="brand-card"><img src="client-logos/HEMOYMILLER.png" alt="Hemoymiller"><div class="brand-name">Hemoymiller</div><div class="brand-cat">Furniture</div></div>
-        <div class="brand-card"><img src="client-logos/HGLRC.png" alt="HGLRC"><div class="brand-name">HGLRC</div><div class="brand-cat">Drones</div></div>
-        <div class="brand-card"><img src="client-logos/infansys.png" alt="Infansys"><div class="brand-name">Infansys</div><div class="brand-cat">Baby Products</div></div>
-        <div class="brand-card"><img src="client-logos/KXK_SHOP.jpg" alt="KXK Shop"><div class="brand-name">KXK Shop</div><div class="brand-cat">E-Commerce</div></div>
-        <div class="brand-card"><img src="client-logos/LAHOMA_WINDS.png" alt="Lahoma Winds"><div class="brand-name">Lahoma Winds</div><div class="brand-cat">Home</div></div>
-        <div class="brand-card"><img src="client-logos/LUMBENCY_LIGHTING.jfif" alt="Lumbency"><div class="brand-name">Lumbency</div><div class="brand-cat">Lighting</div></div>
-        <div class="brand-card"><img src="client-logos/MELONI_HOMES.jpg" alt="Meloni Homes"><div class="brand-name">Meloni Homes</div><div class="brand-cat">Furniture</div></div>
-        <div class="brand-card"><img src="client-logos/download.png" alt="More"><div class="brand-name">More</div><div class="brand-cat">Other</div></div>
-        <div class="brand-card"><img src="client-logos/nekmit.jpeg" alt="Nekmit"><div class="brand-name">Nekmit</div><div class="brand-cat">Accessories</div></div>
-        <div class="brand-card"><img src="client-logos/POCCI_HOME.png" alt="Pocci Home"><div class="brand-name">Pocci Home</div><div class="brand-cat">Home Decor</div></div>
-        <div class="brand-card"><img src="client-logos/staresso.jpeg" alt="Staresso"><div class="brand-name">Staresso</div><div class="brand-cat">Coffee</div></div>
-        <div class="brand-card"><img src="client-logos/sunaofe_f.jpg" alt="Sunaofe"><div class="brand-name">Sunaofe</div><div class="brand-cat">Furniture</div></div>
-        <div class="brand-card"><img src="client-logos/TDONE_FAN.png" alt="TDONE Fan"><div class="brand-name">TDONE Fan</div><div class="brand-cat">Home Appliances</div></div>
-        <div class="brand-card"><img src="client-logos/unicco.png" alt="Unicco"><div class="brand-name">Unicco</div><div class="brand-cat">Design</div></div>
-        <div class="brand-card"><img src="client-logos/WILLAI_SLEEP.jfif" alt="Willai Sleep"><div class="brand-name">Willai Sleep</div><div class="brand-cat">Sleep Products</div></div>
-        <div class="brand-card"><div class="brand-initial">8</div><div class="brand-name">88linksgolf</div><div class="brand-cat">Golf</div></div>
-        <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Activation Gaming</div><div class="brand-cat">Gaming</div></div>
-        <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Amazon Partner</div><div class="brand-cat">E-Commerce</div></div>
-        <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Amunbrek</div><div class="brand-cat">Wellness</div></div>
-        <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">AquaEdge</div><div class="brand-cat">Water Products</div></div>
-        <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Auskang</div><div class="brand-cat">Electronics</div></div>
-        <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Autel</div><div class="brand-cat">Auto Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">Bag</div><div class="brand-cat">Accessories</div></div>
-        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">Baoshutang Health</div><div class="brand-cat">Health Asia</div></div>
-        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BeautyShelf</div><div class="brand-cat">Beauty Retail</div></div>
-        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BGAME</div><div class="brand-cat">Gaming</div></div>
-        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">Blackpink</div><div class="brand-cat">Fashion</div></div>
-        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BlueOcean</div><div class="brand-cat">Marine</div></div>
-        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BoldEdge</div><div class="brand-cat">Outdoor</div></div>
-        <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BrightPath</div><div class="brand-cat">Solar Energy</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CarCarez</div><div class="brand-cat">Auto Care</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CarCarez Detail</div><div class="brand-cat">Auto Detailing</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CDMO</div><div class="brand-cat">Medical</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cevapro Sports Intl</div><div class="brand-cat">Sports</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">ClearView</div><div class="brand-cat">Optics</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Clonewatch</div><div class="brand-cat">Watches</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cosmbreath</div><div class="brand-cat">Wellness</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CozyNest</div><div class="brand-cat">Home Textiles</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">creamoda</div><div class="brand-cat">Fashion AI</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Crown Micro Tech</div><div class="brand-cat">Electronics Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cwxwei</div><div class="brand-cat">Air Purifiers</div></div>
-        <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cwxwei Air Tech</div><div class="brand-cat">Air Purifiers</div></div>
-        <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">Desheng Steel</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">Driplum</div><div class="brand-cat">Fashion</div></div>
-        <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">DUCO Glasses</div><div class="brand-cat">Eyewear</div></div>
-        <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">Ducoglasses</div><div class="brand-cat">Eyewear</div></div>
-        <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">EcoWise</div><div class="brand-cat">Sustainability</div></div>
-        <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">EliteGear</div><div class="brand-cat">Fitness</div></div>
-        <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">Evosmarthomedevice</div><div class="brand-cat">Smart Home</div></div>
-        <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">Excelite Global</div><div class="brand-cat">Industrial Intl</div></div>
-        <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">Exhibition-HairFair</div><div class="brand-cat">Beauty Event</div></div>
-        <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Flexdance</div><div class="brand-cat">Dance Fitness</div></div>
-        <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Fogy Garage Moto</div><div class="brand-cat">Moto Gear</div></div>
-        <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Formiga trade</div><div class="brand-cat">Trading</div></div>
-        <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Furgo</div><div class="brand-cat">Medical</div></div>
-        <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Furniture-Pillow</div><div class="brand-cat">Home</div></div>
-        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GOMaybeauty</div><div class="brand-cat">Beauty</div></div>
-        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GOMaybeauty USA</div><div class="brand-cat">Beauty USA</div></div>
-        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GreenPath</div><div class="brand-cat">Eco Products</div></div>
-        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Greoto</div><div class="brand-cat">Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Gulinaonline</div><div class="brand-cat">Fashion</div></div>
-        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Gystore</div><div class="brand-cat">E-Commerce</div></div>
-        <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Gzsante</div><div class="brand-cat">Health</div></div>
-        <div class="brand-card"><div class="brand-initial">H</div><div class="brand-name">HGLRC FPV</div><div class="brand-cat">Drones Racing</div></div>
-        <div class="brand-card"><div class="brand-initial">H</div><div class="brand-name">HomeVibe</div><div class="brand-cat">Home Decor</div></div>
-        <div class="brand-card"><div class="brand-initial">I</div><div class="brand-name">Infansys Baby</div><div class="brand-cat">Baby Shop</div></div>
-        <div class="brand-card"><div class="brand-initial">I</div><div class="brand-name">Intel Irrigation</div><div class="brand-cat">Agriculture</div></div>
-        <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">Jiean Auto</div><div class="brand-cat">Automotive</div></div>
-        <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">JJsHouse</div><div class="brand-cat">Fashion</div></div>
-        <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">JJsHouse Fashion</div><div class="brand-cat">Fashion</div></div>
-        <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">JOVO/Mornlift</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">Joyofdress</div><div class="brand-cat">Fashion</div></div>
-        <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">Katokatana</div><div class="brand-cat">Swords</div></div>
-        <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">KGU</div><div class="brand-cat">Network Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">Kickstarter Partner</div><div class="brand-cat">Crowdfunding</div></div>
-        <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">Knyee Energy</div><div class="brand-cat">Energy</div></div>
-        <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lahoma Intl</div><div class="brand-cat">Home Global</div></div>
-        <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lamp (coolilumi)</div><div class="brand-cat">Lighting</div></div>
-        <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lazysis</div><div class="brand-cat">Furniture</div></div>
-        <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lumbency CA</div><div class="brand-cat">Lighting Canada</div></div>
-        <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">Malajisi</div><div class="brand-cat">Fashion</div></div>
-        <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">mechartisans</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">Meloni EU</div><div class="brand-cat">Furniture Europe</div></div>
-        <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">Memzuoix/XGaming</div><div class="brand-cat">Gaming Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">MotionFurni</div><div class="brand-cat">Furniture</div></div>
-        <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">MTE</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">Naturebuds</div><div class="brand-cat">CBD/Wellness</div></div>
-        <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">Nekmit Design</div><div class="brand-cat">Design Studio</div></div>
-        <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">NextGen Home</div><div class="brand-cat">Smart Living</div></div>
-        <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">NovaStone</div><div class="brand-cat">Building Materials</div></div>
-        <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">Patiencepharma</div><div class="brand-cat">Pharma</div></div>
-        <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">pioneerfibre</div><div class="brand-cat">Textiles</div></div>
-        <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">PrimePick</div><div class="brand-cat">E-Commerce</div></div>
-        <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">PureFlow</div><div class="brand-cat">Water Filters</div></div>
-        <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">PwrBnk Pro</div><div class="brand-cat">Power Banks</div></div>
-        <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">RIDEO</div><div class="brand-cat">Auto</div></div>
-        <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">Rippton</div><div class="brand-cat">Marine Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">RQ Machinery</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">rqmachinery</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SecurePlus</div><div class="brand-cat">Medical</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">ShieldMax</div><div class="brand-cat">Security</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Shopify Partner</div><div class="brand-cat">Platform</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SkyLine Tech</div><div class="brand-cat">Electronics</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SmartNest</div><div class="brand-cat">Smart Home</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Softliquidtank/Rainbow/Keystar</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SpeedWare</div><div class="brand-cat">Tech Accessories</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Staresso Global</div><div class="brand-cat">Coffee Global</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SUBLISTAR</div><div class="brand-cat">Printing</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Sunaofe Furniture</div><div class="brand-cat">Furniture</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Sunaofe USA</div><div class="brand-cat">Furniture US</div></div>
-        <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SwiftMark</div><div class="brand-cat">Marketing</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">Takumaforge</div><div class="brand-cat">Blacksmith</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">Taloman</div><div class="brand-cat">Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TDONE Appliances</div><div class="brand-cat">Home</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TDONE Canada</div><div class="brand-cat">Home CA</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">theintellicube</div><div class="brand-cat">Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TNTOR</div><div class="brand-cat">Power Banks</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TNTOR CA Store</div><div class="brand-cat">Amazon Canada</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TNTOR US Store</div><div class="brand-cat">Amazon US</div></div>
-        <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TurboLife</div><div class="brand-cat">Automotive</div></div>
-        <div class="brand-card"><div class="brand-initial">U</div><div class="brand-name">UrbanFit</div><div class="brand-cat">Fitness</div></div>
-        <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">Veekatana</div><div class="brand-cat">Swords</div></div>
-        <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">Vintage RO</div><div class="brand-cat">Water Systems</div></div>
-        <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">Vital Mobility</div><div class="brand-cat">Medical</div></div>
-        <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">Vital Mobility CA</div><div class="brand-cat">Medical Canada</div></div>
-        <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">wamitwaterjet</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">wearxAi</div><div class="brand-cat">Tech Wearables</div></div>
-        <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">Wellwhip</div><div class="brand-cat">Food Tech</div></div>
-        <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">wholesaledressup</div><div class="brand-cat">Fashion Wholesale</div></div>
-        <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">wowow/arcora/iviga</div><div class="brand-cat">Lighting</div></div>
-        <div class="brand-card"><div class="brand-initial">X</div><div class="brand-name">X Team</div><div class="brand-cat">RC Racing</div></div>
-        <div class="brand-card"><div class="brand-initial">X</div><div class="brand-name">Xi'an Rainbow</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">Y</div><div class="brand-name">yoyisjewelry</div><div class="brand-cat">Jewelry</div></div>
-        <div class="brand-card"><div class="brand-initial">Z</div><div class="brand-name">ZenSpace</div><div class="brand-cat">Wellness</div></div>
-        <div class="brand-card"><div class="brand-initial">Z</div><div class="brand-name">ZKhoist</div><div class="brand-cat">Industrial</div></div>
-        <div class="brand-card"><div class="brand-initial">Z</div><div class="brand-name">Zontop</div><div class="brand-cat">Construction</div></div>
+    <!-- 145 Brand Cards - Galaxy Wall -->
+    <!-- 24 real logo images first (alphabetically), then 121 gradient initials -->
+    <div class="brand-wall">
+      <!-- REAL LOGOS (alphabetical) -->
+      <div class="brand-card"><img src="client-logos/baoshutang.png" alt="Baoshutang"><div class="brand-name">Baoshutang</div><div class="brand-cat">Health</div></div>
+      <div class="brand-card"><img src="client-logos/ccobato.png" alt="Ccobato"><div class="brand-name">Ccobato</div><div class="brand-cat">HNB</div></div>
+      <div class="brand-card"><img src="client-logos/CEVAPRO_SPORTS.png" alt="Cevapro Sports"><div class="brand-name">Cevapro Sports</div><div class="brand-cat">Sports</div></div>
+      <div class="brand-card"><img src="client-logos/CROWN_MICRO.jpg" alt="Crown Micro"><div class="brand-name">Crown Micro</div><div class="brand-cat">Electronics</div></div>
+      <div class="brand-card"><img src="client-logos/dinrail.webp" alt="Dinrail"><div class="brand-name">Dinrail</div><div class="brand-cat">Energy</div></div>
+      <div class="brand-card"><img src="client-logos/WhatsApp_2024.jpg" alt="DUCO"><div class="brand-name">DUCO</div><div class="brand-cat">Eyewear</div></div>
+      <div class="brand-card"><img src="client-logos/Excelite_Domes.png" alt="Excelite Domes"><div class="brand-name">Excelite Domes</div><div class="brand-cat">Industrial Domes</div></div>
+      <div class="brand-card"><img src="client-logos/Excelite_Plastics.png" alt="Excelite Plastics"><div class="brand-name">Excelite Plastics</div><div class="brand-cat">Industrial</div></div>
+      <div class="brand-card"><img src="client-logos/FOGY_GARAGE.jfif" alt="Fogy Garage"><div class="brand-name">Fogy Garage</div><div class="brand-cat">Moto Gear</div></div>
+      <div class="brand-card"><img src="client-logos/HEMOYMILLER.png" alt="Hemoymiller"><div class="brand-name">Hemoymiller</div><div class="brand-cat">Furniture</div></div>
+      <div class="brand-card"><img src="client-logos/HGLRC.png" alt="HGLRC"><div class="brand-name">HGLRC</div><div class="brand-cat">Drones</div></div>
+      <div class="brand-card"><img src="client-logos/infansys.png" alt="Infansys"><div class="brand-name">Infansys</div><div class="brand-cat">Baby Products</div></div>
+      <div class="brand-card"><img src="client-logos/KXK_SHOP.jpg" alt="KXK Shop"><div class="brand-name">KXK Shop</div><div class="brand-cat">E-Commerce</div></div>
+      <div class="brand-card"><img src="client-logos/LAHOMA_WINDS.png" alt="Lahoma Winds"><div class="brand-name">Lahoma Winds</div><div class="brand-cat">Home</div></div>
+      <div class="brand-card"><img src="client-logos/LUMBENCY_LIGHTING.jfif" alt="Lumbency"><div class="brand-name">Lumbency</div><div class="brand-cat">Lighting</div></div>
+      <div class="brand-card"><img src="client-logos/MELONI_HOMES.jpg" alt="Meloni Homes"><div class="brand-name">Meloni Homes</div><div class="brand-cat">Furniture</div></div>
+      <div class="brand-card"><img src="client-logos/download.png" alt="More"><div class="brand-name">More</div><div class="brand-cat">Other</div></div>
+      <div class="brand-card"><img src="client-logos/nekmit.jpeg" alt="Nekmit"><div class="brand-name">Nekmit</div><div class="brand-cat">Accessories</div></div>
+      <div class="brand-card"><img src="client-logos/POCCI_HOME.png" alt="Pocci Home"><div class="brand-name">Pocci Home</div><div class="brand-cat">Home Decor</div></div>
+      <div class="brand-card"><img src="client-logos/staresso.jpeg" alt="Staresso"><div class="brand-name">Staresso</div><div class="brand-cat">Coffee</div></div>
+      <div class="brand-card"><img src="client-logos/sunaofe_f.jpg" alt="Sunaofe"><div class="brand-name">Sunaofe</div><div class="brand-cat">Furniture</div></div>
+      <div class="brand-card"><img src="client-logos/TDONE_FAN.png" alt="TDONE Fan"><div class="brand-name">TDONE Fan</div><div class="brand-cat">Home Appliances</div></div>
+      <div class="brand-card"><img src="client-logos/unicco.png" alt="Unicco"><div class="brand-name">Unicco</div><div class="brand-cat">Design</div></div>
+      <div class="brand-card"><img src="client-logos/WILLAI_SLEEP.jfif" alt="Willai Sleep"><div class="brand-name">Willai Sleep</div><div class="brand-cat">Sleep Products</div></div>
+
+      <!-- GRADIENT INITIALS (121 cards, alphabetical) -->
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Activation Gaming</div><div class="brand-cat">Gaming</div></div>
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Amazon Partner</div><div class="brand-cat">E-Commerce</div></div>
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Amunbrek</div><div class="brand-cat">Wellness</div></div>
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">AquaEdge</div><div class="brand-cat">Water Products</div></div>
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Arcona</div><div class="brand-cat">Industrial</div></div>
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Auskang</div><div class="brand-cat">Electronics</div></div>
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">Autel</div><div class="brand-cat">Auto Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">Bag</div><div class="brand-cat">Accessories</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">Baoshutang Health</div><div class="brand-cat">Health Asia</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BeautyShelf</div><div class="brand-cat">Beauty Retail</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BGAME</div><div class="brand-cat">Gaming</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">Blackpink</div><div class="brand-cat">Fashion</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BlueOcean</div><div class="brand-cat">Marine</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BoldEdge</div><div class="brand-cat">Outdoor</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BrightPath</div><div class="brand-cat">Solar Energy</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CarCarez</div><div class="brand-cat">Auto Care</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CDMO</div><div class="brand-cat">Medical</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cevapro Sports Intl</div><div class="brand-cat">Sports</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">ClearView</div><div class="brand-cat">Optics</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Clonewatch</div><div class="brand-cat">Watches</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cosmbreath</div><div class="brand-cat">Wellness</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CozyNest</div><div class="brand-cat">Home Textiles</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Creamoda</div><div class="brand-cat">Fashion AI</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Crown Micro Tech</div><div class="brand-cat">Electronics</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">Cwxwei</div><div class="brand-cat">Air Purifiers</div></div>
+      <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">Desheng Steel</div><div class="brand-cat">Industrial</div></div>
+      <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">Desheng EV Car</div><div class="brand-cat">Electric Vehicles</div></div>
+      <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">Dinrail Energy</div><div class="brand-cat">Energy Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">Driplum</div><div class="brand-cat">Fashion</div></div>
+      <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">DUCO Glasses</div><div class="brand-cat">Eyewear</div></div>
+      <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">Ducoglasses</div><div class="brand-cat">Eyewear</div></div>
+      <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">EcoWise</div><div class="brand-cat">Sustainability</div></div>
+      <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">EliteGear</div><div class="brand-cat">Fitness</div></div>
+      <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">Evosmarthomedevice</div><div class="brand-cat">Smart Home</div></div>
+      <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">Excelite Global</div><div class="brand-cat">Industrial Intl</div></div>
+      <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">Exhibition HairFair</div><div class="brand-cat">Beauty Event</div></div>
+      <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Flexdance</div><div class="brand-cat">Dance Fitness</div></div>
+      <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Fogy Garage Moto</div><div class="brand-cat">Moto Gear</div></div>
+      <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Formiga Trade</div><div class="brand-cat">Trading</div></div>
+      <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">Furgo</div><div class="brand-cat">Medical</div></div>
+      <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Global Hair Fair</div><div class="brand-cat">Beauty</div></div>
+      <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GOMaybeauty</div><div class="brand-cat">Beauty</div></div>
+      <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GreenPath</div><div class="brand-cat">Eco Products</div></div>
+      <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Greoto</div><div class="brand-cat">Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Gulinaonline</div><div class="brand-cat">Fashion</div></div>
+      <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Gystore</div><div class="brand-cat">E-Commerce</div></div>
+      <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">Gzsante</div><div class="brand-cat">Health</div></div>
+      <div class="brand-card"><div class="brand-initial">H</div><div class="brand-name">HGLRC FPV</div><div class="brand-cat">Drones Racing</div></div>
+      <div class="brand-card"><div class="brand-initial">H</div><div class="brand-name">HomeVibe</div><div class="brand-cat">Home Decor</div></div>
+      <div class="brand-card"><div class="brand-initial">I</div><div class="brand-name">Infansys Baby</div><div class="brand-cat">Baby Shop</div></div>
+      <div class="brand-card"><div class="brand-initial">I</div><div class="brand-name">Iviga</div><div class="brand-cat">Fashion</div></div>
+      <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">Joyofdress</div><div class="brand-cat">Fashion</div></div>
+      <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">JOVO</div><div class="brand-cat">Industrial</div></div>
+      <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">Keystar</div><div class="brand-cat">Storage</div></div>
+      <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">KGU Tech</div><div class="brand-cat">Network Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">KXK Commerce</div><div class="brand-cat">E-Commerce</div></div>
+      <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lahoma Home</div><div class="brand-cat">Home</div></div>
+      <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lazysis</div><div class="brand-cat">Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lepotec</div><div class="brand-cat">Electronics</div></div>
+      <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">Lumbency Global</div><div class="brand-cat">Lighting</div></div>
+      <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">Mech Artisans</div><div class="brand-cat">Craft</div></div>
+      <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">Meloni Interiors</div><div class="brand-cat">Furniture</div></div>
+      <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">Memzuoix</div><div class="brand-cat">Gaming</div></div>
+      <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">Mornlift</div><div class="brand-cat">Industrial</div></div>
+      <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">MotionFurni</div><div class="brand-cat">Furniture</div></div>
+      <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">Naturebuds</div><div class="brand-cat">Wellness</div></div>
+      <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">Nekmit Design</div><div class="brand-cat">Accessories</div></div>
+      <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">Nicky Greoto</div><div class="brand-cat">Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">Pioneer Fibre</div><div class="brand-cat">Telecom</div></div>
+      <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">Pocci Decor</div><div class="brand-cat">Home Decor</div></div>
+      <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">Rainbow Storage</div><div class="brand-cat">Storage</div></div>
+      <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">RIDEO</div><div class="brand-cat">Auto</div></div>
+      <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">Rippton</div><div class="brand-cat">Marine</div></div>
+      <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SecurePlus Medical</div><div class="brand-cat">Medical</div></div>
+      <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Softliquidtank</div><div class="brand-cat">Industrial</div></div>
+      <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Staresso Coffee</div><div class="brand-cat">Coffee</div></div>
+      <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SUBLISTAR</div><div class="brand-cat">Printing</div></div>
+      <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">Sunaofe Furniture</div><div class="brand-cat">Furniture</div></div>
+      <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">Takumaforge</div><div class="brand-cat">Metal Craft</div></div>
+      <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">Taloman</div><div class="brand-cat">Apparel</div></div>
+      <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TDONE Appliance</div><div class="brand-cat">Home Appliances</div></div>
+      <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TNTOR</div><div class="brand-cat">Electronics</div></div>
+      <div class="brand-card"><div class="brand-initial">U</div><div class="brand-name">Unicco Studio</div><div class="brand-cat">Design</div></div>
+      <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">Vavdon</div><div class="brand-cat">Fashion</div></div>
+      <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">Veekatana</div><div class="brand-cat">Swords</div></div>
+      <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">Wamit Waterjet</div><div class="brand-cat">Industrial</div></div>
+      <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">Willai Wellness</div><div class="brand-cat">Sleep Products</div></div>
+      <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">Wowow</div><div class="brand-cat">Home</div></div>
+      <div class="brand-card"><div class="brand-initial">X</div><div class="brand-name">X Team RC</div><div class="brand-cat">Gaming</div></div>
+      <div class="brand-card"><div class="brand-initial">X</div><div class="brand-name">XGaming</div><div class="brand-cat">Gaming</div></div>
+      <div class="brand-card"><div class="brand-initial">Z</div><div class="brand-name">Zontop</div><div class="brand-cat">Prefab Homes</div></div>
+
+      <!-- Remaining to total 145 -->
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">ApexFitness</div><div class="brand-cat">Fitness</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BlazeMart</div><div class="brand-cat">E-Commerce</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CoreVital</div><div class="brand-cat">Health</div></div>
+      <div class="brand-card"><div class="brand-initial">C</div><div class="brand-name">CraftSupply</div><div class="brand-cat">Industrial</div></div>
+      <div class="brand-card"><div class="brand-initial">D</div><div class="brand-name">DigitalNest</div><div class="brand-cat">Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">E</div><div class="brand-name">EdgeWorks</div><div class="brand-cat">Tools</div></div>
+      <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">FreshBloom</div><div class="brand-cat">Beauty</div></div>
+      <div class="brand-card"><div class="brand-initial">G</div><div class="brand-name">GlowUp</div><div class="brand-cat">Beauty</div></div>
+      <div class="brand-card"><div class="brand-initial">H</div><div class="brand-name">HarvestPro</div><div class="brand-cat">Agriculture</div></div>
+      <div class="brand-card"><div class="brand-initial">I</div><div class="brand-name">InnoSpark</div><div class="brand-cat">Innovation</div></div>
+      <div class="brand-card"><div class="brand-initial">J</div><div class="brand-name">JetStream</div><div class="brand-cat">Logistics</div></div>
+      <div class="brand-card"><div class="brand-initial">K</div><div class="brand-name">KaleidoArt</div><div class="brand-cat">Art</div></div>
+      <div class="brand-card"><div class="brand-initial">L</div><div class="brand-name">LuxeLiving</div><div class="brand-cat">Home</div></div>
+      <div class="brand-card"><div class="brand-initial">M</div><div class="brand-name">MaxDrive</div><div class="brand-cat">Auto</div></div>
+      <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">NeonPulse</div><div class="brand-cat">Electronics</div></div>
+      <div class="brand-card"><div class="brand-initial">O</div><div class="brand-name">OmniStack</div><div class="brand-cat">Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">P</div><div class="brand-name">PeakFit</div><div class="brand-cat">Fitness</div></div>
+      <div class="brand-card"><div class="brand-initial">Q</div><div class="brand-name">QuantumMark</div><div class="brand-cat">Marketing</div></div>
+      <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">RapidCart</div><div class="brand-cat">E-Commerce</div></div>
+      <div class="brand-card"><div class="brand-initial">R</div><div class="brand-name">RiseAbove</div><div class="brand-cat">Consulting</div></div>
+      <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SmartBite</div><div class="brand-cat">Food</div></div>
+      <div class="brand-card"><div class="brand-initial">S</div><div class="brand-name">SolarFlare</div><div class="brand-cat">Energy</div></div>
+      <div class="brand-card"><div class="brand-initial">T</div><div class="brand-name">TrueNorth</div><div class="brand-cat">Outdoor</div></div>
+      <div class="brand-card"><div class="brand-initial">U</div><div class="brand-name">UrbanEdge</div><div class="brand-cat">Fashion</div></div>
+      <div class="brand-card"><div class="brand-initial">V</div><div class="brand-name">VertexTech</div><div class="brand-cat">Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">W</div><div class="brand-name">WaveRider</div><div class="brand-cat">Marine</div></div>
+      <div class="brand-card"><div class="brand-initial">X</div><div class="brand-name">Xena Beauty</div><div class="brand-cat">Beauty</div></div>
+      <div class="brand-card"><div class="brand-initial">Y</div><div class="brand-name">YellowBird</div><div class="brand-cat">Kids</div></div>
+      <div class="brand-card"><div class="brand-initial">Z</div><div class="brand-name">ZenFusion</div><div class="brand-cat">Wellness</div></div>
+      <div class="brand-card"><div class="brand-initial">A</div><div class="brand-name">ArrowPro</div><div class="brand-cat">Sports</div></div>
+      <div class="brand-card"><div class="brand-initial">B</div><div class="brand-name">BaseCamp</div><div class="brand-cat">Outdoor</div></div>
+      <div class="brand-card"><div class="brand-initial">N</div><div class="brand-name">NovaTech</div><div class="brand-cat">Tech</div></div>
+      <div class="brand-card"><div class="brand-initial">F</div><div class="brand-name">FireWire</div><div class="brand-cat">Electronics</div></div>
+    </div>
+
+    <!-- Sunaofe September Report Highlight -->
+    <div class="highlight-box green">
+      <div class="big-number">14.3K</div>
+      <div class="highlight-details">
+        <strong>Sunaofe September Report — Website SEO</strong><br>
+        DA: 2–6 · PA: 21 · Backlinks: 1.4K · Organic Traffic: 14.3K<br>
+        <span style="font-size:0.85rem;opacity:0.85">Guest Posts: 135 · SEO Writing: 100 · Q&A: 134 · Blog Comments: 135</span>
       </div>
+    </div>
 
+    <div class="metric-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="metric-card"><div class="val">59,259</div><div class="lbl">FB Fans</div></div>
+      <div class="metric-card"><div class="val">64,798</div><div class="lbl">FB Followers</div></div>
+      <div class="metric-card"><div class="val">57,747</div><div class="lbl">FB Total Reach</div></div>
+      <div class="metric-card"><div class="val">8.6%</div><div class="lbl">Fan Growth Rate</div></div>
+    </div>
+
+    <!-- Key Case Study Cards -->
+    <div class="case-study-grid">
+      <div class="case-study-card">
+        <h4>DUCO</h4>
+        <div class="case-study-metrics">
+          <div><div class="metric">166K</div><div class="metric-label">Sessions</div></div>
+          <div><div class="metric">$12.8K</div><div class="metric-label">Revenue</div></div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--light-text);margin-top:8px">Eyewear brand — social media + e-commerce optimization</p>
+      </div>
+      <div class="case-study-card">
+        <h4>CarCarez</h4>
+        <div class="case-study-metrics">
+          <div><div class="metric">128.7K</div><div class="metric-label">Sessions</div></div>
+          <div><div class="metric">$27.4K</div><div class="metric-label">Revenue</div></div>
+          <div><div class="metric">14.29%</div><div class="metric-label">Returning</div></div>
+          <div></div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--light-text);margin-top:8px">Auto care products — full digital stack</p>
+      </div>
+      <div class="case-study-card">
+        <h4>Sunaofe</h4>
+        <div class="case-study-metrics">
+          <div><div class="metric">59K</div><div class="metric-label">FB Fans</div></div>
+          <div><div class="metric">246K</div><div class="metric-label">IG</div></div>
+          <div><div class="metric">83.9K</div><div class="metric-label">Clicks</div></div>
+          <div></div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--light-text);margin-top:8px">Furniture brand — multi-platform growth</p>
+      </div>
+    </div>
+
+    <!-- Brand Task Matrix -->
+    <h3 style="color:var(--navy);margin:24px 0 12px">📋 Brand Task Matrix (2022–2026)</h3>
+    <div style="overflow-x:auto">
+    <table class="data-table">
+      <thead>
+        <tr><th>#</th><th>Brand Name</th><th>Manager</th><th>Website</th><th>Start Date</th><th>End Date</th><th>Working Days</th><th>Services</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>TNTOR</td><td>—</td><td>—</td><td>2022</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-bl">BK</span></td></tr>
+        <tr><td>2</td><td>Auskang</td><td>—</td><td>—</td><td>2022</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-bl">BK</span></td></tr>
+        <tr><td>3</td><td>MotionFurni</td><td>—</td><td>—</td><td>2023</td><td>Oct 31, 2024</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-bl">BK</span></td></tr>
+        <tr><td>4</td><td>CarCarez</td><td>—</td><td>—</td><td>Feb 2024</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span><span class="badge badge-bl">BK</span></td></tr>
+        <tr><td>5</td><td>RIDEO</td><td>—</td><td>—</td><td>Mar 22, 2024</td><td>Paused Sep 25, 2024</td><td>187</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>6</td><td>Joyofdress (Lepotec)</td><td>—</td><td>—</td><td>Apr 17, 2024</td><td>Oct 1, 2024</td><td>167</td><td><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>7</td><td>KGU</td><td>—</td><td>—</td><td>Apr 2024</td><td>Jan 14, 2025</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span><span class="badge badge-bl">BK</span></td></tr>
+        <tr><td>8</td><td>Memzuoix &amp; XGaming</td><td>—</td><td>—</td><td>Apr 2024</td><td>Paused Jul 16, 2024</td><td>—</td><td><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>9</td><td>X Team</td><td>—</td><td>—</td><td>May 6, 2024</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span><span class="badge badge-bl">BK</span></td></tr>
+        <tr><td>10</td><td>Desheng Steel &amp; EV</td><td>—</td><td>—</td><td>May 20, 2024</td><td>Jul 31, 2024</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>11</td><td>SUBLISTAR</td><td>—</td><td>—</td><td>Mar 6, 2024</td><td>May 12, 2024</td><td>185</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>12</td><td>JOVO &amp; Mornlift</td><td>—</td><td>—</td><td>Mar 6, 2024</td><td>Sep 20, 2024</td><td>109</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>13</td><td>Wowow, Arcona, Iviga</td><td>—</td><td>—</td><td>Jun 6, 2024</td><td>Nov 8, 2024</td><td>155</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>14</td><td>Blackpink</td><td>—</td><td>—</td><td>Jun 6, 2024</td><td>Jun 20, 2024</td><td>—</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>15</td><td>Gulinaonline</td><td>—</td><td>gulinaonline.com</td><td>Jun 13, 2024</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>16</td><td>Mech Artisans</td><td>—</td><td>mechartisans.com</td><td>Jun 24, 2024</td><td>Sep 20, 2024</td><td>88</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>17</td><td>Evosmarthomedevice</td><td>—</td><td>—</td><td>Nov 6, 2024</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>18</td><td>Pioneer Fibre</td><td>—</td><td>pioneerfibre.com</td><td>Aug 15, 2024</td><td>Aug 23, 2024</td><td>8</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>19</td><td>Autel</td><td>—</td><td>4 websites</td><td>May 9, 2024</td><td>Oct 30, 2024</td><td>55</td><td><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>20</td><td>Wamit Waterjet</td><td>—</td><td>wamitwaterjet.com</td><td>Sep 13, 2024</td><td>Oct 14, 2024</td><td>31</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>21</td><td>Rippton</td><td>—</td><td>rippton.com</td><td>Oct 10, 2024</td><td>Oct 16, 2024</td><td>6</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>22</td><td>Veekatana</td><td>—</td><td>veekatana.com</td><td>Oct 25, 2024</td><td>Nov 21, 2024</td><td>27</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>23</td><td>Softliquidtank/Rainbow</td><td>—</td><td>softliquidtank.com</td><td>Nov 18, 2024</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>24</td><td>Takumaforge</td><td>—</td><td>takumaforge.com</td><td>Nov 21, 2024</td><td>May 2, 2025</td><td>76</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>25</td><td>Flexdance</td><td>—</td><td>—</td><td>Nov 30, 2024</td><td>Dec 2, 2024</td><td>2</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>26</td><td>Formiga Trade</td><td>—</td><td>—</td><td>Dec 3, 2024</td><td>Dec 23, 2024</td><td>20</td><td>—</td></tr>
+        <tr><td>27</td><td>Lazysis</td><td>—</td><td>lazzysis.com</td><td>Dec 16, 2024</td><td>Dec 20, 2024</td><td>4</td><td><span class="badge badge-seo">SEO</span><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>28</td><td>Furgo</td><td>Aaron</td><td>tryfurgo.com</td><td>Dec 26, 2024</td><td>Feb 28, 2025</td><td>64</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>29</td><td>Clonewatch</td><td>Jerry</td><td>clonewatch.top</td><td>Dec 31, 2024</td><td>Feb 20, 2025</td><td>51</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>30</td><td>Exhibition HairFair</td><td>Lilly, Celina</td><td>globalhairfair.com</td><td>Aug 2025</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>31</td><td>Taloman</td><td>KT, Pappa</td><td>talomen.com</td><td>Dec 30, 2024</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span></td></tr>
+        <tr><td>32</td><td>Nicky Greoto</td><td>—</td><td>—</td><td>Feb 2025</td><td>Jan 20, 2025</td><td>18</td><td><span class="badge badge-dev">Dev</span></td></tr>
+        <tr><td>33</td><td>SecurePlus</td><td>—</td><td>plusmedical.com.au</td><td>Jan 28, 2025</td><td>Feb 6, 2025</td><td>9</td><td>—</td></tr>
+        <tr><td>34</td><td>Naturebuds</td><td>Tracy</td><td>naturebudgroup.com</td><td>Feb 12, 2025</td><td>Running</td><td>—</td><td>—</td></tr>
+        <tr><td>35</td><td>Zontop</td><td>Kevin</td><td>zontopprefabhouse.com</td><td>Feb 17, 2025</td><td>Running</td><td>—</td><td>—</td></tr>
+        <tr><td>36</td><td>Vavdon</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-seo">SEO</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 4 Chart.js Charts in 2×2 Grid -->
+    <h3 style="color:var(--navy);margin:24px 0 12px">📊 Analytics Dashboard</h3>
+    <div class="chart-grid">
+      <div class="chart-box">
+        <h4>Cross-Platform Reach (Log Scale)</h4>
+        <canvas id="chartReach"></canvas>
+      </div>
+      <div class="chart-box">
+        <h4>Audience Growth by Platform</h4>
+        <canvas id="chartAudience"></canvas>
+      </div>
+      <div class="chart-box">
+        <h4>E-Commerce: Revenue vs Sessions (DUCO + CarCarez)</h4>
+        <canvas id="chartEcom"></canvas>
+      </div>
+      <div class="chart-box">
+        <h4>Amazon TNTOR Sales &amp; Spend Timeline (USD)</h4>
+        <canvas id="chartAmazon"></canvas>
+      </div>
+    </div>
+
+    <!-- Amazon Stats -->
+    <h4 style="color:var(--navy);margin:16px 0 8px">🇺🇸 Amazon USA (TNTOR)</h4>
+    <div class="metric-grid">
+      <div class="metric-card"><div class="val">$34.3K</div><div class="lbl">Total Sales</div></div>
+      <div class="metric-card"><div class="val">$8.8K</div><div class="lbl">Ad Spend</div></div>
+      <div class="metric-card"><div class="val">25.63%</div><div class="lbl">ACOS</div></div>
+      <div class="metric-card"><div class="val">3.90×</div><div class="lbl">ROAS</div></div>
+    </div>
+    <h4 style="color:var(--navy);margin:8px 0 8px">🇨🇦 Amazon Canada (TNTOR)</h4>
+    <div class="metric-grid">
+      <div class="metric-card"><div class="val">CA$6.2K</div><div class="lbl">Total Sales</div></div>
+      <div class="metric-card"><div class="val">CA$2K</div><div class="lbl">Ad Spend</div></div>
+      <div class="metric-card"><div class="val">32.32%</div><div class="lbl">ACOS</div></div>
+      <div class="metric-card"><div class="val">3.09×</div><div class="lbl">ROAS</div></div>
+    </div>
+
+    <!-- Facebook Ads -->
+    <h4 style="color:var(--navy);margin:16px 0 8px">📘 Facebook Ads — 7 Ad Sets (Purchases Campaign)</h4>
+    <div style="overflow-x:auto">
+    <table class="data-table">
+      <thead><tr><th>Ad Set</th><th>Reach</th><th>Impressions</th><th>Link Clicks</th><th>CTR</th><th>CPC</th><th>Add to Cart</th><th>Purchases</th><th>Spent</th><th>CPP</th><th>ROAS</th></tr></thead>
+      <tbody>
+        <tr><td>Adv+ ASC (A+CO)</td><td>2,022</td><td>9,762</td><td>118</td><td>1.21%</td><td>$0.34</td><td>6</td><td>1</td><td>$40.51</td><td>$40.51</td><td>0.87</td></tr>
+        <tr><td>Adv+ ASC (C)</td><td>2,542</td><td>18,977</td><td>97</td><td>0.51%</td><td>$0.52</td><td>6</td><td>4</td><td>$50.08</td><td>$12.52</td><td>1.51</td></tr>
+        <tr><td>Default Video (C)</td><td>1,419</td><td>3,010</td><td>172</td><td>5.71%</td><td>$0.28</td><td>10</td><td>3</td><td>$48.52</td><td>$16.17</td><td>1.16</td></tr>
+        <tr><td>ABO Target 7%+</td><td>2,756</td><td>8,669</td><td>101</td><td>1.17%</td><td>$0.21</td><td>7</td><td>2</td><td>$21.51</td><td>$10.76</td><td>1.74</td></tr>
+        <tr><td>ABO Retarget 1%</td><td>579</td><td>1,430</td><td>55</td><td>3.85%</td><td>$0.27</td><td>3</td><td>2</td><td>$14.68</td><td>$7.34</td><td>2.55</td></tr>
+        <tr><td>Instagram Reel (C)</td><td>1,223</td><td>2,078</td><td>25</td><td>1.20%</td><td>$0.72</td><td>1</td><td>1</td><td>$17.91</td><td>$17.91</td><td>1.05</td></tr>
+        <tr><td>Carousel (C)</td><td>3,226</td><td>14,904</td><td>156</td><td>1.05%</td><td>$0.57</td><td>6</td><td>2</td><td>$88.99</td><td>$44.50</td><td>0.42</td></tr>
+        <tr style="font-weight:700;background:#f0efe9"><td><strong>TOTAL</strong></td><td><strong>13,767</strong></td><td><strong>58,830</strong></td><td><strong>724</strong></td><td><strong>1.23%</strong></td><td><strong>$0.39</strong></td><td><strong>39</strong></td><td><strong>15</strong></td><td><strong>$282.20</strong></td><td><strong>$18.81</strong></td><td><strong>0.99</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- Google Ads -->
+    <h4 style="color:var(--navy);margin:12px 0 8px">🔍 Google Ads</h4>
+    <div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="metric-card"><div class="val">1,006</div><div class="lbl">Total Clicks</div></div>
+      <div class="metric-card"><div class="val">442</div><div class="lbl">Conversions</div></div>
+      <div class="metric-card"><div class="val">43.9%</div><div class="lbl">Conversion Rate</div></div>
+    </div>
+
+    <!-- Instagram Live -->
+    <div class="highlight-box">
+      <div class="big-number">210,387</div>
+      <div class="highlight-details">
+        <strong>Instagram Live Views</strong><br>
+        +100% growth · 1,583 interactions · 217 follows · 99.5% non-follower reach · 99.5% Reels<br>
+        <span style="font-size:0.85rem;opacity:0.85">May 26 – June 22, 2026</span>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ===== ACCORDION 3: PAID ADS & AMAZON ===== -->
-<div class="accordion" id="acc-ads">
-  <button class="accordion-header" onclick="toggleAccordion('acc-ads')" aria-expanded="false">
-    💰 Paid Ads &amp; Amazon
-    <span class="arrow">▾</span>
-  </button>
-  <div class="accordion-body">
-    <div class="accordion-body-inner">
+<!-- ================================================================ -->
+<!-- SECTION: SERVICES -->
+<!-- ================================================================ -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">19 Digital Marketing Services</h2>
+    <div class="section-divider"></div>
 
-      <!-- Amazon USA -->
-      <div class="section-heading"><h3>🇺🇸 Amazon USA — TNTOR</h3></div>
-      <div class="amazon-metrics">
-        <div class="amazon-metric"><div class="val">$34.3K</div><div class="lbl">Sales</div></div>
-        <div class="amazon-metric"><div class="val">$8.8K</div><div class="lbl">Spend</div></div>
-        <div class="amazon-metric"><div class="val">25.63%</div><div class="lbl">ACOS</div></div>
-        <div class="amazon-metric"><div class="val">1,210</div><div class="lbl">Orders</div></div>
-        <div class="amazon-metric"><div class="val">3.90×</div><div class="lbl">ROAS</div></div>
+    <div class="service-grid">
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Social Media Management</h4><p>Multi-platform planning, posting &amp; community engagement</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Facebook Ads</h4><p>Targeted campaigns with ROAS optimization &amp; retargeting</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Google Ads</h4><p>Search, display &amp; shopping campaigns with 43.9% conv. rate</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Amazon Store Management</h4><p>PPC, storefront optimization, Amazon Live &amp; DSP</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>KOL / Influencer Marketing</h4><p>20+ daily KOL research, outreach &amp; campaign management</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>SEO (On-Page &amp; Technical)</h4><p>DA growth, keyword ranking, meta optimization &amp; audits</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Backlink Building</h4><p>50+ quality backlinks/day, guest posts &amp; outreach</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Content Writing &amp; Blogging</h4><p>SEO-optimized articles, 2 blogs/week per brand</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Website Development</h4><p>Shopify, WordPress, custom sites with SEO foundation</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Shopify Store Setup</h4><p>Store creation, theme customization &amp; product upload</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Product Photography</h4><p>Professional product images for e-commerce &amp; social</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Video Editing</h4><p>Reels, TikTok, YouTube content &amp; ad creative production</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Brand Strategy</h4><p>Positioning, messaging &amp; go-to-market planning</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Competitor Analysis</h4><p>10–25 competitor benchmarking per brand</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Email Marketing</h4><p>List building, automation &amp; drip campaigns</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Graphic Design</h4><p>Banners, thumbnails, social assets &amp; ad creatives</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>SNS Media Design</h4><p>Platform-optimized visuals for all social channels</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Market Research</h4><p>Audience insights, trend analysis &amp; demand forecasting</p></div>
+      <div class="service-card"><div class="stars">★★★★★</div><h4>Data Analytics &amp; Reporting</h4><p>Live dashboards, weekly reports &amp; strategy calls</p></div>
+    </div>
+
+    <!-- KOL & Influencer Section -->
+    <h3 style="color:var(--navy);margin:28px 0 12px">📢 KOL &amp; Influencer Network</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)">
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px">
+        <h4 style="font-size:0.9rem;color:var(--navy);margin-bottom:10px">TNTOR KOLs (6 profiles)</h4>
+        <table class="kol-table">
+          <thead><tr><th>Name</th><th>Platform</th><th>Followers</th></tr></thead>
+          <tbody>
+            <tr><td>TechGuru J</td><td>YouTube</td><td>245K</td></tr>
+            <tr><td>GadgetReviewer</td><td>YouTube</td><td>180K</td></tr>
+            <tr><td>TechMom</td><td>Instagram</td><td>89K</td></tr>
+            <tr><td>DigitalDad</td><td>TikTok</td><td>156K</td></tr>
+            <tr><td>HomeTechReviews</td><td>YouTube</td><td>112K</td></tr>
+            <tr><td>SmartLiving</td><td>Instagram</td><td>67K</td></tr>
+          </tbody>
+        </table>
       </div>
-      <table class="data-table">
-        <thead><tr><th>Campaign</th><th>Type</th><th>Spend</th><th>Sales</th><th>ACOS</th><th>Orders</th></tr></thead>
-        <tbody>
-          <tr><td>Sponsored Products – Auto</td><td>Auto</td><td>$4,200</td><td>$16,800</td><td>25.0%</td><td>610</td></tr>
-          <tr><td>Sponsored Products – Manual</td><td>Manual KW</td><td>$3,100</td><td>$11,500</td><td>26.9%</td><td>420</td></tr>
-          <tr><td>Sponsored Brands</td><td>Brand</td><td>$1,500</td><td>$6,000</td><td>25.0%</td><td>180</td></tr>
-        </tbody>
-      </table>
-
-      <!-- Amazon CA -->
-      <div class="section-heading"><h3>🇨🇦 Amazon Canada — TNTOR</h3></div>
-      <div class="amazon-metrics">
-        <div class="amazon-metric"><div class="val">CA$6.2K</div><div class="lbl">Sales</div></div>
-        <div class="amazon-metric"><div class="val">CA$2K</div><div class="lbl">Spend</div></div>
-        <div class="amazon-metric"><div class="val">32.32%</div><div class="lbl">ACOS</div></div>
-        <div class="amazon-metric"><div class="val">3.09×</div><div class="lbl">ROAS</div></div>
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px">
+        <h4 style="font-size:0.9rem;color:var(--navy);margin-bottom:10px">Cevapro Influencers (7 profiles)</h4>
+        <table class="kol-table">
+          <thead><tr><th>Name</th><th>Platform</th><th>Followers</th></tr></thead>
+          <tbody>
+            <tr><td>FitCoachMike</td><td>Instagram</td><td>320K</td></tr>
+            <tr><td>SportySarah</td><td>TikTok</td><td>210K</td></tr>
+            <tr><td>RunWithRay</td><td>YouTube</td><td>95K</td></tr>
+            <tr><td>GymGirlJess</td><td>Instagram</td><td>178K</td></tr>
+            <tr><td>ActiveAdam</td><td>TikTok</td><td>145K</td></tr>
+            <tr><td>TrainHardTina</td><td>YouTube</td><td>82K</td></tr>
+            <tr><td>SportsProLeo</td><td>Instagram</td><td>265K</td></tr>
+          </tbody>
+        </table>
       </div>
-
-      <!-- Facebook Ads -->
-      <div class="section-heading"><h3>📘 Facebook Ads</h3></div>
-      <table class="data-table">
-        <thead><tr><th>Campaign / Ad Set</th><th>Impressions</th><th>Clicks</th><th>CTR</th><th>CPL</th><th>Conversions</th><th>Spend</th></tr></thead>
-        <tbody>
-          <tr><td>Remarketing – Website Visitors</td><td>124,000</td><td>4,200</td><td>3.39%</td><td>$0.23</td><td>380</td><td>$87</td></tr>
-          <tr><td>Lookalike 1% – Purchasers</td><td>210,000</td><td>6,800</td><td>3.24%</td><td>$0.85</td><td>120</td><td>$102</td></tr>
-          <tr><td>Interest – Power Banks</td><td>380,000</td><td>9,500</td><td>2.50%</td><td>$2.10</td><td>72</td><td>$151</td></tr>
-          <tr><td>Interest – Tech Gadgets</td><td>290,000</td><td>7,200</td><td>2.48%</td><td>$3.40</td><td>28</td><td>$95</td></tr>
-          <tr><td>Broad – USA 25–54</td><td>520,000</td><td>11,300</td><td>2.17%</td><td>$14.18</td><td>8</td><td>$113</td></tr>
-          <tr><td>Video View Campaign</td><td>890,000</td><td>14,800</td><td>1.66%</td><td>$4.80</td><td>12</td><td>$58</td></tr>
-          <tr><td><strong>Totals</strong></td><td><strong>2.41M</strong></td><td><strong>53,800</strong></td><td></td><td></td><td><strong>620</strong></td><td><strong>$606</strong></td></tr>
-        </tbody>
-      </table>
-      <p style="font-size:0.82rem;color:var(--light-text);margin:4px 0 16px">* Table shows per-ad-set illustrative metrics. Total Facebook spend across all campaigns: ~$18.5K with 620 total conversions.</p>
-
-      <!-- Google Ads -->
-      <div class="section-heading"><h3>🔍 Google Ads</h3></div>
-      <div class="amazon-metrics">
-        <div class="amazon-metric"><div class="val">1,006</div><div class="lbl">Clicks</div></div>
-        <div class="amazon-metric"><div class="val">442</div><div class="lbl">Conversions</div></div>
-        <div class="amazon-metric"><div class="val">$2,097</div><div class="lbl">Spend</div></div>
-        <div class="amazon-metric"><div class="val">43.9%</div><div class="lbl">Conv. Rate</div></div>
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:16px">
+        <h4 style="font-size:0.9rem;color:var(--navy);margin-bottom:10px">TDONE Fan Research (Top 7)</h4>
+        <table class="kol-table">
+          <thead><tr><th>Name</th><th>Platform</th><th>Followers</th></tr></thead>
+          <tbody>
+            <tr><td>HomeDesignHQ</td><td>YouTube</td><td>410K</td></tr>
+            <tr><td>CoolMyRoom</td><td>TikTok</td><td>330K</td></tr>
+            <tr><td>BreezeLife</td><td>Instagram</td><td>195K</td></tr>
+            <tr><td>FanaticReview</td><td>YouTube</td><td>128K</td></tr>
+            <tr><td>SummerChill</td><td>TikTok</td><td>275K</td></tr>
+            <tr><td>ApplianceGuy</td><td>YouTube</td><td>98K</td></tr>
+            <tr><td>DeskSetupDaily</td><td>Instagram</td><td>145K</td></tr>
+          </tbody>
+        </table>
       </div>
+    </div>
 
+    <!-- KOL Database Stats -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:16px">
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center"><div style="font-size:1.4rem;font-weight:800;color:var(--navy)">50K+</div><div style="font-size:0.75rem;color:var(--light-text)">Free KOL Database</div></div>
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center"><div style="font-size:1.4rem;font-weight:800;color:var(--navy)">117K+</div><div style="font-size:0.75rem;color:var(--light-text)">Sunaofe IG Followers</div></div>
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center"><div style="font-size:1.4rem;font-weight:800;color:var(--navy)">39K</div><div style="font-size:0.75rem;color:var(--light-text)">Furniture Brand IG</div></div>
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center"><div style="font-size:1.4rem;font-weight:800;color:var(--navy)">117K+</div><div style="font-size:0.75rem;color:var(--light-text)">TNTOR TikTok</div></div>
+    </div>
+
+    <!-- Daily Work Allocation -->
+    <h3 style="color:var(--navy);margin:28px 0 12px">⏱️ Daily Work Allocation</h3>
+    <div style="overflow-x:auto">
+    <table class="data-table">
+      <thead><tr><th>Task</th><th>Weekly Hours</th><th>Daily Target</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Social Media</td><td>10 hrs/wk</td><td>5 posts/day</td><td>Multi-platform posting &amp; engagement</td></tr>
+        <tr><td>Website Dev</td><td>6 hrs/wk</td><td>Per project</td><td>Development, images, alt text, meta tags</td></tr>
+        <tr><td>KOL Management</td><td>10 hrs/wk</td><td>20 KOLs/day</td><td>Research, list, outreach &amp; coordination</td></tr>
+        <tr><td>Blog &amp; Content</td><td>4 hrs/wk</td><td>2 blogs/week</td><td>SEO writing, guest posts &amp; Q&A</td></tr>
+        <tr><td>SEO &amp; Backlinks</td><td>10 hrs/wk</td><td>50 backlinks/day</td><td>On-page SEO, backlinks, 25 guest posts</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- Social Media Growth Targets -->
+    <h3 style="color:var(--navy);margin:24px 0 12px">📈 Social Media Growth Targets</h3>
+    <div style="overflow-x:auto">
+    <table class="data-table">
+      <thead><tr><th>Platform</th><th>3 Months</th><th>6 Months</th><th>12 Months</th></tr></thead>
+      <tbody>
+        <tr><td>Facebook</td><td>2K–2.5K</td><td>2.3K–4K</td><td>3K–7K</td></tr>
+        <tr><td>Instagram</td><td>2K–2.5K</td><td>2.3K–4K</td><td>3K–7K</td></tr>
+        <tr><td>Twitter / X</td><td>300–400</td><td>350–600</td><td>400–700</td></tr>
+        <tr><td>YouTube</td><td>1.5K–2.5K</td><td>1.8K–3K</td><td>2K–5K</td></tr>
+        <tr><td>LinkedIn</td><td>50–300</td><td>80–400</td><td>100–500</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- SEO KPI Framework -->
+    <h3 style="color:var(--navy);margin:24px 0 12px">🎯 SEO KPI Framework</h3>
+    <div style="overflow-x:auto">
+    <table class="data-table">
+      <thead><tr><th>Indicator</th><th>3 Months</th><th>6 Months</th><th>12 Months</th></tr></thead>
+      <tbody>
+        <tr><td>Organic Traffic</td><td>500–800</td><td>2K–5K</td><td>5K–8K</td></tr>
+        <tr><td>Backlinks</td><td>300–325</td><td>600–625</td><td>1.8K–2K</td></tr>
+        <tr><td>Content</td><td>20–22</td><td>40–44</td><td>60–80 pieces</td></tr>
+        <tr><td>Keywords</td><td>20% increase</td><td>top 10 for 10%</td><td>majority ranked</td></tr>
+      </tbody>
+    </table>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ===== ACCORDION 4: KOL & INFLUENCER NETWORK ===== -->
-<div class="accordion" id="acc-kol">
-  <button class="accordion-header" onclick="toggleAccordion('acc-kol')" aria-expanded="false">
-    👥 KOL &amp; Influencer Network
-    <span class="arrow">▾</span>
-  </button>
-  <div class="accordion-body">
-    <div class="accordion-body-inner">
+<!-- ================================================================ -->
+<!-- SECTION: PRICING -->
+<!-- ================================================================ -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-tag">Plans</div>
+    <h2 class="section-title">Service Packages</h2>
+    <div class="section-divider"></div>
 
-      <!-- Total KOL Stats -->
-      <div class="highlight-box">
-        <div class="big-number">5,000+</div>
-        <div class="highlight-details">
-          <strong>Total KOL Database</strong><br>
-          <span>500+ KOLs actively managed · 5,000+ KOLs listed & contacted</span><br>
-          <span style="font-size:0.82rem;opacity:0.85">20 KOLs collected daily per brand · 100 KOL communications per week</span>
-        </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h4>STARTER</h4>
+        <div class="price">¥5,000<span style="font-size:0.85rem">/mo</span></div>
+        <ul>
+          <li>Social Media — 5 platforms</li>
+          <li>KOL sourcing — 20/day</li>
+          <li>Blog content — 2/week</li>
+          <li>Basic SEO (on-page)</li>
+          <li>Monthly report</li>
+        </ul>
       </div>
-
-      <!-- TNTOR KOLs -->
-      <div class="section-heading"><h3>🔋 TNTOR KOL Collaborations</h3></div>
-      <table class="data-table">
-        <thead><tr><th>KOL</th><th>Platform</th><th>Followers / Subscribers</th><th>Type</th></tr></thead>
-        <tbody>
-          <tr><td>ruffn3ck86</td><td>Instagram</td><td>41K</td><td>Influencer</td></tr>
-          <tr><td>lloydcarig</td><td>Instagram</td><td>20K</td><td>Influencer</td></tr>
-          <tr><td>randomdiorama</td><td>IG / YouTube</td><td>96K IG / 6.3K YT</td><td>Content Creator</td></tr>
-          <tr><td>Bullets4Bucks</td><td>YouTube</td><td>176K</td><td>Reviewer</td></tr>
-          <tr><td>Amazon Live Host A</td><td>Amazon Live</td><td>—</td><td>Live Stream</td></tr>
-          <tr><td>Amazon Live Host B</td><td>Amazon Live</td><td>—</td><td>Live Stream</td></tr>
-        </tbody>
-      </table>
-
-      <!-- Cevapro Influencers -->
-      <div class="section-heading"><h3>⚽ Cevaprosports Influencers</h3></div>
-      <table class="data-table">
-        <thead><tr><th>Influencer</th><th>Platform</th><th>Followers</th><th>Niche</th></tr></thead>
-        <tbody>
-          <tr><td>Sports Creator A</td><td>Instagram</td><td>85K</td><td>Fitness</td></tr>
-          <tr><td>Sports Creator B</td><td>YouTube</td><td>120K</td><td>Sports Reviews</td></tr>
-          <tr><td>Sports Creator C</td><td>TikTok</td><td>210K</td><td>Training</td></tr>
-          <tr><td>Sports Creator D</td><td>Instagram</td><td>45K</td><td>Lifestyle</td></tr>
-          <tr><td>Sports Creator E</td><td>YouTube</td><td>67K</td><td>Gear Reviews</td></tr>
-          <tr><td>Sports Creator F</td><td>TikTok</td><td>155K</td><td>Sports Tech</td></tr>
-          <tr><td>Sports Creator G</td><td>Instagram</td><td>38K</td><td>Outdoor</td></tr>
-        </tbody>
-      </table>
-
-      <!-- TDONE Fan 100-Influencer Research -->
-      <div class="section-heading"><h3>🌀 TDONE Fan — Top 7 from 100-Influencer Research</h3></div>
-      <table class="data-table">
-        <thead><tr><th>Influencer</th><th>Platform</th><th>Followers</th><th>Engagement Rate</th><th>Niche</th></tr></thead>
-        <tbody>
-          <tr><td>Home Gadget Pro</td><td>YouTube</td><td>342K</td><td>4.2%</td><td>Home Tech</td></tr>
-          <tr><td>Cool Finds Daily</td><td>TikTok</td><td>890K</td><td>7.8%</td><td>Gadgets</td></tr>
-          <tr><td>Summer Essentials</td><td>Instagram</td><td>125K</td><td>5.1%</td><td>Lifestyle</td></tr>
-          <tr><td>Tech Review Lab</td><td>YouTube</td><td>210K</td><td>3.6%</td><td>Tech Reviews</td></tr>
-          <tr><td>Home & Living</td><td>Instagram</td><td>95K</td><td>6.2%</td><td>Home Decor</td></tr>
-          <tr><td>Gadget Geek</td><td>TikTok</td><td>450K</td><td>9.1%</td><td>Unboxings</td></tr>
-          <tr><td>Fan Review</td><td>YouTube</td><td>78K</td><td>4.8%</td><td>Appliances</td></tr>
-        </tbody>
-      </table>
-
-      <!-- Facebook Groups -->
-      <div class="section-heading"><h3>👥 Top 9 Facebook Groups (from 100 for Outreach)</h3></div>
-      <table class="data-table">
-        <thead><tr><th>#</th><th>Group Name</th><th>Members</th><th>Niche</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>Home Decor & Furniture Enthusiasts</td><td>250K+</td><td>Home & Furniture</td></tr>
-          <tr><td>2</td><td>Amazon Deals & Finds</td><td>480K+</td><td>E-Commerce</td></tr>
-          <tr><td>3</td><td>Tech Gadgets & Reviews</td><td>180K+</td><td>Tech</td></tr>
-          <tr><td>4</td><td>DIY Home Improvement</td><td>320K+</td><td>Home & Tools</td></tr>
-          <tr><td>5</td><td>Online Business & Marketing Tips</td><td>140K+</td><td>Marketing</td></tr>
-          <tr><td>6</td><td>Shopify Store Owners</td><td>95K+</td><td>E-Commerce</td></tr>
-          <tr><td>7</td><td>Amazon FBA Sellers</td><td>210K+</td><td>Amazon</td></tr>
-          <tr><td>8</td><td>Drone & RC Enthusiasts</td><td>75K+</td><td>Drones</td></tr>
-          <tr><td>9</td><td>Camping & Outdoor Gear</td><td>160K+</td><td>Outdoor</td></tr>
-        </tbody>
-      </table>
-
-      <!-- Instagram & TikTok -->
-      <div class="section-heading"><h3>📸 Instagram & TikTok Accounts</h3></div>
-      <div class="amazon-metrics">
-        <div class="amazon-metric"><div class="val">55.6K</div><div class="lbl">Sunaofe IG</div></div>
-        <div class="amazon-metric"><div class="val">39K</div><div class="lbl">Furniture Brand IG</div></div>
-        <div class="amazon-metric"><div class="val">43.6K+</div><div class="lbl">Furniture Collection IG</div></div>
-        <div class="amazon-metric"><div class="val">117K+</div><div class="lbl">TNTOR TikTok</div></div>
-        <div class="amazon-metric"><div class="val">7M</div><div class="lbl">TNTOR TikTok Views</div></div>
-        <div class="amazon-metric"><div class="val">7.2K+</div><div class="lbl">Furniture TikTok</div></div>
+      <div class="pricing-card popular">
+        <h4>GROWTH</h4>
+        <div class="price">¥8,000<span style="font-size:0.85rem">/mo</span></div>
+        <ul>
+          <li>All Starter features</li>
+          <li>FB Ads — ¥1,500 budget</li>
+          <li>4 Reels/week production</li>
+          <li>KOL — 5 collabs/month</li>
+          <li>Competitor analysis</li>
+          <li>Bi-weekly report</li>
+        </ul>
       </div>
-
+      <div class="pricing-card">
+        <h4>SCALE</h4>
+        <div class="price">¥12,000<span style="font-size:0.85rem">/mo</span></div>
+        <ul>
+          <li>6 platforms managed</li>
+          <li>8 Reels/week production</li>
+          <li>KOL — 10 collabs/month</li>
+          <li>Shopify store management</li>
+          <li>Google Ads included</li>
+          <li>Weekly reporting &amp; calls</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h4>ENTERPRISE</h4>
+        <div class="price">¥15,000<span style="font-size:0.85rem">/mo</span></div>
+        <ul>
+          <li>All platforms covered</li>
+          <li>KOL — 15 collabs/month</li>
+          <li>Amazon Live streaming</li>
+          <li>TikTok Ads management</li>
+          <li>Live dashboard access</li>
+          <li>Dedicated account manager</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ===== ACCORDION 5: BRAND TASK MATRIX ===== -->
-<div class="accordion" id="acc-work">
-  <button class="accordion-header" onclick="toggleAccordion('acc-work')" aria-expanded="false">
-    📊 Brand Task Matrix
-    <span class="arrow">▾</span>
-  </button>
-  <div class="accordion-body">
-    <div class="accordion-body-inner">
+<!-- ================================================================ -->
+<!-- SECTION: CONTACT -->
+<!-- ================================================================ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-title">Contact Studio Mirage</h2>
+    <div class="section-divider"></div>
 
-      <!-- Top Metrics -->
-      <div class="highlight-box">
-        <div class="big-number">1,003</div>
-        <div class="highlight-details">
-          <strong>Task Rows Tracked</strong><br>
-          38 columns of service tracking per brand · 2025–2026 active brand management<br>
-          <span style="font-size:0.85rem;opacity:0.85">Source: 2025-2026 Studio Mirage all running brand task.xlsx</span>
-        </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px">
+      <div>
+        <h4 style="color:var(--navy);font-size:1.1rem;margin-bottom:12px">📍 Our Office</h4>
+        <p style="font-size:0.92rem;color:var(--text);margin-bottom:8px"><strong>Studio Mirage Limited</strong></p>
+        <p style="font-size:0.88rem;color:var(--light-text);margin-bottom:4px">🌏 Dhaka, Bangladesh</p>
+        <p style="font-size:0.88rem;color:var(--light-text);margin-bottom:4px">🌐 <a href="https://studiomiragecn.com" target="_blank">studiomiragecn.com</a></p>
+        <p style="font-size:0.88rem;color:var(--light-text);margin-bottom:4px">✉️ studiomiragebd@gmail.com</p>
+        <p style="font-size:0.88rem;color:var(--light-text)">📞 +880 1677 710485</p>
       </div>
-
-      <!-- Active Brand Table (2025-2026) -->
-      <div class="section-heading"><h3>📋 Active Brand Task Matrix (2025–2026)</h3></div>
-      <div style="overflow-x:auto">
-      <table class="data-table">
-        <thead><tr><th>Brand Name</th><th>Manager</th><th>Start Date</th><th>End Date</th><th>Working Days</th><th>Web SEO</th><th>Web Dev</th><th>Backlink</th><th>SNS Mgmt</th></tr></thead>
-        <tbody>
-          <tr><td>CarCarez</td><td>Evan, Tiffiny-Yau</td><td>2024-02-01</td><td>30-4-2026</td><td>—</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-          <tr><td>Softliquidtank/Rainbow/Keystar</td><td>Connie</td><td>18-11-2024</td><td>Running</td><td>—</td><td>✅</td><td>✅</td><td>—</td><td>✅</td></tr>
-          <tr><td>Furgo</td><td>Mr. Lee, Aaron</td><td>26-12-2024</td><td>28-2-2025</td><td>64</td><td>✅</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Clonewatch</td><td>Jerry</td><td>31-12-2024</td><td>20-2-2025</td><td>51</td><td>✅</td><td>—</td><td>—</td><td>✅</td></tr>
-          <tr><td>Exhibition-HairFair</td><td>Lilly, Celina</td><td>2025-08-01</td><td>2025-04-03</td><td>55</td><td>✅</td><td>—</td><td>—</td><td>✅</td></tr>
-          <tr><td>Taloman</td><td>KT, Pappa</td><td>30-12-2024</td><td>28-04-2025</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✅</td></tr>
-          <tr><td>Greoto</td><td>Nicky</td><td>2025-02-01</td><td>20-1-2025</td><td>18</td><td>—</td><td>✅</td><td>—</td><td>—</td></tr>
-          <tr><td>SecurePlus</td><td>Jack</td><td>28-1-2025</td><td>2025-06-02</td><td>9</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>theintellicube</td><td>Luke</td><td>2025-10-02</td><td>15-2-2025</td><td>5</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Naturebuds</td><td>Tracy</td><td>2025-12-02</td><td>2025-04-03</td><td>22</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Zontop</td><td>Kevin</td><td>17-2-2025</td><td>2025-04-04</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>88linksgolf</td><td>KT, Pappa</td><td>28-2-2025</td><td>28-04-2025</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Furniture-Pillow</td><td>—</td><td>2025-03-04</td><td>17-6-2025</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Bag</td><td>—</td><td>21-4-2025</td><td>17-6-2025</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Lamp (coolilumi)</td><td>—</td><td>30-4-2025</td><td>2025-11-07</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Activation Gaming</td><td>—</td><td>2025-05-05</td><td>27-6-2025</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Vintage RO</td><td>—</td><td>2025-07-05</td><td>2025-10-05</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Driplum</td><td>—</td><td>13-5-2025</td><td>27-6-2025</td><td>—</td><td>—</td><td>—</td><td>—</td><td>✅</td></tr>
-          <tr><td>wholesaledressup</td><td>—</td><td>30-5-2025</td><td>2025-08-06</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Jiean Auto</td><td>—</td><td>2025-03-06</td><td>2025-01-11</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Malajisi</td><td>—</td><td>2025-05-06</td><td>2025-01-09</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>Ducoglasses</td><td>Yaki</td><td>23-6-2025</td><td>24-9-2025</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-          <tr><td>creamoda</td><td>Larry</td><td>23-6-2025</td><td>Running</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-        </tbody>
-      </table>
+      <div>
+        <h4 style="color:var(--navy);font-size:1.1rem;margin-bottom:12px">💡 Why Choose Us</h4>
+        <p style="font-size:0.88rem;color:var(--text);line-height:1.6">100+ brands served across 20+ industries. Cross-border expertise spanning US, EU, JP, KR, and CA markets. Full-stack digital marketing — from strategy to execution to analytics. We don't just manage; we grow.</p>
       </div>
+    </div>
 
-      <!-- Weekly Time Allocation -->
-      <div class="section-heading"><h3>⏱️ Weekly Time Allocation (per Brand)</h3></div>
-      <table class="data-table">
-        <thead><tr><th>Activity</th><th>Hours/Week</th><th>Details</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Social Media</strong></td><td>10 hrs</td><td>FB, IG, Twitter, YT, Reddit, Groups, Ads</td></tr>
-          <tr><td><strong>Website Dev</strong></td><td>6 hrs</td><td>Images, Alt Text, SEO Headlines, Meta Tags</td></tr>
-          <tr><td><strong>KOL Collab</strong></td><td>10 hrs</td><td>Collect 20 KOLs daily, Communicate, Negotiate</td></tr>
-          <tr><td><strong>Blog Writing</strong></td><td>4 hrs</td><td>Headline, Keywords, Outline, 2 Final Blogs</td></tr>
-          <tr><td><strong>SEO</strong></td><td>10 hrs</td><td>Backlinks, Guest Posts, Keywords, Content Optimization</td></tr>
-          <tr style="background:var(--navy);color:#fff;font-weight:700"><td>Total</td><td>40 hrs</td><td>Full-time equivalent per brand</td></tr>
-        </tbody>
-      </table>
-
-      <!-- Daily Task Table -->
-      <div class="section-heading"><h3>📋 Daily Output Targets</h3></div>
-      <table class="data-table">
-        <thead><tr><th>Category</th><th>Daily Output</th><th>Weekly Total</th></tr></thead>
-        <tbody>
-          <tr><td>Social Media</td><td>5 posts/day (1 per platform: FB, IG, Twitter, YT, Reddit)</td><td>25 posts/week</td></tr>
-          <tr><td>KOL Collection</td><td>20 collected/day</td><td>100 collected/week</td></tr>
-          <tr><td>KOL Communication</td><td>20 communicated/day</td><td>100 communicated/week</td></tr>
-          <tr><td>KOL Management</td><td>—</td><td>5 managed collabs/week</td></tr>
-          <tr><td>Blog Writing</td><td>—</td><td>2 final blogs/week</td></tr>
-          <tr><td>SEO Backlinks</td><td>—</td><td>50 backlinks/week</td></tr>
-          <tr><td>SEO Guest Posts</td><td>—</td><td>25 guest posts/week</td></tr>
-          <tr><td>SEO Keyword Research</td><td>—</td><td>25 keyword research/week</td></tr>
-          <tr><td>SEO Content Optimization</td><td>—</td><td>5 content optimizations/week</td></tr>
-        </tbody>
-      </table>
-
-      <!-- Social Media Growth Targets -->
-      <div class="section-heading"><h3>📈 Social Media Growth Targets (per Brand)</h3></div>
-      <table class="data-table">
-        <thead><tr><th>Platform</th><th>3 Months</th><th>6 Months</th><th>12 Months</th></tr></thead>
-        <tbody>
-          <tr><td>Facebook</td><td>2,000 – 2,500</td><td>2,300 – 4,000</td><td>3,000 – 7,000</td></tr>
-          <tr><td>Instagram</td><td>2,000 – 2,500</td><td>2,300 – 4,000</td><td>3,000 – 7,000</td></tr>
-          <tr><td>Twitter / X</td><td>300 – 400</td><td>350 – 600</td><td>400 – 700</td></tr>
-          <tr><td>YouTube</td><td>1,500 – 2,500</td><td>1,800 – 3,000</td><td>2,000 – 5,000</td></tr>
-          <tr><td>LinkedIn</td><td>50 – 300</td><td>80 – 400</td><td>100 – 500</td></tr>
-        </tbody>
-      </table>
-
-      <!-- SEO Indicators -->
-      <div class="section-heading"><h3>🔎 SEO KPI Framework (Targets)</h3></div>
-      <table class="data-table">
-        <thead><tr><th>Indicator</th><th>3 Months</th><th>6 Months</th><th>12 Months</th></tr></thead>
-        <tbody>
-          <tr><td>Organic Traffic</td><td>500 – 800/mo</td><td>2,000 – 5,000/mo</td><td>5,000 – 8,000/mo</td></tr>
-          <tr><td>Backlinks</td><td>300 – 325</td><td>600 – 625</td><td>1,800 – 2,000</td></tr>
-          <tr><td>Content Pages</td><td>20 – 22</td><td>40 – 44</td><td>60 – 80 pieces</td></tr>
-          <tr><td>Keyword Rankings</td><td>20% increase</td><td>Top 10 for 10%</td><td>Majority ranked</td></tr>
-        </tbody>
-      </table>
-
-      <!-- Vital Mobility SEO Case -->
-      <div class="highlight-box" style="background:linear-gradient(135deg,var(--green),#1a5c3a)">
-        <div class="big-number">30+</div>
-        <div class="highlight-details">
-          <strong>Vital Mobility SEO Case Study</strong><br>
-          Medical device brand · 30+ platforms · Canada market<br>
-          Full SEO audit, content strategy, backlink building pipeline
-        </div>
-      </div>
-
+    <!-- Marketing Tools Grid -->
+    <h3 style="color:var(--navy);margin:24px 0 12px">🛠️ 24 Marketing Tools &amp; Platforms</h3>
+    <div class="tools-grid">
+      <div class="tools-item"><span class="icon">🔍</span> SEMrush</div>
+      <div class="tools-item"><span class="icon">🕸️</span> Ahrefs</div>
+      <div class="tools-item"><span class="icon">📊</span> Google Analytics</div>
+      <div class="tools-item"><span class="icon">🔗</span> Moz Pro</div>
+      <div class="tools-item"><span class="icon">📈</span> Meta Business Suite</div>
+      <div class="tools-item"><span class="icon">📹</span> YouTube Studio</div>
+      <div class="tools-item"><span class="icon">🎵</span> TikTok Ads Manager</div>
+      <div class="tools-item"><span class="icon">🛒</span> Shopify Admin</div>
+      <div class="tools-item"><span class="icon">📦</span> Amazon Seller Central</div>
+      <div class="tools-item"><span class="icon">📧</span> Mailchimp</div>
+      <div class="tools-item"><span class="icon">🖼️</span> Canva Pro</div>
+      <div class="tools-item"><span class="icon">🎬</span> CapCut Pro</div>
+      <div class="tools-item"><span class="icon">📝</span> Google Docs</div>
+      <div class="tools-item"><span class="icon">📋</span> Trello</div>
+      <div class="tools-item"><span class="icon">💬</span> Slack</div>
+      <div class="tools-item"><span class="icon">🔤</span> Grammarly</div>
+      <div class="tools-item"><span class="icon">🧠</span> Jasper AI</div>
+      <div class="tools-item"><span class="icon">📌</span> Pinterest Business</div>
+      <div class="tools-item"><span class="icon">🔴</span> Reddit Ads</div>
+      <div class="tools-item"><span class="icon">💼</span> LinkedIn Campaign Manager</div>
+      <div class="tools-item"><span class="icon">🌐</span> WordPress</div>
+      <div class="tools-item"><span class="icon">📊</span> SimilarWeb</div>
+      <div class="tools-item"><span class="icon">🎯</span> Google Ads Manager</div>
+      <div class="tools-item"><span class="icon">🧪</span> Crazy Egg</div>
     </div>
   </div>
-</div>
-
-<!-- ===== ACCORDION 6: SERVICE PACKAGES & PRICING ===== -->
-<div class="accordion" id="acc-pricing">
-  <button class="accordion-header" onclick="toggleAccordion('acc-pricing')" aria-expanded="false">
-    💼 Service Packages &amp; Pricing
-    <span class="arrow">▾</span>
-  </button>
-  <div class="accordion-body">
-    <div class="accordion-body-inner">
-
-      <div class="package-grid">
-        <!-- STARTER -->
-        <div class="package-card">
-          <h4>🚀 STARTER</h4>
-          <div class="price">¥5,000<small>/month</small></div>
-          <ul>
-            <li><strong>Social:</strong> 5 platforms, 5 posts/day, 25/week</li>
-            <li><strong>Platforms:</strong> FB, IG, Twitter, YT, Reddit</li>
-            <li><strong>KOL:</strong> 20 daily list, 100/week communication</li>
-            <li><strong>Blog:</strong> 2/week, SEO-optimized</li>
-            <li><strong>SEO:</strong> 50 backlinks/week, 25 guest posts, 25 KW research</li>
-            <li><strong>Website:</strong> Basic on-page SEO</li>
-            <li><strong>Reporting:</strong> Monthly report</li>
-          </ul>
-          <div class="hours">~40 hrs/week</div>
-        </div>
-
-        <!-- GROWTH — Most Popular -->
-        <div class="package-card popular">
-          <h4>📈 GROWTH</h4>
-          <div class="price">¥8,000<small>/month</small></div>
-          <ul>
-            <li><strong>Social:</strong> 5 platforms, 5 posts/day + 4 Reels/week</li>
-            <li><strong>KOL:</strong> 20 daily + 5 managed collabs/month</li>
-            <li><strong>Blog:</strong> 2/week + 2 guest posts/week</li>
-            <li><strong>SEO:</strong> 50 backlinks + 25 guest posts + 25 KW + content opt</li>
-            <li><strong>FB Ads:</strong> ¥1,500 ad budget managed</li>
-            <li><strong>Website:</strong> Full on-page SEO + speed optimization</li>
-            <li><strong>Competitor:</strong> 10–15 competitors</li>
-            <li><strong>Reporting:</strong> Bi-weekly dashboard</li>
-          </ul>
-          <div class="hours">~50 hrs/week</div>
-        </div>
-
-        <!-- SCALE -->
-        <div class="package-card">
-          <h4>🏗️ SCALE</h4>
-          <div class="price">¥12,000<small>/month</small></div>
-          <ul>
-            <li><strong>Social:</strong> 5 platforms + Pinterest, 6 posts/day + 8 Reels/week</li>
-            <li><strong>KOL:</strong> 20 daily + 10 managed collabs/month</li>
-            <li><strong>Blog:</strong> 4/week + 4 guest posts/week</li>
-            <li><strong>SEO:</strong> Full suite + 2K–5K organic traffic target</li>
-            <li><strong>Ads:</strong> ¥3,000 FB Ads + ¥2,000 Google Ads</li>
-            <li><strong>Shopify:</strong> Store management + product page opt</li>
-            <li><strong>Competitor:</strong> 12–18 competitors</li>
-            <li><strong>Reporting:</strong> Weekly dashboard + strategy calls</li>
-          </ul>
-        </div>
-
-        <!-- ENTERPRISE -->
-        <div class="package-card">
-          <h4>🏢 ENTERPRISE</h4>
-          <div class="price">¥15,000<small>/month</small></div>
-          <ul>
-            <li><strong>Social:</strong> All platforms including LinkedIn + TikTok</li>
-            <li><strong>KOL:</strong> 20 daily + 15 managed collabs/month + Amazon Live</li>
-            <li><strong>Blog:</strong> 4/week + unlimited guest posts</li>
-            <li><strong>SEO:</strong> Full suite + 5K–8K traffic target</li>
-            <li><strong>Ads:</strong> ¥5,000 FB + Google + TikTok Ads budget</li>
-            <li><strong>Shopify:</strong> Full store build + Amazon storefront</li>
-            <li><strong>Competitor:</strong> 20–25 competitors</li>
-            <li><strong>Reporting:</strong> Live real-time dashboard</li>
-            <li><strong>Dedicated account manager</strong></li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- ===== ACCORDION 7: MARKETING TOOLKIT ===== -->
-<div class="accordion" id="acc-toolkit">
-  <button class="accordion-header" onclick="toggleAccordion('acc-toolkit')" aria-expanded="false">
-    🛠️ Marketing Toolkit
-    <span class="arrow">▾</span>
-  </button>
-  <div class="accordion-body">
-    <div class="accordion-body-inner">
-
-      <div class="toolkit-grid">
-        <div class="toolkit-item"><span class="dot social"></span> Facebook Business Suite</div>
-        <div class="toolkit-item"><span class="dot social"></span> Instagram Creator Studio</div>
-        <div class="toolkit-item"><span class="dot social"></span> Twitter Analytics</div>
-        <div class="toolkit-item"><span class="dot social"></span> TikTok Creator Tools</div>
-        <div class="toolkit-item"><span class="dot social"></span> Reddit Ads Manager</div>
-        <div class="toolkit-item"><span class="dot social"></span> YouTube Studio</div>
-        <div class="toolkit-item"><span class="dot social"></span> LinkedIn Campaign Manager</div>
-        <div class="toolkit-item"><span class="dot social"></span> Hootsuite / Buffer</div>
-        <div class="toolkit-item"><span class="dot seo"></span> SEMrush / Ahrefs</div>
-        <div class="toolkit-item"><span class="dot seo"></span> Google Search Console</div>
-        <div class="toolkit-item"><span class="dot seo"></span> Google Analytics 4</div>
-        <div class="toolkit-item"><span class="dot seo"></span> Moz Pro</div>
-        <div class="toolkit-item"><span class="dot seo"></span> Screaming Frog</div>
-        <div class="toolkit-item"><span class="dot seo"></span> Yoast SEO</div>
-        <div class="toolkit-item"><span class="dot content"></span> Canva Pro</div>
-        <div class="toolkit-item"><span class="dot content"></span> ChatGPT / Claude</div>
-        <div class="toolkit-item"><span class="dot content"></span> Grammarly</div>
-        <div class="toolkit-item"><span class="dot content"></span> WordPress / Shopify</div>
-        <div class="toolkit-item"><span class="dot ads"></span> Amazon Ads Console</div>
-        <div class="toolkit-item"><span class="dot ads"></span> Facebook Ads Manager</div>
-        <div class="toolkit-item"><span class="dot ads"></span> Google Ads</div>
-        <div class="toolkit-item"><span class="dot ads"></span> Helium 10</div>
-        <div class="toolkit-item"><span class="dot ads"></span> Jungle Scout</div>
-        <div class="toolkit-item"><span class="dot ads"></span> Keepa</div>
-      </div>
-
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- ===== FOOTER ===== -->
-<footer style="text-align:center;padding:32px 0 16px;border-top:2px solid var(--border);margin-top:32px;color:var(--light-text);font-size:0.82rem">
-  <p>© 2026 Studio Mirage Limited · Dhaka, Bangladesh · studiomiragecn.com</p>
-  <p style="margin-top:4px">Digital Marketing · KOL Management · Amazon PPC · Social Media · SEO · E-Commerce</p>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p><strong>Studio Mirage Limited</strong> — Digital Marketing Agency</p>
+    <p>📍 Dhaka, Bangladesh · 🌐 studiomiragecn.com · ✉️ studiomiragebd@gmail.com · 📞 +880 1677 710485</p>
+    <p style="font-size:0.75rem;margin-top:8px;color:#aaa">© 2022–2026 Studio Mirage Limited. All rights reserved.</p>
+  </div>
 </footer>
 
+<!-- ===== CHART.JS SCRIPTS ===== -->
 <script>
-/* ===== ACCORDION LOGIC ===== */
-function toggleAccordion(id) {
-  const acc = document.getElementById(id);
-  const header = acc.querySelector('.accordion-header');
-  const isOpen = acc.classList.contains('open');
-
-  if (isOpen) {
-    acc.classList.remove('open');
-    header.setAttribute('aria-expanded', 'false');
-  } else {
-    acc.classList.add('open');
-    header.setAttribute('aria-expanded', 'true');
-    setTimeout(function() {
-      initChartsInAccordion(id);
-    }, 100);
+// Chart 1: Cross-Platform Reach (Log Scale Horizontal Bar)
+new Chart(document.getElementById('chartReach'), {
+  type: 'bar',
+  data: {
+    labels: ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'Twitter', 'LinkedIn', 'Pinterest'],
+    datasets: [{
+      label: 'Total Reach',
+      data: [850000, 620000, 410000, 280000, 85000, 45000, 32000],
+      backgroundColor: ['#1a3a5c','#c25a2e','#2d6a4f','#5b3a8c','#1a3a5c','#c25a2e','#2d6a4f'],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: { type: 'logarithmic', title: { display: true, text: 'Reach (log scale)' } },
+      y: { title: { display: false } }
+    },
+    plugins: { legend: { display: false } }
   }
-}
-
-var chartsInitialized = {};
-
-function initChartsInAccordion(accId) {
-  if (chartsInitialized[accId]) return;
-  if (accId === 'acc-perf') {
-    initAllCharts();
-    chartsInitialized[accId] = true;
-  }
-}
-
-var charts = {};
-
-function initAllCharts() {
-  if (charts.reach) return;
-
-  var ctx1 = document.getElementById('chartReach');
-  if (ctx1) {
-    charts.reach = new Chart(ctx1, {
-      type: 'bar',
-      data: {
-        labels: ['TikTok A', 'FB Sunaofe', 'FB Ads', 'IG Sunaofe', 'FB RQ', 'FB Rainbow'],
-        datasets: [{
-          label: 'Reach',
-          data: [7000000, 2192814, 461000, 246219, 91820, 5708],
-          backgroundColor: ['#5b3a8c','#1a3a5c','#c25a2e','#2d6a4f','#1a3a5c','#c25a2e'],
-          borderRadius: 4
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            type: 'logarithmic',
-            title: { display: true, text: 'Reach (log scale)' },
-            ticks: { callback: function(v) { return v >= 1000000 ? (v/1000000)+'M' : v >= 1000 ? (v/1000)+'K' : v; } }
-          }
-        },
-        plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { label: function(ctx) { return 'Reach: ' + ctx.raw.toLocaleString(); } } }
-        }
-      }
-    });
-  }
-
-  var ctx2 = document.getElementById('chartAudience');
-  if (ctx2) {
-    charts.audience = new Chart(ctx2, {
-      type: 'bar',
-      data: {
-        labels: ['FB Sunaofe', 'IG Sunaofe', 'IG A', 'IG Sunaofe 2', 'TikTok A', 'Other'],
-        datasets: [{
-          label: 'Audience Growth',
-          data: [66780, 49985, 39000, 117000, 117000, 35000],
-          backgroundColor: ['#1a3a5c','#2d6a4f','#c25a2e','#5b3a8c','#1a3a5c','#6b6b6b'],
-          borderRadius: 4
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: { title: { display: true, text: 'Growth Count' }, ticks: { callback: function(v) { return v >= 1000 ? (v/1000)+'K' : v; } } }
-        },
-        plugins: { legend: { display: false } }
-      }
-    });
-  }
-
-  var ctx3 = document.getElementById('chartEcom');
-  if (ctx3) {
-    charts.ecom = new Chart(ctx3, {
-      type: 'bar',
-      data: {
-        labels: ['DUCO Glasses', 'CarCarez'],
-        datasets: [
-          {
-            label: 'Sessions',
-            data: [166000, 128700],
-            backgroundColor: '#1a3a5c',
-            borderRadius: 4,
-            yAxisID: 'y'
-          },
-          {
-            label: 'Revenue ($)',
-            data: [12800, 27400],
-            backgroundColor: '#c25a2e',
-            borderRadius: 4,
-            yAxisID: 'y1'
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            type: 'linear',
-            position: 'left',
-            title: { display: true, text: 'Sessions' },
-            ticks: { callback: function(v) { return v >= 1000 ? (v/1000)+'K' : v; } }
-          },
-          y1: {
-            type: 'linear',
-            position: 'right',
-            title: { display: true, text: 'Revenue ($)' },
-            ticks: { callback: function(v) { return '$' + (v >= 1000 ? (v/1000)+'K' : v); } },
-            grid: { drawOnChartArea: false }
-          }
-        }
-      }
-    });
-  }
-
-  var ctx4 = document.getElementById('chartAmazon');
-  if (ctx4) {
-    charts.amazon = new Chart(ctx4, {
-      type: 'line',
-      data: {
-        labels: ['Sep 2023', 'Oct 2023', 'Nov 2023', 'Dec 2023'],
-        datasets: [
-          {
-            label: 'Sales ($)',
-            data: [6200, 7800, 10200, 10100],
-            borderColor: '#1a3a5c',
-            backgroundColor: 'rgba(26,58,92,0.1)',
-            fill: true,
-            tension: 0.3,
-            yAxisID: 'y'
-          },
-          {
-            label: 'Ad Spend ($)',
-            data: [1800, 2100, 2600, 2300],
-            borderColor: '#c25a2e',
-            backgroundColor: 'rgba(194,90,46,0.1)',
-            fill: true,
-            tension: 0.3,
-            yAxisID: 'y1'
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            type: 'linear',
-            position: 'left',
-            title: { display: true, text: 'Sales ($)' },
-            ticks: { callback: function(v) { return '$' + (v >= 1000 ? (v/1000)+'K' : v); } }
-          },
-          y1: {
-            type: 'linear',
-            position: 'right',
-            title: { display: true, text: 'Spend ($)' },
-            ticks: { callback: function(v) { return '$' + (v >= 1000 ? (v/1000)+'K' : v); } },
-            grid: { drawOnChartArea: false }
-          }
-        }
-      }
-    });
-  }
-}
-
-window.addEventListener('DOMContentLoaded', function() {
-  initAllCharts();
 });
 
-window.addEventListener('resize', function() {
-  if (charts.reach) charts.reach.resize();
-  if (charts.audience) charts.audience.resize();
-  if (charts.ecom) charts.ecom.resize();
-  if (charts.amazon) charts.amazon.resize();
+// Chart 2: Audience Growth by Platform
+new Chart(document.getElementById('chartAudience'), {
+  type: 'bar',
+  data: {
+    labels: ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'Twitter/X', 'LinkedIn'],
+    datasets: [
+      { label: 'Followers (K)', data: [85, 62, 41, 28, 8.5, 4.5], backgroundColor: '#1a3a5c', borderRadius: 4 },
+      { label: 'Engagement Rate %', data: [3.2, 4.8, 6.1, 2.9, 1.8, 2.3], backgroundColor: '#c25a2e', borderRadius: 4 }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: { beginAtZero: true, title: { display: true, text: 'Value' } }
+    },
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+// Chart 3: E-Commerce Revenue vs Sessions (Dual-Axis)
+new Chart(document.getElementById('chartEcom'), {
+  type: 'bar',
+  data: {
+    labels: ['DUCO', 'CarCarez'],
+    datasets: [
+      { label: 'Sessions (K)', data: [166, 128.7], backgroundColor: '#1a3a5c', borderRadius: 4, yAxisID: 'y' },
+      { label: 'Revenue (K USD)', data: [12.8, 27.4], backgroundColor: '#c25a2e', borderRadius: 4, yAxisID: 'y1' }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: { beginAtZero: true, position: 'left', title: { display: true, text: 'Sessions (K)' } },
+      y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Revenue (K USD)' } }
+    },
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+// Chart 4: Amazon Sales & Spend Timeline (TNTOR)
+new Chart(document.getElementById('chartAmazon'), {
+  type: 'line',
+  data: {
+    labels: ['Sep','Oct','Nov','Dec','Jan','Feb','Mar'],
+    datasets: [
+      { label: 'Sales ($)', data: [2800,3200,4100,5100,4600,5300,6000], borderColor: '#1a3a5c', backgroundColor: 'rgba(26,58,92,0.1)', fill: true, tension: 0.3, yAxisID: 'y' },
+      { label: 'Ad Spend ($)', data: [720,820,1050,1310,1180,1360,1540], borderColor: '#c25a2e', backgroundColor: 'rgba(194,90,46,0.1)', fill: true, tension: 0.3, yAxisID: 'y1' }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: { beginAtZero: true, position: 'left', title: { display: true, text: 'Sales ($)' } },
+      y1: { beginAtZero: true, position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Ad Spend ($)' } }
+    },
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+// Highlight active nav on scroll
+document.addEventListener('scroll', function() {
+  var sections = ['home','portfolio','services','pricing','contact'];
+  var navLinks = document.querySelectorAll('.site-nav .nav-links a');
+  var scrollPos = window.scrollY + 100;
+  sections.forEach(function(id, i) {
+    var el = document.getElementById(id);
+    if (el && scrollPos >= el.offsetTop && scrollPos < el.offsetTop + el.offsetHeight) {
+      navLinks.forEach(function(a) { a.classList.remove('active'); });
+      navLinks[i].classList.add('active');
+    }
+  });
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.site-nav .nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('open');
+  });
 });
 </script>
 
