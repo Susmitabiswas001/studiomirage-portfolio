@@ -446,6 +446,16 @@ h1, h2, h3, h4, .ff-serif { font-family: 'Playfair Display', Georgia, serif; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .toolkit-grid { grid-template-columns: repeat(2, 1fr); }
 }
+  <!-- Client Logos CSS -->
+  .logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px;align-items:center;justify-items:center;padding:20px 0}
+  .logo-item{text-align:center;padding:12px 8px;background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-sm);transition:transform 0.2s,box-shadow 0.2s}
+  .logo-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+  .logo-item img{max-height:42px;max-width:110px;margin:0 auto;filter:grayscale(25%);transition:filter 0.2s}
+  .logo-item:hover img{filter:grayscale(0%)}
+  .logo-item span{display:block;font-size:9px;color:var(--gray-400);margin-top:6px;letter-spacing:0.3px}
+
+  /* Responsive logo grid */
+  @media(max-width:768px){.logo-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px}}
 </style>
 </head>
 <body>
@@ -495,6 +505,42 @@ h1, h2, h3, h4, .ff-serif { font-family: 'Playfair Display', Georgia, serif; }
         <div class="stat-number">16+</div>
         <div class="stat-label">Brands Served</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CLIENT LOGOS ==================== -->
+<section class="section" id="clients">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag navy">Trusted By</span>
+      <h2>Client Portfolio</h2>
+      <p class="section-lead">20+ global brands across furniture, electronics, sports, home goods, industrial, and fashion sectors.</p>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-item"><img src="client-logos/sunaofe_f.jpg" alt="Sunaofe"><span>Sunaofe</span></div>
+      <div class="logo-item"><img src="client-logos/FOGY_GARAGE.jfif" alt="Fogy Garage"><span>Fogy Garage</span></div>
+      <div class="logo-item"><img src="client-logos/HGLRC.png" alt="HGLRC"><span>HGLRC</span></div>
+      <div class="logo-item"><img src="client-logos/KXK_SHOP.jpg" alt="KXK Shop"><span>KXK Shop</span></div>
+      <div class="logo-item"><img src="client-logos/CROWN_MICRO.jpg" alt="Crown Micro"><span>Crown Micro</span></div>
+      <div class="logo-item"><img src="client-logos/Excelite_Domes.png" alt="Excelite"><span>Excelite</span></div>
+      <div class="logo-item"><img src="client-logos/LAHOMA_WINDS.png" alt="Lahoma Winds"><span>Lahoma Winds</span></div>
+      <div class="logo-item"><img src="client-logos/MELONI_HOMES.jpg" alt="Meloni Homes"><span>Meloni Homes</span></div>
+      <div class="logo-item"><img src="client-logos/POCCI_HOME.png" alt="Pocci Home"><span>Pocci Home</span></div>
+      <div class="logo-item"><img src="client-logos/staresso.jpeg" alt="Staresso"><span>Staresso</span></div>
+      <div class="logo-item"><img src="client-logos/TDONE_FAN.png" alt="TDONE Fan"><span>TDONE Fan</span></div>
+      <div class="logo-item"><img src="client-logos/HEMOYMILLER.png" alt="Hemoymiller"><span>Hemoymiller</span></div>
+      <div class="logo-item"><img src="client-logos/CEVAPRO_SPORTS.png" alt="Cevapro Sports"><span>Cevapro Sports</span></div>
+      <div class="logo-item"><img src="client-logos/LUMBENCY_LIGHTING.jfif" alt="Lumbency"><span>Lumbency Lighting</span></div>
+      <div class="logo-item"><img src="client-logos/WILLAI_SLEEP.jfif" alt="Willai Sleep"><span>Willai Sleep</span></div>
+      <div class="logo-item"><img src="client-logos/nekmit.jpeg" alt="Nekmit"><span>Nekmit</span></div>
+      <div class="logo-item"><img src="client-logos/unicco.png" alt="Unicco"><span>Unicco</span></div>
+      <div class="logo-item"><img src="client-logos/infansys.png" alt="Infansys"><span>Infansys</span></div>
+      <div class="logo-item"><img src="client-logos/baoshutang.png" alt="Baoshutang"><span>Baoshutang</span></div>
+      <div class="logo-item"><img src="client-logos/dinrail.webp" alt="Dinrail"><span>Dinrail</span></div>
+      <div class="logo-item"><img src="client-logos/ccobato.png" alt="Ccobato"><span>Ccobato</span></div>
+      <div class="logo-item"><img src="client-logos/Excelite_Plastics.png" alt="Excelite Plastics"><span>Excelite Plastics</span></div>
+      <div class="logo-item"><img src="client-logos/download.png" alt="More"><span>+ More</span></div>
     </div>
   </div>
 </section>
@@ -915,21 +961,21 @@ h1, h2, h3, h4, .ff-serif { font-family: 'Playfair Display', Georgia, serif; }
           <div class="social-account">
             <div class="social-avatar sa-ig">A</div>
             <div class="social-account-info">
-              <div class="sa-name">Account A (Furniture)</div>
+              <div class="sa-name">Sunaofe IG</div>
               <div class="sa-meta">39K followers · 6.34% engagement · Russia 43.5%</div>
             </div>
           </div>
           <div class="social-account">
             <div class="social-avatar sa-ig">B</div>
             <div class="social-account-info">
-              <div class="sa-name">Account B (Furniture)</div>
+              <div class="sa-name">Furniture Brand IG</div>
               <div class="sa-meta">4.6K followers · 5.13% engagement · USA 19%</div>
             </div>
           </div>
           <div class="social-account">
             <div class="social-avatar sa-ig">C</div>
             <div class="social-account-info">
-              <div class="sa-name">Account C</div>
+              <div class="sa-name">Furniture Collection IG</div>
               <div class="sa-meta">43.6K+ followers</div>
             </div>
           </div>
@@ -944,15 +990,13 @@ h1, h2, h3, h4, .ff-serif { font-family: 'Playfair Display', Georgia, serif; }
           <div class="social-account">
             <div class="social-avatar sa-tt">A</div>
             <div class="social-account-info">
-              <div class="sa-name">Account A</div>
-              <div class="sa-meta">117K+ followers · 7M views (28d) · 1.5M views (7d)</div>
+              <div class="sa-name">TNTOR TikTok</div>
             </div>
           </div>
           <div class="social-account">
             <div class="social-avatar sa-tt">B</div>
             <div class="social-account-info">
-              <div class="sa-name">Account B</div>
-              <div class="sa-meta">7.2K+ followers · 25.6K views (7d)</div>
+              <div class="sa-name">Furniture TikTok</div>
             </div>
           </div>
         </div>
@@ -1097,32 +1141,6 @@ h1, h2, h3, h4, .ff-serif { font-family: 'Playfair Display', Georgia, serif; }
           <span class="fb-group">Chat Marketing: 1.1K</span>
           <span class="fb-group">Millennials FBA: 1.1K</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== MARKET RESEARCH ==================== -->
-<section class="section section-alt" id="research">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag navy">Market Research</span>
-      <h2>Industry Intelligence</h2>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;margin:0 auto">
-      <div class="amazon-card">
-        <h3>Baby Clothing — China</h3>
-        <div style="font-size:0.7rem;color:var(--gray-400);margin-bottom:12px">Source: baby clothes market overview.docx</div>
-        <div class="brand-metric"><span class="brand-metric-label">Market Size (2023)</span><span class="brand-metric-value">$0.51 Billion</span></div>
-        <div class="brand-metric"><span class="brand-metric-label">CAGR</span><span class="brand-metric-value">4.04%</span></div>
-        <div class="brand-metric"><span class="brand-metric-label">Online Channel Share</span><span class="brand-metric-value">25%</span></div>
-      </div>
-      <div class="amazon-card">
-        <h3>Children's Wear — Bangladesh</h3>
-        <div style="font-size:0.7rem;color:var(--gray-400);margin-bottom:12px">Source: baby clothes market overview.docx</div>
-        <div class="brand-metric"><span class="brand-metric-label">Market Size</span><span class="brand-metric-value">Tk 5,000 crore</span></div>
-        <div class="brand-metric"><span class="brand-metric-label">Annual Growth</span><span class="brand-metric-value">10%</span></div>
       </div>
     </div>
   </div>
