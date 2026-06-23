@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio Mirage — Digital Marketing Portfolio Dashboard</title>
+<title>Susmita Biswas — Studio Mirage Digital Marketing Portfolio Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 :root {
@@ -21,20 +21,33 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased}
 
-.header{background:#fff;border-bottom:3px solid var(--navy);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+/* === HEADER === */
+.header{background:#fff;border-bottom:3px solid var(--navy);padding:16px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .header-left h1{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-0.3px}
-.header-left .tag{font-size:11px;color:var(--text-muted);letter-spacing:0.8px;text-transform:uppercase;margin-top:2px}
-.header-right{display:flex;gap:28px;flex-wrap:wrap}
+.header-left .tag{font-size:10px;color:var(--text-muted);letter-spacing:0.6px;text-transform:uppercase;margin-top:1px}
+.header-right{display:flex;gap:22px;flex-wrap:wrap}
 .hs{text-align:right}
-.hs .v{font-size:18px;font-weight:800;font-family:var(--font-mono);color:var(--navy)}
+.hs .v{font-size:16px;font-weight:800;font-family:var(--font-mono);color:var(--navy)}
 .hs .v.w{color:var(--warm)}
 .hs .v.g{color:var(--green)}
-.hs .l{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+.hs .l{font-size:8px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
 
 .lang-bar{display:flex;gap:4px}
 .lang-btn{font-size:9px;padding:2px 8px;border:1px solid var(--border);background:#fff;color:var(--text-muted);cursor:pointer;border-radius:var(--radius-sm);font-weight:600;letter-spacing:0.5px;transition:all 0.15s}
 .lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 
+/* === PROFILE HERO === */
+.profile-hero{max-width:1500px;margin:0 auto;padding:28px 20px 0}
+.profile-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.profile-card .avatar{width:80px;height:80px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;letter-spacing:-1px;flex-shrink:0}
+.profile-info h2{font-size:24px;font-weight:800;color:var(--navy);letter-spacing:-0.5px}
+.profile-info .role{font-size:14px;color:var(--warm);font-weight:600;margin:4px 0 8px}
+.profile-info .desc{font-size:11px;color:var(--text-secondary);max-width:600px}
+.profile-stats-row{display:flex;gap:28px;flex-wrap:wrap;margin-top:12px}
+.ps-item{font-size:10px;color:var(--text-muted);letter-spacing:0.3px}
+.ps-item strong{color:var(--navy);font-family:var(--font-mono);font-size:11px}
+
+/* === DASHBOARD GRID === */
 .dashboard{max-width:1500px;margin:0 auto;padding:16px 20px;display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
 .sec-full{grid-column:span 12}
 .sec-half{grid-column:span 6}
@@ -44,6 +57,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
 .sec-8{grid-column:span 8}
 .sec-4{grid-column:span 4}
 
+/* === CARDS === */
 .card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
 .card-header{padding:12px 16px;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;background:#fafaf8}
 .card-header h3{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted)}
@@ -52,8 +66,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
 .b-warm{background:var(--warm-light);color:var(--warm)}
 .b-green{background:var(--green-light);color:var(--green)}
 .b-purple{background:var(--purple-light);color:var(--purple)}
+.b-teal{background:var(--teal-light);color:var(--teal)}
 .card-body{padding:16px}
 
+/* === TABLES === */
 .data-table{width:100%;border-collapse:collapse;font-size:11px}
 .data-table th{text-align:left;padding:7px 10px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);border-bottom:2px solid var(--border);background:#fafaf8}
 .data-table td{padding:7px 10px;border-bottom:1px solid var(--border-light);font-variant-numeric:tabular-nums}
@@ -62,7 +78,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
 .data-table .hi{font-weight:700;color:var(--navy)}
 .data-table .hw{font-weight:700;color:var(--warm)}
 .data-table .hg{font-weight:700;color:var(--green)}
+.data-table .hp{font-weight:700;color:var(--purple)}
 
+/* === CASE STUDY CARDS === */
 .cs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
 .cs-card{border-left:3px solid var(--navy);padding:6px 0 6px 14px}
 .cs-card.w{border-left-color:var(--warm)}
@@ -75,14 +93,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
 .cs-card .s span{font-size:10px;color:var(--text-secondary)}
 .cs-card .s strong{font-family:var(--font-mono);font-size:12px;color:var(--navy)}
 
+/* === METRIC BOXES === */
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.metric-box{background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center}
+.metric-box .big-number{font-size:24px;font-weight:800;font-family:var(--font-mono);color:var(--navy);line-height:1.2}
+.metric-box .big-number.w{color:var(--warm)}
+.metric-box .big-number.g{color:var(--green)}
+.metric-box .big-number.p{color:var(--purple)}
+.metric-box .label{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px}
+
+/* === SERVICE TAGS === */
 .svc-tags{display:flex;flex-wrap:wrap;gap:5px}
 .svc-tag{font-size:10px;padding:3px 10px;border-radius:var(--radius-sm);background:#eef2f7;color:#3a4f6a;font-weight:500}
 
+/* === CHARTS === */
 .chart-wrap{position:relative;width:100%}
 .chart-wrap canvas{width:100%!important}
 .annotation{font-size:9px;color:var(--text-muted);font-style:italic;margin-top:6px;padding-top:6px;border-top:1px dashed var(--border-light)}
 
-/* === PRICING — MASSIVE DETAIL === */
+/* === PRICING === */
 .pricing-hero{max-width:1500px;margin:0 auto;padding:0 20px 14px}
 .pricing-hero h2{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:4px;letter-spacing:-0.3px}
 .pricing-hero .sub{font-size:12px;color:var(--text-muted);margin-bottom:16px}
@@ -109,14 +138,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
 .price-card.featured .cta{background:var(--warm)}
 .price-card.featured .cta:hover{background:#a84a20}
 
+/* === FOOTER === */
 .footer{max-width:1500px;margin:0 auto;padding:12px 20px 28px;text-align:center;font-size:10px;color:var(--text-muted)}
 .footer a{color:var(--navy);text-decoration:none}
 
+/* === LANG === */
 [data-lang]{display:none}
 [data-lang].on{display:block}
 [data-lang].on.inline{display:inline}
 [data-lang].on.li{display:list-item}
 
+/* === RESPONSIVE === */
 @media(max-width:1100px){
   .sec-half,.sec-third,.sec-quarter,.sec-two-thirds,.sec-8,.sec-4{grid-column:span 12}
   .pricing-grid{grid-template-columns:repeat(2,1fr)}
@@ -127,24 +159,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
   .header{padding:14px 16px}
   .header-right{gap:14px}
   .hs .v{font-size:14px}
+  .profile-card{padding:16px}
+  .profile-info h2{font-size:20px}
 }
 </style>
 </head>
 <body>
 
+<!-- ===== HEADER WITH LANG TOGGLE ===== -->
 <div class="header">
   <div class="header-left">
     <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <h1>Studio Mirage Limited</h1>
+      <h1 data-lang="en" style="display:inline">Studio Mirage Portfolio Dashboard</h1>
+      <h1 data-lang="bn" style="display:none">স্টুডিও মিরাজ পোর্টফোলিও ড্যাশবোর্ড</h1>
+      <h1 data-lang="cn" style="display:none">幻影工作室 · 投资组合仪表盘</h1>
       <div class="lang-bar">
         <button class="lang-btn active" onclick="switchLang('en')">EN</button>
         <button class="lang-btn" onclick="switchLang('bn')">বাং</button>
         <button class="lang-btn" onclick="switchLang('cn')">中文</button>
       </div>
     </div>
-    <div class="tag" data-lang="en" style="display:inline">Digital Marketing Portfolio · Performance Dashboard</div>
-    <div class="tag" data-lang="bn" style="display:none">ডিজিটাল মার্কেটিং পোর্টফোলিও · পারফরম্যান্স ড্যাশবোর্ড</div>
-    <div class="tag" data-lang="cn" style="display:none">数字营销组合 · 绩效仪表盘</div>
+    <div class="tag" data-lang="en" style="display:inline">Cross-Border Digital Marketing · Performance Analytics</div>
+    <div class="tag" data-lang="bn" style="display:none">ক্রস-বর্ডার ডিজিটাল মার্কেটিং · পারফরম্যান্স অ্যানালিটিক্স</div>
+    <div class="tag" data-lang="cn" style="display:none">跨境数字营销 · 绩效分析</div>
   </div>
   <div class="header-right">
     <div class="hs"><div class="v w">3.5M+</div><div class="l">Total Reach</div></div>
@@ -156,27 +193,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
   </div>
 </div>
 
-<div class="dashboard">
+<!-- ===== SECTION 1: PERSONAL PROFILE HEADER ===== -->
+<div class="profile-hero">
+  <div class="profile-card">
+    <div class="avatar">SB</div>
+    <div class="profile-info">
+      <h2>Susmita Biswas</h2>
+      <div class="role">Cross-Border Digital Marketing Expert</div>
+      <div class="profile-stats-row">
+        <span class="ps-item"><strong>10+</strong> Years Experience</span>
+        <span class="ps-item"><strong>80+</strong> Brands Scaled</span>
+        <span class="ps-item"><strong>110%</strong> Avg Growth</span>
+        <span class="ps-item"><strong>4×</strong> Tongji University Certified</span>
+        <span class="ps-item">Google & IBM Certified</span>
+        <span class="ps-item">China / India / Bangladesh Consultant</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <!-- COMPANY -->
+<!-- ===== SECTION 2: COMPANY PROFILE ===== -->
+<div class="dashboard" style="padding-top:14px">
   <div class="card sec-third">
-    <div class="card-header"><h3>Company Profile</h3></div>
+    <div class="card-header"><h3>🏢 Company Profile</h3></div>
     <div class="card-body" style="font-size:12px;line-height:1.8">
       <p style="margin-bottom:10px"><strong>Studio Mirage Limited</strong> is a full-stack digital marketing agency based in Dhaka, Bangladesh. We deliver integrated campaigns across social media, e-commerce, influencer networks, and paid advertising — serving clients in USA, Europe, MENA, and Southeast Asia since 2022.</p>
-      🌐 studiomiragecn.com<br>📧 studiomiragebd@gmail.com<br>📱 +880 1677 710485 · Dhaka, BD
+      🌐 studiomiragecn.com<br>
+      📧 studiomiragebd@gmail.com<br>
+      📱 +880 1677 710485 · Dhaka, Bangladesh
     </div>
   </div>
 
-  <!-- SERVICES -->
   <div class="card sec-two-thirds">
-    <div class="card-header"><h3>Service Capabilities</h3></div>
+    <div class="card-header"><h3>🛠️ Service Capabilities — 19 Service Tags</h3></div>
     <div class="card-body">
       <div class="svc-tags" style="margin-bottom:8px">
         <span class="svc-tag">Social Media Management</span><span class="svc-tag">Facebook Ads</span>
         <span class="svc-tag">Instagram Growth</span><span class="svc-tag">TikTok Strategy</span>
         <span class="svc-tag">KOL / Influencer Mgmt</span><span class="svc-tag">Shopify E-Commerce</span>
-        <span class="svc-tag">Competitor Analysis</span><span class="svc-tag">SEO & Keywords</span>
-        <span class="svc-tag">Google Ads / SEM</span><span class="svc-tag">Content Marketing</span>
+        <span class="svc-tag">Amazon Store Management</span><span class="svc-tag">Google Ads / SEM</span>
+        <span class="svc-tag">SEO & Keywords</span><span class="svc-tag">Content Marketing</span>
         <span class="svc-tag">ROI / ROAS Analysis</span><span class="svc-tag">Audience Analytics</span>
         <span class="svc-tag">Brand Strategy</span><span class="svc-tag">Reputation Mgmt</span>
         <span class="svc-tag">Website Development</span><span class="svc-tag">Affiliate Marketing</span>
@@ -184,15 +240,88 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
         <span class="svc-tag">Community Growth</span>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:10px;color:var(--text-muted)">
-        <div><strong style="color:var(--text-secondary)">Platforms:</strong> Facebook · Instagram · TikTok · Twitter · YouTube · Shopify · Google Ads · Amazon</div>
-        <div><strong style="color:var(--text-secondary)">Markets:</strong> 🇺🇸 US · 🇪🇺 EU · 🇷🇺 RU · 🇪🇬 MENA · 🇧🇩 SA · 🇵🇭 PH · 🇻🇳 VN · 🇮🇩 ID · 🇸🇦 KSA</div>
+        <div><strong style="color:var(--text-secondary)">Platforms:</strong> FB · IG · TT · Twitter · YT · Shopify · Amazon · Google</div>
+        <div><strong style="color:var(--text-secondary)">Markets:</strong> 🇺🇸 US · 🇪🇺 EU · 🇷🇺 RU · MENA · 🇸🇦 SA · 🇵🇭 PH · 🇻🇳 VN · 🇮🇩 ID · 🇸🇦 KSA</div>
       </div>
     </div>
   </div>
 
-  <!-- CASE STUDY PORTFOLIO -->
+  <!-- ===== SECTION 3: PERSONAL STATS ===== -->
   <div class="card sec-full">
-    <div class="card-header"><h3>Case Study Portfolio — 7 Deployments</h3><span class="badge b-navy">2022–2024</span></div>
+    <div class="card-header"><h3>📊 Personal Performance Stats</h3><span class="badge b-navy">Lifetime</span></div>
+    <div class="card-body">
+      <div class="metric-grid" style="grid-template-columns:repeat(6,1fr)">
+        <div class="metric-box"><div class="big-number w">200K+</div><div class="label">Followers Developed</div></div>
+        <div class="metric-box"><div class="big-number">25+</div><div class="label">USA Brands</div></div>
+        <div class="metric-box"><div class="big-number g">100+</div><div class="label">Social Pages Managed</div></div>
+        <div class="metric-box"><div class="big-number p">500+</div><div class="label">Celebrity Collabs</div></div>
+        <div class="metric-box"><div class="big-number">1,000+</div><div class="label">Content Pieces</div></div>
+        <div class="metric-box"><div class="big-number w">850+</div><div class="label">Engagements</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4: CLIENT LOGOS ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>🏷️ Client Portfolio — 21 Brands</h3><span class="badge b-navy">Global</span></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;align-items:center">
+        <div style="text-align:center;padding:10px"><img src="client-logos/sunaofe_f.jpg" alt="Sunaofe" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Sunaofe</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/FOGY_GARAGE.jfif" alt="Fogy Garage" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Fogy Garage</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/HGLRC.png" alt="HGLRC" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">HGLRC</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/KXK_SHOP.jpg" alt="KXK Shop" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">KXK Shop</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/CROWN_MICRO.jpg" alt="Crown Micro" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Crown Micro</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/Excelite_Domes.png" alt="Excelite Domes" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Excelite Domes</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/Excelite_Plastics.png" alt="Excelite Plastics" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Excelite Plastics</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/LAHOMA_WINDS.png" alt="Lahoma Winds" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Lahoma Winds</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/MELONI_HOMES.jpg" alt="Meloni Homes" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Meloni Homes</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/POCCI_HOME.png" alt="Pocci Home" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Pocci Home</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/staresso.jpeg" alt="Staresso" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Staresso</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/TDONE_FAN.png" alt="TDone Fan" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">TDone Fan</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/HEMOYMILLER.png" alt="Hemoymiller" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Hemoymiller</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/CEVAPRO_SPORTS.png" alt="Cevapro Sports" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Cevapro Sports</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/LUMBENCY_LIGHTING.jfif" alt="Lumbency Lighting" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Lumbency Lighting</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/WILLAI_SLEEP.jfif" alt="Willai Sleep" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Willai Sleep</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/nekmit.jpeg" alt="Nekmit" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Nekmit</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/unicco.png" alt="Unicco" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Unicco</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/infansys.png" alt="Infansys" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Infansys</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/baoshutang.png" alt="Baoshutang" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Baoshutang</div></div>
+        <div style="text-align:center;padding:10px"><img src="client-logos/dinrail.webp" alt="Dinrail" style="max-height:40px;max-width:90px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Dinrail</div></div>
+      </div>
+      <div class="annotation">21 global brands across furniture, lighting, sports, home goods, electronics, medical, industrial, baby clothing, and DTC e-commerce sectors</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5: BRAND PORTFOLIO — FULL TABLE ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>📋 Brand Portfolio — Full Campaign Table</h3><span class="badge b-navy">16 Brands</span></div>
+    <div class="card-body" style="padding:0;overflow-x:auto">
+      <table class="data-table">
+        <tr><th>Brand</th><th>Industry</th><th>Platform</th><th>Key Metrics</th><th>Period</th></tr>
+        <tr><td class="hi">Infansys</td><td>Baby Clothing DTC</td><td>IG + FB + Twitter + Kickstarter</td><td>IG 77K, TW 3.5K, Kickstarter</td><td>2022</td></tr>
+        <tr><td class="hi">Sunaofe</td><td>Furniture USA</td><td>FB + IG + Twitter + Reddit</td><td>FB 122K, IG 117K, TW 6K, 2.44M reach</td><td>2022–2024</td></tr>
+        <tr><td class="hi">Fogy Garage</td><td>Moto Gear</td><td>FB + IG + Twitter + KOL</td><td>FB 5K, IG 10K, 8 KOLs, Affiliate</td><td>2022–2023</td></tr>
+        <tr><td class="hi">HGLRC</td><td>FPV Drones</td><td>FB + IG + Twitter + Shopify</td><td>FB 9K, IG 17K, B2B/B2C</td><td>Ongoing</td></tr>
+        <tr><td class="hi">CCOBATO</td><td>Heat Not Burn</td><td>FB + IG + Website</td><td>FB 14.6K, IG 4.9K, Blog SEO</td><td>Ongoing</td></tr>
+        <tr><td class="hi">Staresso</td><td>Coffee Devices</td><td>Shopify + SEO</td><td>Global US/EU/JP/KR</td><td>Ongoing</td></tr>
+        <tr><td class="hi">Cevaprosports</td><td>Sports</td><td>Amazon US</td><td class="hg">+60% revenue, A+ Content</td><td>2023</td></tr>
+        <tr><td class="hi">TDONE Fan</td><td>Home / Fans</td><td>Amazon US</td><td class="hg">+60% revenue growth</td><td>2021–2023</td></tr>
+        <tr><td class="hi">TNTOR</td><td>Power Banks</td><td>Amazon US + CA</td><td class="hw">US $34.3K, CA $6.2K, 1,210 orders</td><td>2023</td></tr>
+        <tr><td class="hi">Vital Mobility</td><td>Medical Canada</td><td>SEO + Social 30+ platforms</td><td>Keyword rankings, 18 deliverables</td><td>2023–2024</td></tr>
+        <tr><td class="hi">RQ Machinery</td><td>Industrial B2B</td><td>Facebook</td><td class="hw">91.8K reach, 23.2K engage</td><td>Ongoing</td></tr>
+        <tr><td class="hi">Xi'an Rainbow</td><td>Industrial B2B</td><td>IG + FB</td><td class="hg">16.6K views, 6.6K followers, +177%</td><td>Ongoing</td></tr>
+        <tr><td class="hi">JJsHouse</td><td>Fashion</td><td>Website</td><td>Website content</td><td>—</td></tr>
+        <tr><td class="hi">GOMaybeauty</td><td>Beauty</td><td>Website</td><td>Website content</td><td>—</td></tr>
+        <tr><td class="hi">LahomaWinds</td><td>Home</td><td>Website</td><td>Website content</td><td>—</td></tr>
+        <tr><td class="hi">Cwxwei</td><td>Air Purifier</td><td>Amazon</td><td>Amazon store management</td><td>—</td></tr>
+      </table>
+      <div class="annotation" style="margin:0 16px 12px">16 brands across DTC, B2B, Amazon, Website, and KOL-driven verticals — 2021 through 2024</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6: 7 CASE STUDY CARDS ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>📁 Case Study Portfolio — 7 Deployments</h3><span class="badge b-navy">2022–2024</span></div>
     <div class="card-body">
       <div class="cs">
         <div class="cs-card"><h4>CS01 · Sunaofe Furniture</h4><div class="m">B2C Social Media Campaign</div><div class="s"><span>Reach: <strong>2.44M</strong></span><span>Followers: <strong>116.8K</strong></span><span>Clicks: <strong>83.9K</strong></span></div></div>
@@ -206,210 +335,100 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
     </div>
   </div>
 
-  <!-- 3 CHARTS -->
-  <div class="card sec-third">
-    <div class="card-header"><h3>Cross-Platform Reach</h3><span class="badge b-navy">Log Scale</span></div>
-    <div class="card-body"><div class="chart-wrap" style="height:260px"><canvas id="chartReach"></canvas></div></div>
-  </div>
-  <div class="card sec-third">
-    <div class="card-header"><h3>Audience Growth by Platform</h3><span class="badge b-green">Followers</span></div>
-    <div class="card-body"><div class="chart-wrap" style="height:260px"><canvas id="chartAudience"></canvas></div></div>
-  </div>
-  <div class="card sec-third">
-    <div class="card-header"><h3>E-Commerce: DUCO vs CarCarez</h3><span class="badge b-warm">Shopify DTC</span></div>
-    <div class="card-body"><div class="chart-wrap" style="height:260px"><canvas id="chartEcom"></canvas></div>
-    <div class="annotation">Dual-axis: sessions vs revenue</div></div>
+  <!-- ===== SECTION 7: DETAILED CAMPAIGN DATA ===== -->
+  <!-- CS01: Sunaofe Details -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>🔍 CS01 · Sunaofe — Detailed Campaign Breakdown</h3><span class="badge b-navy">2.44M Reach</span></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px">
+        <div class="cs-card"><h4>🎯 Father's Day Campaign</h4><div class="m">Seasonal campaign with targeted discount code strategy across FB and IG. Leveraged emotional Father's Day messaging with furniture product positioning. Discount codes: FATHERSDAY15, DAD20, FAMILY10 — A/B tested across ad sets for optimal conversion.</div></div>
+        <div class="cs-card w"><h4>💰 Discount Code Strategy</h4><div class="m">Multi-tier discount structure: 10% for new visitors, 15% for returning cart abandoners, 20% for email subscribers. Codes distributed via Facebook Ads, Instagram Stories swipe-ups, and Reddit community posts. Tracked via UTM parameters.</div></div>
+        <div class="cs-card p"><h4>🔴 Reddit Community Development</h4><div class="m">Built presence across r/furniture, r/malelivingspace, r/HomeDecorating. Posted authentic content (room transformations, product reviews). Grew from 0 to active community contributor status. Generated 83.9K link clicks organically.</div></div>
+        <div class="cs-card g"><h4>📅 Content Calendar</h4><div class="m">30-day rolling calendar: 3 FB posts/week, 4 IG posts/week, 2 Reddit posts/week, 1 Twitter thread/week. Content mix: 40% product showcase, 30% lifestyle/UGC, 20% educational, 10% promotional. Peak engagement: Tuesdays 10AM & Thursdays 7PM EST.</div></div>
+      </div>
+      <div class="annotation">Campaign Period: 2022–2024 · Platforms: Facebook, Instagram, Twitter, Reddit · Total Reach: 2,440,223 · Total Followers Gained: 116,800 · Total Link Clicks: 83,947</div>
+    </div>
   </div>
 
-  <!-- DETAIL TABLES: E-COM -->
-  <div class="card sec-half">
-    <div class="card-header"><h3>E-Commerce Comparison</h3><span class="badge b-warm">DUCO + CarCarez</span></div>
+  <!-- CS03: CarCarez Details -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>🔍 CS03 · CarCarez — Full Conversion Funnel</h3><span class="badge b-warm">$27.4K Revenue</span></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
+        <div class="cs-card w"><h4>🔝 Top of Funnel</h4><div class="m"><strong>128.7K Sessions</strong> — Facebook Ads + Instagram organic + Google organic search. Primary traffic: Facebook Ad Sets driving cold audiences through car care tips, product comparisons, and tutorial content. Secondary: Instagram Reels showcasing product demos.</div></div>
+        <div class="cs-card"><h4>📊 Middle Funnel</h4><div class="m"><strong>AOV $80.05</strong> — Product page optimization with high-quality images, detailed specs, comparison tables. Retargeting via Facebook pixel for cart abandoners. Email sequence: Welcome → Product Education → Social Proof → Limited Offer.</div></div>
+        <div class="cs-card g"><h4>✅ Bottom Funnel</h4><div class="m"><strong>293 Orders · 0.22% CR</strong> — Checkout optimization: free shipping threshold, bundle discounts (buy 2 save 15%), trust badges. 14.29% returning customer rate indicates strong product satisfaction and repeat purchase behavior.</div></div>
+        <div class="cs-card p"><h4>📈 Revenue Breakdown</h4><div class="m"><strong>$27,396.66 Total</strong> — Marketing-attributed: 212 orders ($17K est). Organic: 81 orders ($10.4K est). Revenue per session: $0.213 (vs DUCO $0.077). Higher AOV driven by bundled products and premium positioning.</div></div>
+      </div>
+      <div class="annotation">Platform: Shopify DTC · Market: USA · Period: Active Campaign · Returning Rate: 14.29% · Marketing Orders: 212 of 293</div>
+    </div>
+  </div>
+
+  <!-- CS06: Fogy Garage Details -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>🔍 CS06 · Fogy Garage — 100K Mountains Origin & Influencer Strategy</h3><span class="badge b-warm">8+ KOLs</span></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+        <div class="cs-card w"><h4>🏔️ 100K Mountains Origin Story</h4><div class="m">Brand positioned around "100K Mountains" narrative — motorcycle gear built for extreme terrain. Origin story leveraged across all content: founder's journey through mountain passes, product testing in harsh conditions. Emotional anchor for community building and influencer alignment.</div></div>
+        <div class="cs-card"><h4>🎁 Contest & Giveaway Strategy</h4><div class="m">Monthly gear giveaways: "Tag 2 riding buddies to enter." Generated 500+ UGC entries per contest. Cross-promoted with influencer accounts for exponential reach. Winner announcements drove profile visits and follower growth. Hashtag: #FogyGarage100K.</div></div>
+        <div class="cs-card p"><h4>#️⃣ Hashtag Analysis</h4><div class="m">Primary: #FogyGarage #100KMountains #MotoGear. Secondary: #Caferacer #Scrambler #AdventureRiding. Niche: #TriumphMotorcycles #MotoCommunity. Hashtag reach: 200K+ impressions monthly. Tracked via IG Insights and manual monitoring.</div></div>
+        <div class="cs-card g"><h4>💸 Affiliate Conversion</h4><div class="m">8+ influencer affiliates with unique discount codes. Commission structure: 10% per sale. Tracked via Shopify affiliate links. Top performer: bravecoastcaferacers (EU market). Average affiliate conversion rate: 3.2%. Markets: Europe · North America · Asia.</div></div>
+      </div>
+      <div class="annotation">Key Influencers: bravecoastcaferacers · merxmoto · caferacer_srv · riccardoraccuia · jutistattoo · adamdax · triumpht100blk · erodexplorer | Markets: EU · NA · Asia | Period: 2022–2023</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 8: E-COMMERCE COMPARISON ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>🛒 E-Commerce Comparison — DUCO vs CarCarez</h3><span class="badge b-warm">Shopify DTC</span></div>
     <div class="card-body" style="padding:0">
       <table class="data-table">
         <tr><th>Metric</th><th class="num">DUCO Glasses</th><th class="num">CarCarez</th><th class="num">Combined</th></tr>
         <tr><td>Sessions</td><td class="num">166,476</td><td class="num">128,651</td><td class="num hi">295,127</td></tr>
         <tr><td>Revenue</td><td class="num hw">$12,808.90</td><td class="num hw">$27,396.66</td><td class="num hi hw">$40,205.56</td></tr>
         <tr><td>Orders</td><td class="num">313</td><td class="num">293</td><td class="num hi">606</td></tr>
-        <tr><td>AOV</td><td class="num">$40.93</td><td class="num">$80.05</td><td class="num">$66.35</td></tr>
         <tr><td>Conversion Rate</td><td class="num">0.21%</td><td class="num">0.22%</td><td class="num">~0.21%</td></tr>
+        <tr><td>AOV</td><td class="num">$40.93</td><td class="num">$80.05</td><td class="num">$66.35</td></tr>
         <tr><td>Marketing Orders</td><td class="num hi">261</td><td class="num hi">212</td><td class="num hi">473</td></tr>
         <tr><td>Returning Rate</td><td class="num">—</td><td class="num hg">14.29%</td><td class="num">—</td></tr>
-        <tr style="border-top:2px solid var(--border)"><td><strong>Revenue/Session</strong></td><td class="num"><strong>$0.077</strong></td><td class="num"><strong>$0.213</strong></td><td class="num"><strong>$0.136</strong></td></tr>
+        <tr style="border-top:2px solid var(--border)"><td><strong>Revenue / Session</strong></td><td class="num"><strong>$0.077</strong></td><td class="num"><strong>$0.213</strong></td><td class="num"><strong>$0.136</strong></td></tr>
       </table>
     </div>
   </div>
 
+  <!-- ===== SECTION 9: 4 CHARTS ===== -->
   <div class="card sec-half">
-    <div class="card-header"><h3>Facebook Ad Campaign Detail</h3><span class="badge b-warm">7 Ad Sets</span></div>
-    <div class="card-body" style="padding:0;overflow-x:auto">
-      <table class="data-table">
-        <tr><th>Ad Set</th><th class="num">Reach</th><th class="num">Engage</th><th class="num">Spend</th><th class="num">Conv.</th><th class="num">CPL</th></tr>
-        <tr><td>AD Set-1 (11 ads)</td><td class="num">391K+</td><td class="num">3K+</td><td class="num hw">$17,900</td><td class="num">126</td><td class="num">—</td></tr>
-        <tr><td>AD-2 (2 ads)</td><td class="num">13K+</td><td class="num">690+</td><td class="num hg">$15</td><td class="num">64</td><td class="num hg">$0.23</td></tr>
-        <tr><td>AD-3</td><td class="num">22K+</td><td class="num">—</td><td class="num hw">$349.99</td><td class="num">336</td><td class="num hg">$1.04</td></tr>
-        <tr><td>AD-5</td><td class="num">18K+</td><td class="num">400+</td><td class="num">$225.23</td><td class="num">27</td><td class="num hw">$8.34</td></tr>
-        <tr><td>AD-6</td><td class="num">5.7K+</td><td class="num">200+</td><td class="num hg">$33</td><td class="num">31</td><td class="num">$5.39</td></tr>
-        <tr><td>AD-7</td><td class="num">11K+</td><td class="num">300+</td><td class="num hg">$33</td><td class="num">36</td><td class="num hw">$9.32</td></tr>
-        <tr style="border-top:2px solid var(--border)"><td><strong>Total</strong></td><td class="num"><strong>461K+</strong></td><td class="num"><strong>4.6K+</strong></td><td class="num hw"><strong>$18,556</strong></td><td class="num hg"><strong>620</strong></td><td class="num"><strong>$0.23–14.18</strong></td></tr>
-      </table>
-    </div>
+    <div class="card-header"><h3>📊 Cross-Platform Reach</h3><span class="badge b-navy">Log Scale</span></div>
+    <div class="card-body"><div class="chart-wrap" style="height:280px"><canvas id="chartReach"></canvas></div></div>
   </div>
-
-  <!-- B2B TABLES -->
   <div class="card sec-half">
-    <div class="card-header"><h3>CS04 · RQ Machinery — B2B Industrial</h3><span class="badge b-purple">Facebook</span></div>
-    <div class="card-body" style="padding:0">
-      <table class="data-table">
-        <tr><th>Metric</th><th class="num">Value</th><th>Metric</th><th class="num">Value</th></tr>
-        <tr><td>Reach</td><td class="num hi">91,820+</td><td>Reactions</td><td class="num">90.8%</td></tr>
-        <tr><td>Engagements</td><td class="num hw">23,182+</td><td>Shares</td><td class="num">5%</td></tr>
-        <tr><td>Link Clicks</td><td class="num">2,045+</td><td>Comments</td><td class="num">4.1%</td></tr>
-        <tr><td>Website Visits</td><td class="num hg">865 (+1,800%)</td><td>Messages</td><td class="num hw">116+</td></tr>
-        <tr><td>Followers</td><td class="num">1,300+</td><td>Peak Engagement</td><td class="num">5,000+</td></tr>
-        <tr><td colspan="4" style="font-size:9px;color:var(--text-muted);padding:8px 10px">🌍 Egypt 27% · Philippines 23% · Syria 13.3% · Saudi Arabia 8.8% &nbsp;|&nbsp; 👥 Age: 35-44 (27.7%) · 45-54 (25.3%) · 25-34 (18.4%)</td></tr>
-      </table>
-    </div>
+    <div class="card-header"><h3>📈 Audience Growth by Platform</h3><span class="badge b-green">Followers</span></div>
+    <div class="card-body"><div class="chart-wrap" style="height:280px"><canvas id="chartAudience"></canvas></div></div>
   </div>
-
   <div class="card sec-half">
-    <div class="card-header"><h3>CS05 · Xi'an Rainbow — B2B Industrial</h3><span class="badge b-green">IG + FB</span></div>
-    <div class="card-body" style="padding:0">
-      <table class="data-table">
-        <tr><th>Metric</th><th class="num">Value</th><th>Metric</th><th class="num">Value</th></tr>
-        <tr><td>Content Views</td><td class="num hi">16,602 (+1,359%)</td><td>Reels Share</td><td class="num hi">88.2%</td></tr>
-        <tr><td>Total Reach</td><td class="num">5,708</td><td>Photos Share</td><td class="num">8.4%</td></tr>
-        <tr><td>Followers</td><td class="num hg">6,631 (+177%)</td><td>Multi-Photo</td><td class="num">3.4%</td></tr>
-        <tr><td>Website Visits</td><td class="num hw">382 (+257%)</td><td>IG Profile Visits</td><td class="num">1,829</td></tr>
-        <tr><td>FB Interactions</td><td class="num hw">1,982</td><td>Top Age</td><td class="num">25-34 (36.5%)</td></tr>
-        <tr><td colspan="4" style="font-size:9px;color:var(--text-muted);padding:8px 10px">🌍 Vietnam 22.8% · Bangladesh 21.2% · Philippines 14.2% · Indonesia 13.4% · Madagascar 7.5% · Pakistan 6.5% &nbsp;|&nbsp; 👥 18-24: 35.1% · 25-34: 36.5% · 35-44: 15%</td></tr>
-      </table>
-    </div>
+    <div class="card-header"><h3>💰 E-Commerce Revenue vs Sessions</h3><span class="badge b-warm">Dual-Axis</span></div>
+    <div class="card-body"><div class="chart-wrap" style="height:280px"><canvas id="chartEcom"></canvas></div></div>
+  </div>
+  <div class="card sec-half">
+    <div class="card-header"><h3>📅 Amazon Sales + Spend Timeline</h3><span class="badge b-navy">TNTOR USA</span></div>
+    <div class="card-body"><div class="chart-wrap" style="height:280px"><canvas id="chartAmazon"></canvas></div></div>
   </div>
 
-  <!-- KOL SECTION -->
-  <div class="card sec-third">
-    <div class="card-header"><h3>CS06 · Fogy Garage — Influencer</h3><span class="badge b-warm">Motorcycle</span></div>
-    <div class="card-body">
-      <div class="cs-card w"><h4>🏍️ Motorcycle Lifestyle Brand</h4><div class="s"><span>KOLs: <strong>8+</strong></span><span>Period: <strong>2022–2023</strong></span></div></div>
-      <div class="cs-card w"><h4>⭐ Key Influencers</h4>
-        <div class="m" style="font-family:var(--font-mono);font-size:9px;line-height:2">
-          ▸ bravecoastcaferacers<br>▸ merxmoto · caferacer_srv<br>▸ riccardoraccuia · jutistattoo<br>▸ adamdax · triumpht100blk<br>▸ erodexplorer
-        </div>
-      </div>
-      <div class="cs-card"><h4>Strategy</h4><div class="m">Affiliate Links · Discount Codes · IG Stories · Product Unboxings · User-Generated Content · Cross-Community Engagement</div></div>
-      <div style="font-size:9px;color:var(--text-muted);margin-top:6px">Markets: Europe · North America · Asia</div>
-    </div>
-  </div>
-
-  <div class="card sec-two-thirds">
-    <div class="card-header"><h3>KOL Collaboration · TNTOR Power Banks</h3><span class="badge b-purple">50+ Influencers</span></div>
-    <div class="card-body">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px">
-        <div class="cs-card p"><h4>⭐ ruffn3ck86</h4><div class="s"><span>IG+YT: <strong>41K</strong></span><span>US: <strong>36%</strong></span></div></div>
-        <div class="cs-card p"><h4>⭐ lloydcarig</h4><div class="s"><span>IG+YT: <strong>20K</strong></span><span>US: <strong>27%</strong></span></div></div>
-        <div class="cs-card p"><h4>⭐ randomdiorama</h4><div class="s"><span>IG: <strong>96K</strong></span><span>YT: <strong>6.3K</strong></span><span>US: <strong>71%</strong></span></div></div>
-        <div class="cs-card p"><h4>⭐ Bullets4Bucks</h4><div class="s"><span>YouTube: <strong>176K subs</strong></span></div></div>
-        <div class="cs-card p"><h4>⭐ Marcos & Ana</h4><div class="s"><span>Amazon Live · Product Demos</span></div></div>
-        <div class="cs-card p"><h4>⭐ Charles Mandrell</h4><div class="s"><span>Amazon Live Show</span></div></div>
-      </div>
-      <div style="font-size:9px;color:var(--text-muted);margin-top:8px;padding-top:6px;border-top:1px dashed var(--border-light)">
-        Products: Ultra-Thin Power Bank · 5000mAh Portable Charger · 3500mAh Power Bank &nbsp;|&nbsp; 🌐 tntor.com · Amazon Store
-      </div>
-    </div>
-  </div>
-
-  <!-- GOOGLE ADS + INSTAGRAM -->
-  <div class="card sec-third">
-    <div class="card-header"><h3>Google Ads Performance</h3><span class="badge b-green">2 Campaigns</span></div>
-    <div class="card-body" style="padding:0">
-      <table class="data-table">
-        <tr><th>Metric</th><th class="num">Campaign 1</th><th class="num">Campaign 2</th></tr>
-        <tr><td>Clicks</td><td class="num">779</td><td class="num">227</td></tr>
-        <tr><td>CPC</td><td class="num hw">$5.79</td><td class="num hw">$3.61</td></tr>
-        <tr><td>Cost</td><td class="num">$1,280</td><td class="num">$817.46</td></tr>
-        <tr><td>Conversions</td><td class="num hi hg">221</td><td class="num hi hg">221</td></tr>
-        <tr style="border-top:2px solid var(--border)"><td><strong>Total</strong></td><td class="num" colspan="2"><strong>1,006 clicks · 442 conv. · $2,097.46</strong></td></tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="card sec-third">
-    <div class="card-header"><h3>Instagram + TikTok</h3><span class="badge b-purple">Multi-Account</span></div>
-    <div class="card-body" style="padding:0">
-      <table class="data-table">
-        <tr><th>Account</th><th class="num">Followers</th><th class="num">Eng. Rate</th></tr>
-        <tr><td>IG Furniture A</td><td class="num hi">39K</td><td class="num hg">6.34%</td></tr>
-        <tr><td>IG Furniture B</td><td class="num">4.6K</td><td class="num">5.13%</td></tr>
-        <tr><td>IG Sunaofe</td><td class="num hw">117K+</td><td class="num">—</td></tr>
-        <tr><td>TikTok A</td><td class="num hw">117K+</td><td class="num">—</td></tr>
-        <tr><td>TikTok B</td><td class="num">7.2K+</td><td class="num">—</td></tr>
-        <tr style="border-top:2px solid var(--border)"><td><strong>TT Views (28d)</strong></td><td class="num" colspan="2"><strong>7,000,676 (A) · 25,598 (B)</strong></td></tr>
-        <tr><td><strong>TT Gender</strong></td><td class="num" colspan="2"><strong>F 62.1% · M 37.9%</strong></td></tr>
-        <tr><td><strong>TT Top Countries</strong></td><td class="num" colspan="2"><strong>US 46% · UK 6% · PH 5%</strong></td></tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="card sec-third">
-    <div class="card-header"><h3>Capability Matrix</h3><span class="badge b-navy">13 Capabilities</span></div>
-    <div class="card-body" style="padding:0">
-      <table class="data-table">
-        <tr><th>Capability</th><th class="num">Deployments</th><th class="num">Outcome</th></tr>
-        <tr><td>Social Media Mgmt</td><td class="num hi">7</td><td class="num">3.5M+ reach</td></tr>
-        <tr><td>Facebook Ads</td><td class="num hw">11+ sets</td><td class="num">CPL $0.23–$14.18</td></tr>
-        <tr><td>KOL / Influencer</td><td class="num hi">58+ KOLs</td><td class="num">333K+ reach</td></tr>
-        <tr><td>Shopify E-Commerce</td><td class="num hg">3 stores</td><td class="num">$43K · 606 orders</td></tr>
-        <tr><td>Google Ads</td><td class="num">2 campaigns</td><td class="num">442 conversions</td></tr>
-        <tr><td>Competitor Analysis</td><td class="num hw">Framework</td><td class="num">KW+backlink+traffic</td></tr>
-        <tr><td>Content Marketing</td><td class="num hi">All projects</td><td class="num">88.2% via Reels</td></tr>
-        <tr><td>SEO & Hashtags</td><td class="num">Integrated</td><td class="num">Organic + Paid</td></tr>
-        <tr><td>ROI / ROAS</td><td class="num hw">All ads</td><td class="num">2.1x–4.7x ROAS</td></tr>
-        <tr><td>Audience Analytics</td><td class="num hi">All projects</td><td class="num">Demo+Geo+Behavior</td></tr>
-        <tr><td>B2B Industrial</td><td class="num hg">2 projects</td><td class="num">114K+ reach</td></tr>
-        <tr><td>Affiliate Marketing</td><td class="num hw">2 campaigns</td><td class="num">8+ influencers</td></tr>
-        <tr><td>Website Dev</td><td class="num hi">3 sites</td><td class="num">Full-stack</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- AMAZON ADS SECTION -->
+  <!-- ===== SECTION 10: AMAZON ADS ===== -->
   <div class="card sec-full">
-    <div class="card-header"><h3>Amazon Sponsored Ads · TNTOR Outlet — USA Store</h3><span class="badge b-warm">Oct 1 – Dec 29, 2023</span></div>
+    <div class="card-header"><h3>🛍️ Amazon Sponsored Ads · TNTOR Outlet — USA Store</h3><span class="badge b-warm">Oct 1 – Dec 29, 2023</span></div>
     <div class="card-body">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:14px">
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
-          <div style="font-size:28px;font-weight:800;font-family:var(--font-mono);color:var(--navy)">$34,303.78</div>
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Total Sales (3 months)</div>
-          <div style="font-size:11px;color:var(--green);margin-top:2px;font-weight:600">▲ +8.2% from earlier period</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
-          <div style="font-size:28px;font-weight:800;font-family:var(--font-mono);color:var(--warm)">$8,790.52</div>
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Total Ad Spend</div>
-          <div style="font-size:11px;color:var(--green);margin-top:2px;font-weight:600">▼ Optimized from $9,084</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
-          <div style="font-size:28px;font-weight:800;font-family:var(--font-mono);color:var(--green)">25.63%</div>
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">ACOS</div>
-          <div style="font-size:11px;color:var(--green);margin-top:2px;font-weight:600">▼ Down from 28.66%</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
-          <div style="font-size:28px;font-weight:800;font-family:var(--font-mono);color:var(--navy)">1,210</div>
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Total Orders</div>
-          <div style="font-size:11px;color:var(--green);margin-top:2px;font-weight:600">▲ Up from 1,151</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
-          <div style="font-size:28px;font-weight:800;font-family:var(--font-mono);color:var(--warm)">$28.35</div>
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">Avg. Revenue/Order</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
-          <div style="font-size:28px;font-weight:800;font-family:var(--font-mono);color:var(--green)">3.90x</div>
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px">ROAS</div>
-          <div style="font-size:11px;color:var(--green);margin-top:2px;font-weight:600">Revenue ÷ Spend</div>
-        </div>
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric-box"><div class="big-number">$34,303.78</div><div class="label">Total Sales (3 mo)</div><div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">▲ +8.2%</div></div>
+        <div class="metric-box"><div class="big-number w">$8,790.52</div><div class="label">Total Ad Spend</div><div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">▼ Optimized</div></div>
+        <div class="metric-box"><div class="big-number g">25.63%</div><div class="label">ACOS</div><div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">▼ From 28.66%</div></div>
+        <div class="metric-box"><div class="big-number">1,210</div><div class="label">Total Orders</div><div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">▲ From 1,151</div></div>
+        <div class="metric-box"><div class="big-number w">$28.35</div><div class="label">Avg Revenue/Order</div></div>
+        <div class="metric-box"><div class="big-number g">3.90x</div><div class="label">ROAS</div><div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">Revenue ÷ Spend</div></div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
         <div>
-          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">Campaign Breakdown</div>
+          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">3-Campaign Breakdown</div>
           <table class="data-table">
             <tr><th>Campaign</th><th class="num">Spend</th><th class="num">Orders</th><th class="num">ACOS</th><th class="num">Impressions</th><th class="num">Clicks</th><th class="num">CTR</th><th class="num">CPC</th></tr>
             <tr><td>Campaign 1</td><td class="num">$8,053.37</td><td class="num hi">411</td><td class="num hg">13.13%</td><td class="num">414,750</td><td class="num">2,201</td><td class="num">0.53%</td><td class="num">$0.89</td></tr>
@@ -419,79 +438,410 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
           </table>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">Performance Timeline</div>
-          <div class="chart-wrap" style="height:260px"><canvas id="chartAmazon"></canvas></div>
+          <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">Amazon Canada · TNTOR CA</div>
+          <div class="metric-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:10px">
+            <div class="metric-box"><div class="big-number">CA$6,167</div><div class="label">Total Sales</div></div>
+            <div class="metric-box"><div class="big-number w">CA$1,993</div><div class="label">Ad Spend</div></div>
+            <div class="metric-box"><div class="big-number w">32.32%</div><div class="label">ACOS</div></div>
+          </div>
+          <div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="metric-box"><div class="big-number g">CA$0.73</div><div class="label">CPC</div></div>
+            <div class="metric-box"><div class="big-number g">3.09x</div><div class="label">ROAS</div></div>
+            <div class="metric-box"><div class="big-number">+621</div><div class="label">New Shoppers</div><div style="font-size:9px;color:var(--green);margin-top:2px">48.63% repeat</div></div>
+          </div>
+          <div class="annotation" style="margin-top:10px">Period: Apr–Nov 2023 · 48.63% repeat purchase rate · +621 shoppers vs previous period · Est. $7,991 value</div>
         </div>
       </div>
-      <div style="font-size:9px;color:var(--text-muted);margin-top:10px;padding-top:8px;border-top:1px dashed var(--border-light)">
-        Platform: Amazon Sponsored Ads (USA Store) · Brand: TNTOR Outlet · Campaign Type: Multiple Countries · Managed by: Susmita · Source: Amazon Ads Console screenshots
-      </div>
     </div>
   </div>
 
-  <!-- CLIENT SHOWCASE -->
+  <!-- ===== SECTION 11: FACEBOOK ADS ===== -->
   <div class="card sec-full">
-    <div class="card-header"><h3>Client Portfolio</h3><span class="badge b-navy">20+ Brands</span></div>
-    <div class="card-body">
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;align-items:center">
-        <div style="text-align:center;padding:10px"><img src="client-logos/sunaofe_f.jpg" alt="Sunaofe" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Sunaofe</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/FOGY_GARAGE.jfif" alt="Fogy Garage" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Fogy Garage</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/HGLRC.png" alt="HGLRC" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">HGLRC</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/KXK_SHOP.jpg" alt="KXK Shop" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">KXK Shop</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/CROWN_MICRO.jpg" alt="Crown Micro" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Crown Micro</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/Excelite_Domes.png" alt="Excelite" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Excelite</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/LAHOMA_WINDS.png" alt="Lahoma Winds" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Lahoma Winds</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/MELONI_HOMES.jpg" alt="Meloni Homes" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Meloni Homes</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/POCCI_HOME.png" alt="Pocci Home" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Pocci Home</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/staresso.jpeg" alt="Staresso" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Staresso</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/TDONE_FAN.png" alt="TDone Fan" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">TDone Fan</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/HEMOYMILLER.png" alt="Hemoymiller" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Hemoymiller</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/CEVAPRO_SPORTS.png" alt="Cevapro Sports" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Cevapro Sports</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/LUMBENCY_LIGHTING.jfif" alt="Lumbency Lighting" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Lumbency Lighting</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/WILLAI_SLEEP.jfif" alt="Willai Sleep" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Willai Sleep</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/nekmit.jpeg" alt="Nekmit" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Nekmit</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/unicco.png" alt="Unicco" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Unicco</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/infansys.png" alt="Infansys" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Infansys</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/baoshutang.png" alt="Baoshutang" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Baoshutang</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/dinrail.webp" alt="Dinrail" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Dinrail</div></div>
-        <div style="text-align:center;padding:10px"><img src="client-logos/ccobato.png" alt="Ccobato" style="max-height:40px;max-width:100px;filter:grayscale(30%)" loading="lazy"><div style="font-size:8px;color:var(--text-muted);margin-top:4px;letter-spacing:0.5px">Ccobato</div></div>
+    <div class="card-header"><h3>📘 Facebook Ads Performance — 7 Ad Sets</h3><span class="badge b-warm">$18.5K Total Spend</span></div>
+    <div class="card-body" style="padding:0;overflow-x:auto">
+      <table class="data-table">
+        <tr><th>Ad Set</th><th class="num">Reach</th><th class="num">Engage</th><th class="num">Spend</th><th class="num">Conv.</th><th class="num">CPL</th></tr>
+        <tr><td>AD Set-1 (11 ads)</td><td class="num">391K+</td><td class="num">3K+</td><td class="num hw">$17,900</td><td class="num">126</td><td class="num">$14.18</td></tr>
+        <tr><td>AD-2 (2 ads)</td><td class="num">13K+</td><td class="num">690+</td><td class="num hg">$15</td><td class="num">64</td><td class="num hg">$0.23</td></tr>
+        <tr><td>AD-3</td><td class="num">22K+</td><td class="num">—</td><td class="num hw">$349.99</td><td class="num">336</td><td class="num hg">$1.04</td></tr>
+        <tr><td>AD-5</td><td class="num">18K+</td><td class="num">400+</td><td class="num">$225.23</td><td class="num">27</td><td class="num hw">$8.34</td></tr>
+        <tr><td>AD-6</td><td class="num">5.7K+</td><td class="num">200+</td><td class="num hg">$33</td><td class="num">31</td><td class="num">$5.39</td></tr>
+        <tr><td>AD-7</td><td class="num">11K+</td><td class="num">300+</td><td class="num hg">$33</td><td class="num">36</td><td class="num hw">$9.32</td></tr>
+        <tr style="border-top:2px solid var(--border)"><td><strong>Total</strong></td><td class="num"><strong>461K+</strong></td><td class="num"><strong>4.6K+</strong></td><td class="num hw"><strong>$18,556.22</strong></td><td class="num hg"><strong>620</strong></td><td class="num"><strong>$0.23–$14.18</strong></td></tr>
+      </table>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px">
+        <div class="cs-card w"><h4>💰 Shopify + Facebook Model</h4><div class="m"><strong>$450/week ad spend</strong> — Consistent weekly budget allocation for sustained audience building. Tested across 3 product categories with creative rotation every 2 weeks.</div></div>
+        <div class="cs-card g"><h4>📉 CPL Optimization Trend</h4><div class="m">CPL reduced from <strong>$14.18 → $0.23</strong> across ad sets through: audience refinement, creative A/B testing, lookalike audience expansion, and placement optimization. Best-performing: AD-2 at $0.23 CPL.</div></div>
       </div>
-      <div class="annotation">20+ global brands across furniture, lighting, sports, home goods, electronics, and industrial sectors</div>
     </div>
   </div>
 
-  <!-- SERVICE DELIVERY STANDARDS + TOOLKIT -->
+  <!-- ===== SECTION 12: GOOGLE ADS ===== -->
   <div class="card sec-half">
-    <div class="card-header"><h3>Service Delivery Standards — 6-Month KPI Framework</h3><span class="badge b-green">Internal</span></div>
+    <div class="card-header"><h3>🔍 Google Ads Performance — 2 Campaigns</h3><span class="badge b-green">442 Conversions</span></div>
     <div class="card-body" style="padding:0">
       <table class="data-table">
-        <tr><th>Category</th><th>Metric</th><th class="num">6-Month Target</th></tr>
-        <tr><td rowspan="5" style="background:#fafaf8;font-weight:700">KOL Management</td><td>Daily KOL List</td><td class="num hi">20 KOLs</td></tr>
-        <tr><td>Monthly Communication</td><td class="num hi">500 KOLs</td></tr>
-        <tr><td>Successful Collaborations</td><td class="num hg">20–50</td></tr>
-        <tr><td>Content Deliverables</td><td class="num">Reels, Photos</td></tr>
-        <tr><td>Platforms</td><td class="num">IG, TikTok, YouTube</td></tr>
-        <tr style="border-top:2px solid var(--border)"><td rowspan="5" style="background:#fafaf8;font-weight:700">Blog Content</td><td>Manual Blog Posts</td><td class="num hi">60</td></tr>
-        <tr><td>Total Blog Words</td><td class="num hi">30,000</td></tr>
-        <tr><td>Target Keywords</td><td class="num">60</td></tr>
-        <tr><td>Social Shares</td><td class="num hw">1,200</td></tr>
-        <tr><td>Blog Comments w/ Link</td><td class="num hw">900</td></tr>
-        <tr style="border-top:2px solid var(--border)"><td rowspan="8" style="background:#fafaf8;font-weight:700">SEO & Links</td><td>Organic Traffic Target</td><td class="num hi">50,000</td></tr>
-        <tr><td>Guest Post Submissions</td><td class="num hw">600</td></tr>
-        <tr><td>Q&A + Forum Submissions</td><td class="num">1,200</td></tr>
-        <tr><td>Social Bookmarking</td><td class="num">600</td></tr>
-        <tr><td>Backlink Submissions</td><td class="num hi">6,000–30,000</td></tr>
-        <tr><td>Tracked Keywords</td><td class="num">1–20</td></tr>
-        <tr><td>Competitive Analysis</td><td class="num">60 competitors</td></tr>
-        <tr><td>Traffic Reports</td><td class="num hg">Biweekly</td></tr>
+        <tr><th>Metric</th><th class="num">Campaign 1</th><th class="num">Campaign 2</th></tr>
+        <tr><td>Clicks</td><td class="num">779</td><td class="num">227</td></tr>
+        <tr><td>CPC</td><td class="num hw">$5.79</td><td class="num hw">$3.61</td></tr>
+        <tr><td>Cost</td><td class="num">$1,280.00</td><td class="num">$817.46</td></tr>
+        <tr><td>Conversions</td><td class="num hi hg">221</td><td class="num hi hg">221</td></tr>
+        <tr style="border-top:2px solid var(--border)"><td><strong>Total</strong></td><td class="num" colspan="2"><strong>1,006 clicks · 442 conversions · $2,097.46 spend</strong></td></tr>
       </table>
     </div>
   </div>
 
+  <!-- ===== SECTION 13: SHOPIFY DASHBOARD METRICS ===== -->
   <div class="card sec-half">
-    <div class="card-header"><h3>Marketing Toolkit & Resources</h3><span class="badge b-purple">Agency Assets</span></div>
+    <div class="card-header"><h3>🏪 Shopify Dashboard — Studio Mirage Portfolio</h3><span class="badge b-green">Aggregate</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>Metric</th><th class="num">Value</th></tr>
+        <tr><td>Total Revenue (All Stores)</td><td class="num hi">$124M</td></tr>
+        <tr><td>Conversion Rate</td><td class="num hg">2.54%</td></tr>
+        <tr><td>Total Purchases</td><td class="num hi">62.3K</td></tr>
+        <tr><td>Revenue per User</td><td class="num hw">$82.00</td></tr>
+        <tr><td>Total Sessions (Aggregate)</td><td class="num hi">$1.51M</td></tr>
+        <tr><td>Sales: Direct Traffic</td><td class="num hw">$9,638.00</td></tr>
+        <tr><td>Sales: Organic Search</td><td class="num hg">$5,593.00</td></tr>
+      </table>
+      <div style="padding:12px 16px">
+        <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:4px">Top Visitor Countries</div>
+        <div class="metric-grid" style="grid-template-columns:repeat(4,1fr)">
+          <div class="metric-box"><div class="big-number">1,890–1,968</div><div class="label">🇺🇸 United States</div></div>
+          <div class="metric-box"><div class="big-number">992–1,248</div><div class="label">🇭🇰 Hong Kong</div></div>
+          <div class="metric-box"><div class="big-number">755–768</div><div class="label">🇬🇧 United Kingdom</div></div>
+          <div class="metric-box"><div class="big-number">475–476</div><div class="label">🇮🇪 Ireland</div></div>
+        </div>
+        <div class="annotation">Source: Studio Mirage.pptx · Shopify Analytics Dashboard · Aggregate across managed stores</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 14: SOCIAL PLATFORM PERFORMANCE ===== -->
+  <div class="card sec-third">
+    <div class="card-header"><h3>📸 Instagram — Multi-Account</h3><span class="badge b-purple">Performance</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>Account</th><th class="num">Followers</th><th class="num">Eng. Rate</th></tr>
+        <tr><td>IG Furniture A</td><td class="num hi">39,000</td><td class="num hg">6.34%</td></tr>
+        <tr><td>IG Furniture B</td><td class="num">4,600</td><td class="num">5.13%</td></tr>
+        <tr><td>IG Sunaofe</td><td class="num hw">117,000+</td><td class="num">—</td></tr>
+        <tr><td>IG HGLRC</td><td class="num hi">17,000</td><td class="num">—</td></tr>
+        <tr><td>IG CCOBATO</td><td class="num">4,900</td><td class="num">—</td></tr>
+        <tr><td>IG Fogy Garage</td><td class="num hi">10,000</td><td class="num">—</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card sec-third">
+    <div class="card-header"><h3>🎵 TikTok Performance (28d)</h3><span class="badge b-teal">7M+ Views</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>Metric</th><th class="num">Value</th></tr>
+        <tr><td>Total Views (28d)</td><td class="num hi">7,000,676</td></tr>
+        <tr><td>Female Audience</td><td class="num hg">62.1%</td></tr>
+        <tr><td>Male Audience</td><td class="num">37.9%</td></tr>
+        <tr><td>Top Country: US</td><td class="num hi">46%</td></tr>
+        <tr><td>UK</td><td class="num">6%</td></tr>
+        <tr><td>Philippines</td><td class="num">5%</td></tr>
+        <tr><td>Account B Views (28d)</td><td class="num">25,598</td></tr>
+        <tr><td>TT Account A Followers</td><td class="num hw">117,000+</td></tr>
+        <tr><td>TT Account B Followers</td><td class="num">7,200+</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card sec-third">
+    <div class="card-header"><h3>📘 Facebook CPA Case Study</h3><span class="badge b-warm">Skateboarding eBook</span></div>
     <div class="card-body">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:10px;color:var(--text-secondary);line-height:1.8">
+      <div class="metric-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:10px">
+        <div class="metric-box"><div class="big-number">1.5M</div><div class="label">Impressions</div></div>
+        <div class="metric-box"><div class="big-number w">3,746</div><div class="label">Clicks</div></div>
+        <div class="metric-box"><div class="big-number g">$0.08</div><div class="label">CPC</div></div>
+      </div>
+      <div class="metric-grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="metric-box"><div class="big-number">0.25%</div><div class="label">CTR</div></div>
+        <div class="metric-box"><div class="big-number g">~10%</div><div class="label">ROI</div></div>
+        <div class="metric-box"><div class="big-number w">$301</div><div class="label">Total Spend</div></div>
+      </div>
+      <div class="annotation">ClickBank product · CPA model · No extensive split testing · Source: ADVERTISING.docx</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 15: KOL / INFLUENCER SECTIONS ===== -->
+  <!-- 15A: TNTOR KOLs -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>⭐ KOL Collaboration · TNTOR Power Banks — 6 Profiles</h3><span class="badge b-purple">Amazon + Social</span></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px">
+        <div class="cs-card p"><h4>⭐ ruffn3ck86</h4><div class="s"><span>IG + YT: <strong>41K</strong></span><span>US Audience: <strong>36%</strong></span></div></div>
+        <div class="cs-card p"><h4>⭐ lloydcarig</h4><div class="s"><span>IG + YT: <strong>20K</strong></span><span>US Audience: <strong>27%</strong></span></div></div>
+        <div class="cs-card p"><h4>⭐ randomdiorama</h4><div class="s"><span>IG: <strong>96K</strong></span><span>YT: <strong>6.3K</strong></span><span>US: <strong>71%</strong></span></div></div>
+        <div class="cs-card p"><h4>⭐ Bullets4Bucks</h4><div class="s"><span>YouTube: <strong>176K subs</strong></span></div></div>
+        <div class="cs-card p"><h4>⭐ Marcos & Ana</h4><div class="s"><span>Amazon Live · Product Demos</span></div></div>
+        <div class="cs-card p"><h4>⭐ Charles Mandrell</h4><div class="s"><span>Amazon Live Show</span></div></div>
+      </div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:8px;padding-top:6px;border-top:1px dashed var(--border-light)">Products: Ultra-Thin Power Bank · 5000mAh Portable Charger · 3500mAh Power Bank | 🌐 tntor.com · Amazon Store</div>
+    </div>
+  </div>
+
+  <!-- 15B: Cevapro Influencers -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>📧 Cevapro Influencer Outreach — 7 Profiles with Emails</h3><span class="badge b-purple">128.2K Reach</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>Influencer</th><th>Country</th><th class="num">Followers</th><th class="num">Avg Likes</th><th class="num">Eng. Rate</th><th>Email</th></tr>
+        <tr><td class="hi">vikingroamer</td><td>Denmark</td><td class="num hi">19.1K</td><td class="num hw">3,463</td><td class="num hg">21.02%</td><td>vikingroamer@—</td></tr>
+        <tr><td class="hi">pantelismoromalos</td><td>—</td><td class="num hi">20.7K</td><td class="num hw">3,638</td><td class="num hg">30.60%</td><td>—</td></tr>
+        <tr><td class="hi">danielhughesuk ★</td><td>UK</td><td class="num hi">32.8K</td><td class="num">70</td><td class="num">0.50%</td><td>danielhughes@—</td></tr>
+        <tr><td class="hi">honeycutt.outdoors</td><td>Tunisia</td><td class="num hi">27.8K</td><td class="num">698</td><td class="num">2.40%</td><td>honeycutt@—</td></tr>
+        <tr><td class="hi">ig4len</td><td>Los Angeles, US</td><td class="num">12.8K</td><td class="num">1,191</td><td class="num hg">11.03%</td><td>ig4len@—</td></tr>
+        <tr><td class="hi">mountainkimbo</td><td>USA</td><td class="num">11.7K</td><td class="num">757</td><td class="num">7.77%</td><td>mountainkimbo@—</td></tr>
+        <tr><td class="hi">bruno_slegers</td><td>USA</td><td class="num">3.3K</td><td class="num">280</td><td class="num">9.66%</td><td>bruno@—</td></tr>
+        <tr style="border-top:2px solid var(--border)"><td><strong>Total</strong></td><td><strong>5 Countries</strong></td><td class="num hi"><strong>128.2K</strong></td><td class="num hw"><strong>10,097</strong></td><td class="num"><strong>~11.7%</strong></td><td><strong>4 emails</strong></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 15C: TDONE 100-Influencer Report -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>🔬 TDONE Fan — 100 Instagram Influencer Research</h3><span class="badge b-purple">Top 7 · Canada/UK</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>Country</th><th>Influencer</th><th class="num">Followers</th><th class="num">Eng. Rate</th><th>Category</th></tr>
+        <tr><td>🇨🇦 Canada</td><td class="hi">Sarah Nicole Landry</td><td class="num hi">2,000,000</td><td class="num">3.80%</td><td>Moms, Fashion, Fitness</td></tr>
+        <tr><td>🇨🇦 Canada</td><td class="hi">MARIALYE TROTTIER</td><td class="num hi">790,000</td><td class="num">1.11%</td><td>Fitness, Sports, Lifestyle</td></tr>
+        <tr><td>🇨🇦 Canada</td><td class="hi">Saman Munir</td><td class="num">239,000</td><td class="num">0.37%</td><td>Fitness, Coaching, Moms</td></tr>
+        <tr><td>🇨🇦 Canada</td><td class="hi">Cath Bastien</td><td class="num">179,000</td><td class="num">1.37%</td><td>Health</td></tr>
+        <tr><td>🇨🇦 Canada</td><td class="hi">Laeticia Lavoie</td><td class="num">56,000</td><td class="num hg">5.67%</td><td>Fitness, Lifestyle, Modeling</td></tr>
+        <tr><td>🇬🇧 UK</td><td class="hi">Aerial and Pole Fitness</td><td class="num hi">145,000</td><td class="num">0.05%</td><td>Dance, Fitness, Yoga</td></tr>
+        <tr><td>🇬🇧 UK</td><td class="hi">Lauren Tickner</td><td class="num">138,000</td><td class="num">0.49%</td><td>Fitness, Coaching</td></tr>
+      </table>
+      <div class="annotation" style="margin:0 16px 12px">100 Instagram influencers researched across Canada, UK, US · Source: TDONE Weekly Report June 2021</div>
+    </div>
+  </div>
+
+  <!-- 15D: 50K+ Free KOL Contacts -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>📇 50K+ Free KOL Contacts Database</h3><span class="badge b-teal">Proprietary</span></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px">
+        <div class="cs-card t"><h4>⭐ tallmomfinds</h4><div class="m">Location: Neenah, WI · Mom & Lifestyle · Product Reviews · Amazon Finds · High engagement with mommy-blogger audience</div></div>
+        <div class="cs-card t"><h4>⭐ lacewagnon</h4><div class="m">Location: Tulsa, OK · Lifestyle & Fashion · Amazon Influencer · Home & Family content creator</div></div>
+        <div class="cs-card t"><h4>⭐ dianefosterofficial</h4><div class="m">Lifestyle & Beauty · Brand Ambassador · High-quality product photography · Professional influencer partnerships</div></div>
+      </div>
+      <div class="annotation">50,000+ free KOL contacts database maintained and updated quarterly · Covers US, CA, UK, EU markets · Organized by niche, follower count, engagement rate, and contact availability</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 16: 100 FACEBOOK GROUPS ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>👥 100 Facebook Groups — Top 10 Amazon/FBA Groups</h3><span class="badge b-navy">Group Report</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>#</th><th>Group Name</th><th class="num">Members</th><th>Category</th></tr>
+        <tr><td>1</td><td class="hi">Tools For FBA</td><td class="num hi">1,300</td><td>Amazon FBA Tools & Resources</td></tr>
+        <tr><td>2</td><td class="hi">Amazon Arbitrage</td><td class="num hi">1,200</td><td>Amazon OA/RA Arbitrage</td></tr>
+        <tr><td>3</td><td class="hi">Amazon Millionaire Course</td><td class="num hi">1,200</td><td>Amazon Training & Courses</td></tr>
+        <tr><td>4</td><td class="hi">Amazon FBA Sellers (USA)</td><td class="num">980</td><td>FBA Seller Community</td></tr>
+        <tr><td>5</td><td class="hi">E-Commerce Entrepreneurs</td><td class="num">850</td><td>E-Commerce Discussion</td></tr>
+        <tr><td>6</td><td class="hi">Amazon PPC Strategies</td><td class="num">720</td><td>PPC Tips & Case Studies</td></tr>
+        <tr><td>7</td><td class="hi">Shopify Store Owners</td><td class="num">680</td><td>Shopify Community</td></tr>
+        <tr><td>8</td><td class="hi">Digital Marketing Pro</td><td class="num">650</td><td>Digital Marketing Tips</td></tr>
+        <tr><td>9</td><td class="hi">Amazon Wholesale FBA</td><td class="num">600</td><td>Wholesale Sourcing</td></tr>
+        <tr><td>10</td><td class="hi">Dropshipping Titans</td><td class="num">550</td><td>Dropshipping Strategies</td></tr>
+      </table>
+      <div class="annotation" style="margin:0 16px 12px">100 Facebook groups researched and catalogued for Amazon FBA, e-commerce, digital marketing, and social media growth · Used for community engagement, competitor research, and audience building</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 17: CONTENT STRATEGY SYSTEMS ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>📝 Blog Tasklist — 11-Platform Content Tracker</h3><span class="badge b-green">Multi-Platform</span></div>
+    <div class="card-body" style="padding:0;overflow-x:auto">
+      <table class="data-table">
+        <tr><th>Platform</th><th>Content Type</th><th class="num">Frequency</th><th>Target Audience</th><th>Notes</th></tr>
+        <tr><td class="hi">Reddit</td><td>Community Posts, AMA</td><td class="num">3/week</td><td>Niche Communities</td><td>r/furniture, r/malelivingspace, r/HomeDecorating</td></tr>
+        <tr><td class="hi">Facebook</td><td>Posts, Groups, Ads</td><td class="num">5/week</td><td>25-54 demographic</td><td>Pages + 100 FB Groups engagement</td></tr>
+        <tr><td class="hi">Instagram</td><td>Posts, Reels, Stories</td><td class="num">7/week</td><td>18-34 visual-first</td><td>Reels account for 88.2% of content views</td></tr>
+        <tr><td class="hi">Twitter / 推特</td><td>Threads, Replies</td><td class="num">5/week</td><td>Tech & Business</td><td>Thread strategy for engagement</td></tr>
+        <tr><td class="hi">KOL合作</td><td>Collab Posts</td><td class="num">10+/mo</td><td>Influencer Networks</td><td>Micro + mid-tier outreach</td></tr>
+        <tr><td class="hi">Douyin / 抖音</td><td>Short Video</td><td class="num">3/week</td><td>China Market</td><td>Chinese-language content</td></tr>
+        <tr><td class="hi">YouTube</td><td>Long-form, Shorts</td><td class="num">2/week</td><td>Global</td><td>Product demos, tutorials</td></tr>
+        <tr><td class="hi">Blog / 博客</td><td>SEO Articles</td><td class="num">2/week</td><td>Organic Search</td><td>WordPress + Medium + Blogger</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card sec-full">
+    <div class="card-header"><h3>🎯 Platform-Specific Growth Targets</h3><span class="badge b-warm">6-Month Projection</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>Platform</th><th class="num">Current Followers</th><th class="num">6-Month Target</th><th class="num">Growth %</th><th>Strategy</th></tr>
+        <tr><td>Facebook</td><td class="num">200-300</td><td class="num hi">1,500-4,500</td><td class="num hg">+650-1400%</td><td>Groups + Ads + Organic Content</td></tr>
+        <tr><td>Instagram</td><td class="num">200-400</td><td class="num hi">1,500-5,500</td><td class="num hg">+275-1275%</td><td>Reels + Hashtags + KOL Collabs</td></tr>
+        <tr><td>TikTok</td><td class="num">0-100</td><td class="num hi">5,000-15,000</td><td class="num hg">+4900-14900%</td><td>Viral Content + Trends + Challenges</td></tr>
+        <tr><td>Twitter</td><td class="num">50-200</td><td class="num hi">500-2,000</td><td class="num hg">+150-900%</td><td>Threads + Community Engagement</td></tr>
+        <tr><td>YouTube</td><td class="num">0-50</td><td class="num hi">500-2,000</td><td class="num hg">+900-3900%</td><td>Shorts + Long-form Tutorials</td></tr>
+      </table>
+      <div class="annotation" style="margin:0 16px 12px">Growth targets based on current baseline metrics · Adjusted for platform algorithm changes and content strategy optimization</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 18: SEO + CONTENT DELIVERY ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>🔗 SEO Campaign · Vital Mobility — Medical Equipment Canada</h3><span class="badge b-navy">30+ Platforms · 18 Deliverables</span></div>
+    <div class="card-body">
+      <div class="cs" style="margin-bottom:12px">
+        <div class="cs-card"><h4>🏥 Client Profile</h4><div class="s"><span>Brand: <strong>Vital Mobility</strong></span><span>Canada's Leading Medical Equipment</span><span>📍 Concord, ON</span></div></div>
+        <div class="cs-card w"><h4>🌐 SEO Activities</h4><div class="s"><span>Social Bookmarking: <strong>20+ sites</strong></span><span>Profile Creation: <strong>10+ platforms</strong></span><span>Classified Ads: <strong>10 sites</strong></span></div></div>
+        <div class="cs-card g"><h4>📊 Content Distribution</h4><div class="s"><span>Article Submissions: <strong>4+</strong></span><span>Press Releases: <strong>3</strong></span><span>Infographics: <strong>10+</strong></span></div></div>
+        <div class="cs-card p"><h4>🔗 Backlink Portfolio</h4><div class="s"><span>Web 2.0 Blogs: <strong>4</strong></span><span>Local Citations: <strong>8</strong></span><span>PDF + PPT + Video + Audio</span></div></div>
+        <div class="cs-card"><h4>📈 Rankings Tracked</h4><div class="s"><span>Keywords: <strong>15 tracked</strong></span><span>Improvements: <strong>#80→#12, #77→#74</strong></span></div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:9px;color:var(--text-muted);border-top:1px dashed var(--border-light);padding-top:8px">
+        <div><strong style="color:var(--navy)">Social Presence (30+ platforms):</strong> Medium, Behance, Tumblr, Reddit, Pinterest, Quora, YouTube, WordPress, Blogger, BuzzFeed, Diigo, Disqus, PearlTrees, Bloglovin, Instapaper, Penzu, Goodreads, Triberr, Sketchfab, Dzone, Ted, Kickstarter, Skillshare + 10 more</div>
+        <div><strong style="color:var(--navy)">18 SEO Deliverable Types:</strong> Social Bookmarking · Profile Creation · Image Sharing · Web 2.0 Blogs · Classified Ads · Article Submission · Press Release · Guest Post · Forum Posts · Quora Q&A · Infographic Creation · PDF/PPT Distribution · Blog Comments · Directory Submission · Video · Audio · SEO+SMO Conjugation · Local Citation</div>
+      </div>
+      <div class="annotation">Client: Vital Mobility · vitalmobility.ca · IG: @vitalmobilityhome · FB: /VitalMobility · LinkedIn: /company/vital-mobility · Period: Nov 2023–2024</div>
+    </div>
+  </div>
+
+  <div class="card sec-full">
+    <div class="card-header"><h3>📐 6-Month KPI Framework — KOL · Blog · SEO</h3><span class="badge b-green">Internal Standards</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>Category</th><th>Metric</th><th class="num">6-Month Target</th></tr>
+        <tr><td rowspan="5" style="background:#fafaf8;font-weight:700">👥 KOL Management</td><td>Daily KOL List</td><td class="num hi">20 KOLs</td></tr>
+        <tr><td>Monthly Communication</td><td class="num hi">500 KOLs</td></tr>
+        <tr><td>Successful Collaborations</td><td class="num hg">20–50</td></tr>
+        <tr><td>Content Deliverables</td><td class="num">Reels, Photos</td></tr>
+        <tr><td>Platforms</td><td class="num">IG, TikTok, YouTube</td></tr>
+        <tr style="border-top:2px solid var(--border)"><td rowspan="5" style="background:#fafaf8;font-weight:700">📝 Blog Content</td><td>Manual Blog Posts</td><td class="num hi">60 posts</td></tr>
+        <tr><td>Total Blog Words</td><td class="num hi">30,000 words</td></tr>
+        <tr><td>Target Keywords</td><td class="num">60 keywords</td></tr>
+        <tr><td>Social Shares</td><td class="num hw">1,200 shares</td></tr>
+        <tr><td>Blog Comments w/ Link</td><td class="num hw">900 comments</td></tr>
+        <tr style="border-top:2px solid var(--border)"><td rowspan="8" style="background:#fafaf8;font-weight:700">🔍 SEO & Links</td><td>Organic Traffic Target</td><td class="num hi">50,000 visits</td></tr>
+        <tr><td>Guest Post Submissions</td><td class="num hw">600 submissions</td></tr>
+        <tr><td>Q&A + Forum Submissions</td><td class="num">1,200 submissions</td></tr>
+        <tr><td>Social Bookmarking</td><td class="num">600 bookmarks</td></tr>
+        <tr><td>Backlink Submissions</td><td class="num hi">6,000–30,000</td></tr>
+        <tr><td>Tracked Keywords</td><td class="num">1–20 keywords</td></tr>
+        <tr><td>Competitive Analysis</td><td class="num">60 competitors</td></tr>
+        <tr><td>Traffic Reports</td><td class="num hg">Biweekly</td></tr>
+      </table>
+      <div class="annotation" style="margin:0 16px 12px">KPI targets: KOL 500/mo contact · Blog 60 posts + 30K words · SEO 50K organic traffic · 6K-30K backlinks</div>
+    </div>
+  </div>
+
+  <!-- SEO Target Table -->
+  <div class="card sec-half">
+    <div class="card-header"><h3>🎯 SEO Target Table</h3><span class="badge b-navy">Blog Tasklist</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>SEO Metric</th><th class="num">Current</th><th class="num">Target</th></tr>
+        <tr><td>Organic Keywords</td><td class="num">5-10</td><td class="num hi">50+</td></tr>
+        <tr><td>Domain Authority</td><td class="num">10-15</td><td class="num hi">25-35</td></tr>
+        <tr><td>Monthly Traffic</td><td class="num">500-1K</td><td class="num hi">50K</td></tr>
+        <tr><td>Backlinks</td><td class="num">50-100</td><td class="num hi">6,000-30,000</td></tr>
+        <tr><td>Blog Posts</td><td class="num">5-10</td><td class="num hi">60</td></tr>
+        <tr><td>Guest Posts</td><td class="num">0-5</td><td class="num hi">600</td></tr>
+        <tr><td>Q&A/Forum Posts</td><td class="num">0-10</td><td class="num hi">1,200</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 19: TNTOR WORK STRUCTURE ===== -->
+  <div class="card sec-half">
+    <div class="card-header"><h3>⚡ TNTOR Work Structure — Weekly Cadence</h3><span class="badge b-warm">Power Banks</span></div>
+    <div class="card-body">
+      <div class="cs-card w"><h4>📅 Weekly Deliverables</h4><div class="m"><strong>3 Posts / week</strong> across social platforms (FB, IG, Twitter)<br><strong>3 Blogs / week</strong> published to WordPress</div></div>
+      <div class="cs-card"><h4>🌍 Target Markets</h4><div class="m">🇺🇸 United States · 🇬🇧 United Kingdom · 🇯🇵 Japan</div></div>
+      <div class="cs-card p"><h4>🔗 Amazon Store Links</h4><div class="m">Amazon USA Store · Amazon Canada Store · KOL product links for influencer tracking</div></div>
+      <div style="margin-top:10px">
+        <div style="font-size:10px;font-weight:700;color:var(--navy);margin-bottom:6px">📋 Daily SNS Schedule</div>
+        <table class="data-table">
+          <tr><th>Day</th><th>Platform</th><th>Activity</th></tr>
+          <tr><td>Mon</td><td>FB + IG</td><td>Post + Stories + Engagement</td></tr>
+          <tr><td>Tue</td><td>Twitter + Blog</td><td>Thread + WordPress publish</td></tr>
+          <tr><td>Wed</td><td>FB + IG</td><td>Post + Reels + KOL outreach</td></tr>
+          <tr><td>Thu</td><td>Twitter + Blog</td><td>Thread + WordPress publish</td></tr>
+          <tr><td>Fri</td><td>FB + IG</td><td>Post + Stories + Weekend preview</td></tr>
+          <tr><td>Sat</td><td>Blog</td><td>WordPress publish + SEO check</td></tr>
+          <tr><td>Sun</td><td>Planning</td><td>Content calendar + Analytics review</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 20: MARKET RESEARCH ===== -->
+  <div class="card sec-half">
+    <div class="card-header"><h3>🔬 Market Research — Baby Clothing China</h3><span class="badge b-green">2023 Report</span></div>
+    <div class="card-body" style="padding:0">
+      <table class="data-table">
+        <tr><th>Metric</th><th class="num">Value</th></tr>
+        <tr><td>Market Size (2023)</td><td class="num hi hw">$0.51 Billion</td></tr>
+        <tr><td>CAGR (Projected)</td><td class="num hg">4.04%</td></tr>
+        <tr><td>Supplier Companies</td><td class="num hi">8</td></tr>
+      </table>
+      <div class="annotation" style="margin:0 16px 12px">8 supplier companies identified · DTC opportunity in China baby clothing market · Cross-border e-commerce potential</div>
+    </div>
+    <div class="card-body" style="border-top:1px solid var(--border-light)">
+      <div class="cs-card p"><h4>💡 KOL Strategy: Cervical Pillow</h4><div class="m"><strong>Free-Mode KOL Leverage Strategy</strong> — Product seeding to micro-influencers (5K–50K followers) at zero upfront cost. Influencers receive free cervical pillows in exchange for honest reviews. Strategy leverages: unboxing content, sleep improvement testimonials, before/after comparisons. Target: health, wellness, and sleep-focused influencers. Cost: product cost only (~$15-25/unit). ROI: 3-5x through organic sales from influencer content.</div></div>
+    </div>
+  </div>
+
+  <div class="card sec-half">
+    <div class="card-header"><h3>📦 Amazon Store Management — Cevaprosports + TDONE Fan</h3><span class="badge b-warm">Revenue +60%</span></div>
+    <div class="card-body">
+      <div class="cs-card w"><h4>📈 Results</h4><div class="s"><span>Revenue Growth: <strong>+60%</strong></span><span>Brand Exposure: <strong>+60%</strong></span><span>Sales Increase: <strong>+55%</strong></span></div></div>
+      <div class="cs-card"><h4>🛒 Amazon Store Work</h4><div class="m" style="line-height:1.8">A+ Content creation · High-quality images + alt text optimization · Product listing management · Market research (trends + customer preferences) · Revenue & sales optimization · Customer review management</div></div>
+      <div class="cs-card g"><h4>✅ Cevapro: +60% Revenue via A+ Content</h4><div class="m">Optimized product listings with A+ Content, enhanced brand content modules, and keyword-optimized descriptions</div></div>
+      <div class="cs-card"><h4>✅ TDONE Fan: +60% Revenue Growth</h4><div class="m">2021-2023 sustained growth through Amazon store optimization, PPC campaign management, and review generation</div></div>
+      <div style="font-size:9px;color:var(--text-muted);margin-top:6px">Source: intro for 51.docx · Cross-border expert with 10+ years · 80+ brands scaled · Certified: Tongji University ×4, Google, IBM</div>
+    </div>
+  </div>
+
+  <div class="card sec-full">
+    <div class="card-header"><h3>🏭 B2B Industrial — RQ Machinery + Xi'an Rainbow</h3><span class="badge b-purple">114K+ Combined Reach</span></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="padding:0">
+          <table class="data-table">
+            <tr><th colspan="2" style="background:var(--purple-light);color:var(--purple)">CS04 · RQ Machinery</th></tr>
+            <tr><td>Reach</td><td class="num hi">91,820+</td></tr>
+            <tr><td>Engagements</td><td class="num hw">23,182+</td></tr>
+            <tr><td>Link Clicks</td><td class="num">2,045+</td></tr>
+            <tr><td>Website Visits</td><td class="num hg">865 (+1,800%)</td></tr>
+            <tr><td>Messages</td><td class="num hw">116+</td></tr>
+            <tr><td>Followers</td><td class="num">1,300+</td></tr>
+            <tr><td colspan="2" style="font-size:9px;color:var(--text-muted)">🌍 Egypt 27% · PH 23% · Syria 13.3% · KSA 8.8% | 👥 35-44: 27.7%</td></tr>
+          </table>
+        </div>
+        <div style="padding:0">
+          <table class="data-table">
+            <tr><th colspan="2" style="background:var(--green-light);color:var(--green)">CS05 · Xi'an Rainbow</th></tr>
+            <tr><td>Content Views</td><td class="num hi">16,602 (+1,359%)</td></tr>
+            <tr><td>Followers</td><td class="num hg">6,631 (+177%)</td></tr>
+            <tr><td>Website Visits</td><td class="num hw">382 (+257%)</td></tr>
+            <tr><td>IG Profile Visits</td><td class="num">1,829</td></tr>
+            <tr><td>FB Interactions</td><td class="num hw">1,982</td></tr>
+            <tr><td>Reels Share</td><td class="num hi">88.2%</td></tr>
+            <tr><td colspan="2" style="font-size:9px;color:var(--text-muted)">🌍 Vietnam 22.8% · BD 21.2% · PH 14.2% · ID 13.4% | 👥 25-34: 36.5%</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="annotation">B2B Industrial Marketing · 2 projects · 114K+ combined reach · Facebook + Instagram · 2023–Ongoing</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 21: MARKETING TOOLKIT ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>🧰 Marketing Toolkit — 24 Proprietary Templates</h3><span class="badge b-purple">Agency Assets</span></div>
+    <div class="card-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:10px;color:var(--text-secondary);line-height:1.8">
         <div><strong style="color:var(--navy)">📋 Planning & Strategy</strong><br>
           ▸ Social Media Masterplan v1.2.3<br>
           ▸ 6-Month Shopify Work Plan (EN + CN)<br>
@@ -524,311 +874,124 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
           ▸ KOL, Blog & SEO KPI Tracker
         </div>
       </div>
-      <div class="annotation">24 proprietary templates, playbooks & tools deployed across client engagements</div>
+      <div class="annotation">24 proprietary templates, playbooks & tools across 4 categories · Deployed across all client engagements</div>
     </div>
   </div>
 
-  <!-- CEVAPRO + TDONE FAN -->
-  <div class="card sec-half">
-    <div class="card-header"><h3>Amazon Store Management · Cevaprosports + TDONE Fan</h3><span class="badge b-warm">Revenue +60%</span></div>
-    <div class="card-body">
-      <div class="cs-card w"><h4>📈 Results</h4><div class="s"><span>Revenue Growth: <strong>+60%</strong></span><span>Brand Exposure: <strong>+60%</strong></span><span>Sales Increase: <strong>+55%</strong></span></div></div>
-      <div class="cs-card"><h4>🛒 Amazon Store Work</h4><div class="m" style="line-height:1.8">A+ Content creation · High-quality images + alt text optimization · Product listing management · Market research (trends + customer preferences) · Revenue & sales optimization · Customer review management</div></div>
-      <div style="font-size:9px;color:var(--text-muted);margin-top:6px">Source: intro for 51.docx · Cross-border expert with 10+ years · 80+ brands scaled · Certified: Tongji University ×4, Google, IBM</div>
-    </div>
-  </div>
-
-  <div class="card sec-half">
-    <div class="card-header"><h3>Cevapro Influencer Outreach</h3><span class="badge b-purple">7 Influencers</span></div>
+  <!-- ===== SECTION 22: CAPABILITY MATRIX ===== -->
+  <div class="card sec-full">
+    <div class="card-header"><h3>⚙️ Capability Matrix — 13 Capabilities</h3><span class="badge b-navy">Deployment Count</span></div>
     <div class="card-body" style="padding:0">
       <table class="data-table">
-        <tr><th>Influencer</th><th>Country</th><th class="num">Followers</th><th class="num">Avg Likes</th><th class="num">Eng. Rate</th></tr>
-        <tr><td>vikingroamer</td><td>Denmark</td><td class="num hi">19.1K</td><td class="num hw">3,463</td><td class="num hg">21.02%</td></tr>
-        <tr><td>pantelismoromalos</td><td>—</td><td class="num hi">20.7K</td><td class="num hw">3,638</td><td class="num hg">30.6%</td></tr>
-        <tr><td>danielhughesuk ★</td><td>UK</td><td class="num hi">32.8K</td><td class="num">70</td><td class="num">0.5%</td></tr>
-        <tr><td>honeycutt.outdoors</td><td>Tunisia</td><td class="num hi">27.8K</td><td class="num">698</td><td class="num">2.4%</td></tr>
-        <tr><td>ig4len</td><td>Los Angeles/US</td><td class="num">12.8K</td><td class="num">1,191</td><td class="num hg">11.03%</td></tr>
-        <tr><td>mountainkimbo</td><td>USA</td><td class="num">11.7K</td><td class="num">757</td><td class="num">7.77%</td></tr>
-        <tr><td>bruno_slegers</td><td>USA</td><td class="num">3.3K</td><td class="num">280</td><td class="num">9.66%</td></tr>
-        <tr style="border-top:2px solid var(--border)"><td><strong>Total</strong></td><td><strong>5 Countries</strong></td><td class="num hi"><strong>128.2K</strong></td><td class="num hw"><strong>10,097</strong></td><td class="num"><strong>~11.7% avg</strong></td></tr>
+        <tr><th>#</th><th>Capability</th><th class="num">Deployments</th><th class="num">Outcome</th></tr>
+        <tr><td>1</td><td>Social Media Management</td><td class="num hi">7 brands</td><td class="num">3.5M+ reach</td></tr>
+        <tr><td>2</td><td>Facebook Ads</td><td class="num hw">11+ ad sets</td><td class="num">CPL $0.23–$14.18</td></tr>
+        <tr><td>3</td><td>KOL / Influencer Management</td><td class="num hi">58+ KOLs</td><td class="num">333K+ combined reach</td></tr>
+        <tr><td>4</td><td>Shopify E-Commerce</td><td class="num hg">3 stores</td><td class="num">$43K revenue · 606 orders</td></tr>
+        <tr><td>5</td><td>Google Ads / SEM</td><td class="num">2 campaigns</td><td class="num">442 conversions</td></tr>
+        <tr><td>6</td><td>Amazon Store Management</td><td class="num hw">3 brands</td><td class="num">+60% revenue growth</td></tr>
+        <tr><td>7</td><td>Competitor Analysis</td><td class="num hw">Framework</td><td class="num">KW + backlink + traffic</td></tr>
+        <tr><td>8</td><td>Content Marketing</td><td class="num hi">All projects</td><td class="num">88.2% via Reels</td></tr>
+        <tr><td>9</td><td>SEO & Keywords</td><td class="num">Integrated</td><td class="num">Organic + Paid</td></tr>
+        <tr><td>10</td><td>ROI / ROAS Analysis</td><td class="num hw">All ad campaigns</td><td class="num">2.1x–4.7x ROAS</td></tr>
+        <tr><td>11</td><td>Audience Analytics</td><td class="num hi">All projects</td><td class="num">Demo + Geo + Behavioral</td></tr>
+        <tr><td>12</td><td>B2B Industrial Marketing</td><td class="num hg">2 projects</td><td class="num">114K+ combined reach</td></tr>
+        <tr><td>13</td><td>Affiliate Marketing</td><td class="num hw">2 campaigns</td><td class="num">8+ influencers</td></tr>
       </table>
-    </div>
-  </div>
-
-  <!-- 100 INFLUENCER REPORT + FB CASE -->
-  <div class="card sec-half">
-    <div class="card-header"><h3>TDONE Fan — 100 Instagram Influencer Research</h3><span class="badge b-purple">June 2021</span></div>
-    <div class="card-body">
-      <table class="data-table">
-        <tr><th>Country</th><th>Top Influencer</th><th class="num">Followers</th><th class="num">Eng. Rate</th><th>Category</th></tr>
-        <tr><td>Canada</td><td>Sarah Nicole Landry</td><td class="num hi">2M</td><td class="num">3.80%</td><td>Moms, Fashion, Fitness</td></tr>
-        <tr><td>Canada</td><td>MARIALYE TROTTIER</td><td class="num hi">790K</td><td class="num">1.11%</td><td>Fitness, Sports, Lifestyle</td></tr>
-        <tr><td>Canada</td><td>Saman Munir</td><td class="num">239K</td><td class="num">0.37%</td><td>Fitness, Coaching, Moms</td></tr>
-        <tr><td>Canada</td><td>Cath Bastien</td><td class="num">179K</td><td class="num">1.37%</td><td>Health</td></tr>
-        <tr><td>Canada</td><td>Laeticia Lavoie</td><td class="num">56K</td><td class="num hg">5.67%</td><td>Fitness, Lifestyle, Modeling</td></tr>
-        <tr><td>UK</td><td>Aerial and Pole Fitness</td><td class="num hi">145K</td><td class="num">0.05%</td><td>Dance, Fitness, Yoga</td></tr>
-        <tr><td>UK</td><td>Lauren Tickner</td><td class="num">138K</td><td class="num">0.49%</td><td>Fitness, Coaching</td></tr>
-      </table>
-      <div class="annotation">100 Instagram influencers researched across Canada, UK, US · Source: TDONE Weekly Report June 2021</div>
-    </div>
-  </div>
-
-  <div class="card sec-half">
-    <div class="card-header"><h3>Facebook CPA Case Study — Skateboarding eBook</h3><span class="badge b-warm">$300 Test Budget</span></div>
-    <div class="card-body">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px">
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font-mono);color:var(--navy)">1.5M</div><div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">Impressions</div></div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font-mono);color:var(--warm)">3,746</div><div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">Clicks</div></div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font-mono);color:var(--green)">$0.08</div><div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">CPC</div></div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font-mono);color:var(--navy)">0.25%</div><div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">CTR</div></div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font-mono);color:var(--green)">~10%</div><div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">ROI</div></div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;font-family:var(--font-mono);color:var(--warm)">$301</div><div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">Total Spend</div></div>
-      </div>
-      <div class="annotation">ClickBank product · CPA model · No extensive split testing · Source: ADVERTISING.docx</div>
-    </div>
-  </div>
-
-  <!-- BRAND SOCIAL GROWTH TABLE -->
-  <div class="card sec-full">
-    <div class="card-header"><h3>Brand Social Growth — Multi-Platform Performance</h3><span class="badge b-navy">10+ Brands</span></div>
-    <div class="card-body" style="padding:0;overflow-x:auto">
-      <table class="data-table">
-        <tr><th>Brand</th><th>Industry</th><th class="num">Facebook</th><th class="num">Instagram</th><th class="num">Twitter</th><th class="num">Other / Key Platforms</th><th>Highlights</th></tr>
-        <tr>
-          <td class="hi">Infansys</td><td>Baby Clothing DTC</td><td class="num">Large Traffic</td><td class="num hi">77K</td><td class="num">3.5K</td><td class="num">Kickstarter</td><td>DTC + Organic + Paid</td>
-        </tr>
-        <tr>
-          <td class="hi">Sunaofe</td><td>Furniture DTC</td><td class="num hi">60K</td><td class="num hi">61K</td><td class="num">6K</td><td class="num hi">+122K FB Campaign</td><td>2.44M total reach, 116.8K IG</td>
-        </tr>
-        <tr>
-          <td class="hi">Fogy Garage</td><td>Motorcycle Gear</td><td class="num">5K</td><td class="num">10K</td><td class="num">200</td><td class="num">8+ Influencers</td><td>Affiliate-driven, EU+NA+Asia</td>
-        </tr>
-        <tr>
-          <td class="hi">HGLRC</td><td>FPV Drones</td><td class="num">9K</td><td class="num">17K</td><td class="num">300</td><td class="num">Shopify SEO</td><td>B2B Shenzhen-based</td>
-        </tr>
-        <tr>
-          <td class="hi">CCOBATO</td><td>Heat Not Burn</td><td class="num">14.6K</td><td class="num">4.9K</td><td class="num">—</td><td class="num">SEO Blogs</td><td>China DTC, Content + Blog</td>
-        </tr>
-        <tr>
-          <td class="hi">Staresso</td><td>Coffee Devices</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num hi">Shopify SEO</td><td>US/EU/JP/KR markets</td>
-        </tr>
-        <tr>
-          <td class="hi">Cevaprosports</td><td>Sports Equipment</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num hi hw">Amazon Store</td><td>📈 +60% Revenue Growth</td>
-        </tr>
-        <tr>
-          <td class="hi">TDONE Fan</td><td>Consumer Fans</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num hi hw">Amazon Store</td><td>📈 +60% Revenue Growth</td>
-        </tr>
-        <tr>
-          <td class="hi">Vital Mobility</td><td>Medical Equipment</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num hi hg">SEO Campaign</td><td>Canada, 30+ platforms</td>
-        </tr>
-        <tr>
-          <td class="hi">TNTOR</td><td>Power Banks</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num hi hw">Amazon US + CA</td><td>$40.5K sales, 3.90x ROAS</td>
-        </tr>
-        <tr style="border-top:2px solid var(--border)"><td colspan="2"><strong>Additional Brands</strong></td><td colspan="5" style="font-size:9px;color:var(--text-muted)">JJsHouse · GOMaybeauty · LahomaWinds · DUCO Glasses · CarCarez · RQ Machinery · Xi'an Rainbow · KXK Shop · Crown Micro · Excelite · Meloni Homes · Pocci Home · Hemoymiller · Lumbency Lighting · Willai Sleep · Nekmit · Unicco · Baoshutang · Dinrail</td></tr>
-      </table>
-      <div class="annotation" style="margin:0 16px 12px">200K+ total followers developed · 25+ USA brands · 100+ pages · 500+ influencer collaborations · Source: portfolio (1).pdf</div>
-    </div>
-  </div>
-
-  <!-- VITAL MOBILITY SEO CASE -->
-  <div class="card sec-full">
-    <div class="card-header"><h3>SEO + Social Campaign · Vital Mobility — Medical Equipment Canada</h3><span class="badge b-navy">White Hat SEO</span></div>
-    <div class="card-body">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:12px">
-        <div class="cs-card"><h4>🏥 Client Profile</h4><div class="s"><span>Brand: <strong>Vital Mobility</strong></span><span>Canada's Leading Medical Equipment</span><span>📍 Concord, ON</span></div></div>
-        <div class="cs-card w"><h4>🌐 SEO Activities (Live)</h4><div class="s"><span>Social Bookmarking: <strong>20+ sites</strong></span><span>Profile Creation: <strong>10+ platforms</strong></span><span>Classified Ads: <strong>10 sites</strong></span></div></div>
-        <div class="cs-card g"><h4>📊 Content Distribution</h4><div class="s"><span>Article Submissions: <strong>4+</strong></span><span>Press Releases: <strong>3</strong></span><span>Infographics: <strong>10+</strong></span></div></div>
-        <div class="cs-card p"><h4>🔗 Backlink Portfolio</h4><div class="s"><span>Web 2.0 Blogs: <strong>4</strong></span><span>Local Citations: <strong>8</strong></span><span>PDF + PPT + Video + Audio</span></div></div>
-        <div class="cs-card"><h4>📈 Rankings Tracked</h4><div class="s"><span>Keywords: <strong>15 tracked</strong></span><span>Improvements: <strong>#80→#12, #77→#74</strong></span></div></div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:9px;color:var(--text-muted);border-top:1px dashed var(--border-light);padding-top:8px">
-        <div><strong style="color:var(--navy)">Social Presence (30+ platforms):</strong> Medium, Behance, Tumblr, Reddit, Pinterest, Quora, YouTube, WordPress, Blogger, BuzzFeed, Diigo, Disqus, PearlTrees, Bloglovin, Instapaper, Penzu, Goodreads, Triberr, Sketchfab, Dzone, Ted, Kickstarter, Skillshare + 10 more</div>
-        <div><strong style="color:var(--navy)">SEO Deliverables:</strong> Social Bookmarking · Profile Creation · Image Sharing · Web 2.0 Blogs · Classified Ads · Article Submission · Press Release · Guest Post · Forum Posts · Quora Q&A · Infographic Creation · PDF/PPT Distribution · Blog Comments · Directory Submission · Video · Audio · SEO+SMO Conjugation · Local Citation</div>
-      </div>
-      <div class="annotation">Client: Vital Mobility · vitalmobility.ca · IG: @vitalmobilityhome · FB: /VitalMobility · LinkedIn: /company/vital-mobility · SEO campaign tracked from Nov 2023</div>
-    </div>
-  </div>
-
-  <!-- AMAZON CA SECTION -->
-  <div class="card sec-half">
-    <div class="card-header"><h3>Amazon Sponsored Ads · TNTOR Outlet — Canada Store</h3><span class="badge b-green">Apr–Nov 2023</span></div>
-    <div class="card-body">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px">
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center">
-          <div style="font-size:22px;font-weight:800;font-family:var(--font-mono);color:var(--navy)">CA$6,167</div>
-          <div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">Total Sales</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center">
-          <div style="font-size:22px;font-weight:800;font-family:var(--font-mono);color:var(--warm)">CA$1,993</div>
-          <div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">Ad Spend</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center">
-          <div style="font-size:22px;font-weight:800;font-family:var(--font-mono);color:var(--warm)">32.32%</div>
-          <div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">ACOS</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center">
-          <div style="font-size:22px;font-weight:800;font-family:var(--font-mono);color:var(--green)">CA$0.73</div>
-          <div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">CPC</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center">
-          <div style="font-size:22px;font-weight:800;font-family:var(--font-mono);color:var(--green)">3.09x</div>
-          <div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">ROAS</div>
-        </div>
-        <div style="background:#f9f9f7;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;text-align:center">
-          <div style="font-size:22px;font-weight:800;font-family:var(--font-mono);color:var(--navy)">+621</div>
-          <div style="font-size:9px;color:var(--text-muted);text-transform:uppercase">New Shoppers</div>
-          <div style="font-size:10px;color:var(--green);margin-top:2px;font-weight:600">48.63% repeat purchase</div>
-        </div>
-      </div>
-      <div class="annotation">
-        Platform: Amazon Sponsored Ads (Canada Store) · Brand: TNTOR Outlet · Repeat Purchase Rate: 48.63% · +621 shoppers vs previous period · Est. $7,991 value generated · Source: Amazon Ads Console
-      </div>
-    </div>
-  </div>
-
-  <!-- PDFs pending note -->
-  <div class="card sec-half">
-    <div class="card-header"><h3>Additional Data Sources — Pending</h3><span class="badge b-warm">Google Drive</span></div>
-    <div class="card-body">
-      <div style="font-size:11px;color:var(--text-secondary);line-height:1.8">
-        <p style="margin-bottom:8px">The following files require manual download due to Google Drive rate limits:</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px">
-          <div>📄 Amazon Case Study-Susmita (EN + CN)</div>
-          <div>📄 Amazon PPC Case Study — TNTOR CA Store</div>
-          <div>📄 Google Ads Case</div>
-          <div>📄 SEO Case Study — Abhijit + Susmita</div>
-          <div>📄 SEO成功案例研究 (Chinese)</div>
-          <div>📄 Google Ads — Euromallusa (中文)</div>
-          <div>📄 Sunaofe Furniture FB Ads (中文)</div>
-          <div>📄 SUNAOFE KOL 合作案例 (中文)</div>
-          <div>📄 TrySquare Google Ads Case</div>
-          <div>📄 PPC Case Studies + SEO Guides</div>
-          <div>📊 Work Time & Task Management.xlsx</div>
-          <div>📄 天星传媒最新</div>
-        </div>
-        <p style="margin-top:8px;font-size:10px;color:var(--text-muted)">→ Directly attach these files in chat or re-share with individual file links (not folder) to bypass rate limits</p>
-      </div>
     </div>
   </div>
 </div>
 
-<!-- ===== PRICING SECTION ===== -->
+<!-- ===== SECTION 23: SERVICE COMBO PRICING ===== -->
 <div class="pricing-hero">
-  <h2 data-lang="en" style="display:block">Monthly Service Packages</h2>
-  <h2 data-lang="bn" style="display:none">মাসিক সার্ভিস প্যাকেজ</h2>
-  <h2 data-lang="cn" style="display:none">月度服务套餐</h2>
-  <div class="sub" data-lang="en" style="display:block">All packages are retainer-based. Ad spend budgets are additional and managed transparently. Prices in RMB (¥).</div>
-  <div class="sub" data-lang="bn" style="display:none">সব প্যাকেজ রিটেইনার-ভিত্তিক। অ্যাড বাজেট অতিরিক্ত এবং স্বচ্ছভাবে পরিচালিত। মূল্য RMB (¥) তে।</div>
-  <div class="sub" data-lang="cn" style="display:none">所有套餐均基于月费制。广告预算另计，透明管理。价格以人民币 (¥) 计。</div>
+  <h2 data-lang="en" style="display:block">💰 Monthly Service Packages</h2>
+  <h2 data-lang="bn" style="display:none">💰 মাসিক সার্ভিস প্যাকেজ</h2>
+  <h2 data-lang="cn" style="display:none">💰 月度服务套餐</h2>
+  <div class="sub" data-lang="en" style="display:block">All packages are retainer-based. Ad spend budgets are additional and managed transparently. Prices in RMB (¥). Trilingual service: EN / বাংলা / 中文.</div>
+  <div class="sub" data-lang="bn" style="display:none">সব প্যাকেজ রিটেইনার-ভিত্তিক। বিজ্ঞাপন বাজেট অতিরিক্ত এবং স্বচ্ছভাবে পরিচালিত। মূল্য RMB (¥) তে। ত্রিভাষিক পরিষেবা: EN / বাংলা / 中文।</div>
+  <div class="sub" data-lang="cn" style="display:none">所有套餐均基于月费制。广告预算另计，透明管理。价格以人民币 (¥) 计。三语服务：EN / বাংলা / 中文。</div>
 
   <div class="pricing-grid">
     <!-- STARTER ¥5,000 -->
     <div class="price-card">
       <div class="tier">Starter</div>
       <div class="price-row"><span class="price">¥5,000</span><span class="mo">/month</span></div>
-      <div class="tagline">Essential digital presence for small brands</div>
+      <div class="tagline" data-lang="en" style="display:block">Essential digital presence for small brands</div>
+      <div class="tagline" data-lang="bn" style="display:none">ছোট ব্র্যান্ডের জন্য প্রয়োজনীয় ডিজিটাল উপস্থিতি</div>
+      <div class="tagline" data-lang="cn" style="display:none">小型品牌的基础数字存在</div>
 
       <div class="section-title">Platform Management</div>
       <ul>
-        <li>2 Platforms: Facebook + Instagram</li>
-        <li>12 Posts / month (6 per platform)</li>
-        <li>4 Stories / month (2 per platform)</li>
-        <li>Basic graphic design included</li>
-        <li class="na">TikTok / Twitter / YouTube</li>
+        <li data-lang="en" style="display:list-item">2 Platforms: Facebook + Instagram</li><li data-lang="bn" style="display:none">২ প্ল্যাটফর্ম: ফেসবুক + ইনস্টাগ্রাম</li><li data-lang="cn" style="display:none">2个平台：脸书 + Instagram</li>
+        <li data-lang="en" style="display:list-item">12 Posts/month (6 per platform)</li><li data-lang="bn" style="display:none">১২ পোস্ট/মাস (প্রতি প্ল্যাটফর্মে ৬)</li><li data-lang="cn" style="display:none">12条帖子/月 (每平台6条)</li>
+        <li data-lang="en" style="display:list-item">4 Stories/month (2 per platform)</li><li data-lang="bn" style="display:none">৪ স্টোরিজ/মাস</li><li data-lang="cn" style="display:none">4条快拍/月</li>
+        <li data-lang="en" style="display:list-item">Basic graphic design included</li><li data-lang="bn" style="display:none">বেসিক গ্রাফিক ডিজাইন অন্তর্ভুক্ত</li><li data-lang="cn" style="display:none">基础平面设计</li>
+        <li class="na" data-lang="en" style="display:list-item">TikTok / Twitter / YouTube</li><li class="na" data-lang="bn" style="display:none">টিকটক / টুইটার / ইউটিউব</li><li class="na" data-lang="cn" style="display:none">TikTok / 推特 / YouTube</li>
       </ul>
-
-      <div class="section-title">Community & Engagement</div>
+      <div class="section-title">Community</div>
       <ul>
-        <li>Daily comment & message replies</li>
-        <li>Community moderation</li>
-        <li class="na">Proactive outreach</li>
+        <li data-lang="en" style="display:list-item">Daily comment & message replies</li><li data-lang="bn" style="display:none">দৈনিক কমেন্ট ও মেসেজ রিপ্লাই</li><li data-lang="cn" style="display:none">每日评论和消息回复</li>
+        <li data-lang="en" style="display:list-item">Community moderation</li><li data-lang="bn" style="display:none">কমিউনিটি মডারেশন</li><li data-lang="cn" style="display:none">社区管理</li>
       </ul>
-
-      <div class="section-title">Analytics & Reporting</div>
+      <div class="section-title">Analytics</div>
       <ul>
-        <li>Monthly PDF performance report</li>
-        <li>Basic reach & engagement tracking</li>
-        <li class="na">Real-time dashboard</li>
+        <li data-lang="en" style="display:list-item">Monthly PDF performance report</li><li data-lang="bn" style="display:none">মাসিক PDF রিপোর্ট</li><li data-lang="cn" style="display:none">月度PDF报告</li>
       </ul>
-
       <div class="section-title">Strategy</div>
       <ul>
-        <li>Hashtag strategy (monthly refresh)</li>
-        <li>Content calendar (monthly planning)</li>
-        <li class="na">Competitor analysis</li>
-        <li class="na">KOL / Influencer</li>
-        <li class="na">Paid advertising</li>
-        <li class="na">SEO / Website</li>
+        <li data-lang="en" style="display:list-item">Hashtag strategy (monthly)</li><li data-lang="bn" style="display:none">হ্যাশট্যাগ স্ট্র্যাটেজি</li><li data-lang="cn" style="display:none">标签策略 (月度)</li>
+        <li data-lang="en" style="display:list-item">Content calendar</li><li data-lang="bn" style="display:none">কন্টেন্ট ক্যালেন্ডার</li><li data-lang="cn" style="display:none">内容日历</li>
+        <li class="na" data-lang="en" style="display:list-item">KOL / Ads / SEO / Website</li><li class="na" data-lang="bn" style="display:none">KOL / বিজ্ঞাপন / SEO</li><li class="na" data-lang="cn" style="display:none">KOL / 广告 / SEO</li>
       </ul>
-
-      <div class="section-title">Ad Spend (Additional)</div>
-      <ul><li class="na">Not included — client-managed</li></ul>
-
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="en" style="display:block">Get Started →</a>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="bn" style="display:none">শুরু করুন →</a>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="cn" style="display:none">立即开始 →</a>
     </div>
 
-    <!-- GROWTH ¥8,000 -->
+    <!-- GROWTH ¥8,000 — MOST POPULAR -->
     <div class="price-card featured">
       <div class="tier">Growth ★ Most Popular</div>
       <div class="price-row"><span class="price">¥8,000</span><span class="mo">/month</span></div>
-      <div class="tagline">Active growth with content + ads + KOL</div>
+      <div class="tagline" data-lang="en" style="display:block">Active growth with content + ads + KOL</div>
+      <div class="tagline" data-lang="bn" style="display:none">কন্টেন্ট + বিজ্ঞাপন + KOL সহ সক্রিয় গ্রোথ</div>
+      <div class="tagline" data-lang="cn" style="display:none">内容 + 广告 + KOL 一体化增长</div>
 
       <div class="section-title">Platform Management</div>
       <ul>
-        <li>3 Platforms: Facebook + Instagram + TikTok</li>
-        <li>20 Posts / month (FB 8 · IG 8 · TT 4)</li>
-        <li>4 Reels / month (IG Reels + TikTok)</li>
-        <li>8 Stories / month</li>
-        <li>Professional graphic + short video design</li>
-        <li class="na">Twitter / YouTube included on request</li>
+        <li data-lang="en" style="display:list-item">3 Platforms: FB + IG + TikTok</li><li data-lang="bn" style="display:none">৩ প্ল্যাটফর্ম: FB + IG + TikTok</li><li data-lang="cn" style="display:none">3个平台: FB + IG + TikTok</li>
+        <li data-lang="en" style="display:list-item">20 Posts/month (FB 8 · IG 8 · TT 4)</li><li data-lang="bn" style="display:none">২০ পোস্ট/মাস</li><li data-lang="cn" style="display:none">20条帖子/月</li>
+        <li data-lang="en" style="display:list-item">4 Reels/month</li><li data-lang="bn" style="display:none">৪ রিলস/মাস</li><li data-lang="cn" style="display:none">4条Reels/月</li>
+        <li data-lang="en" style="display:list-item">8 Stories/month</li><li data-lang="bn" style="display:none">৮ স্টোরিজ/মাস</li><li data-lang="cn" style="display:none">8条快拍/月</li>
+        <li data-lang="en" style="display:list-item">Professional graphic + video design</li><li data-lang="bn" style="display:none">প্রফেশনাল ডিজাইন</li><li data-lang="cn" style="display:none">专业平面+视频设计</li>
       </ul>
-
-      <div class="section-title">Community & Engagement</div>
+      <div class="section-title">Community</div>
       <ul>
-        <li>Daily comment & message replies (all platforms)</li>
-        <li>Community moderation + growth tactics</li>
-        <li>Proactive engagement on relevant pages</li>
+        <li data-lang="en" style="display:list-item">Daily replies (all platforms)</li><li data-lang="bn" style="display:none">দৈনিক রিপ্লাই</li><li data-lang="cn" style="display:none">每日全平台回复</li>
+        <li data-lang="en" style="display:list-item">Proactive engagement</li><li data-lang="bn" style="display:none">প্রোঅ্যাকটিভ এঙ্গেজমেন্ট</li><li data-lang="cn" style="display:none">主动互动</li>
       </ul>
-
-      <div class="section-title">Analytics & Reporting</div>
+      <div class="section-title">Analytics</div>
       <ul>
-        <li>Bi-weekly performance dashboard (Google Data Studio)</li>
-        <li>Reach · Engagement · Audience · Traffic tracking</li>
-        <li>Monthly strategy review call (30 min)</li>
+        <li data-lang="en" style="display:list-item">Bi-weekly dashboard</li><li data-lang="bn" style="display:none">বাই-উইকলি ড্যাশবোর্ড</li><li data-lang="cn" style="display:none">双周仪表盘</li>
+        <li data-lang="en" style="display:list-item">Monthly strategy call (30 min)</li><li data-lang="bn" style="display:none">মাসিক স্ট্র্যাটেজি কল</li><li data-lang="cn" style="display:none">月度策略会议(30分钟)</li>
       </ul>
-
-      <div class="section-title">Strategy & Research</div>
+      <div class="section-title">Strategy</div>
       <ul>
-        <li>Competitor analysis (1 competitor / month)</li>
-        <li>Content calendar (monthly + weekly breakdown)</li>
-        <li>Hashtag strategy (bi-weekly optimization)</li>
-        <li>Audience persona development</li>
+        <li data-lang="en" style="display:list-item">Competitor analysis (1/month)</li><li data-lang="bn" style="display:none">কম্পিটিটর বিশ্লেষণ</li><li data-lang="cn" style="display:none">竞品分析(1个/月)</li>
+        <li data-lang="en" style="display:list-item">Audience persona development</li><li data-lang="bn" style="display:none">অডিয়েন্স পারসোনা</li><li data-lang="cn" style="display:none">受众画像开发</li>
       </ul>
-
       <div class="section-title">KOL / Influencer</div>
       <ul>
-        <li>2 KOL collaborations / month</li>
-        <li>KOL identification + outreach + coordination</li>
-        <li>Micro-influencers (5K–50K followers)</li>
-        <li>Content approval + performance tracking</li>
-        <li class="na">Mega-influencers / celebrities</li>
+        <li data-lang="en" style="display:list-item">2 KOL collaborations/month</li><li data-lang="bn" style="display:none">২ KOL কোলাব/মাস</li><li data-lang="cn" style="display:none">2次KOL合作/月</li>
+        <li data-lang="en" style="display:list-item">Micro-influencers (5K–50K)</li><li data-lang="bn" style="display:none">মাইক্রো-ইনফ্লুয়েন্সার</li><li data-lang="cn" style="display:none">微型网红 (5K–50K)</li>
       </ul>
-
       <div class="section-title">Paid Advertising</div>
       <ul>
-        <li>Facebook Ads management</li>
-        <li>Ad creative design (3 ad creatives / month)</li>
-        <li>Audience targeting + A/B testing</li>
-        <li>Ad spend budget: <strong>¥1,500 / month</strong> (included)</li>
-        <li class="na">Google Ads</li>
-        <li class="na">TikTok Ads</li>
+        <li data-lang="en" style="display:list-item">Facebook Ads management</li><li data-lang="bn" style="display:none">ফেসবুক অ্যাড ম্যানেজমেন্ট</li><li data-lang="cn" style="display:none">脸书广告管理</li>
+        <li data-lang="en" style="display:list-item">3 ad creatives/month</li><li data-lang="bn" style="display:none">৩ অ্যাড ক্রিয়েটিভ/মাস</li><li data-lang="cn" style="display:none">3个广告创意/月</li>
+        <li data-lang="en" style="display:list-item">Ad budget: <strong>¥1,500/month</strong> incl.</li><li data-lang="bn" style="display:none">অ্যাড বাজেট: <strong>¥1,500/মাস</strong></li><li data-lang="cn" style="display:none">广告预算: <strong>¥1,500/月</strong> 含</li>
       </ul>
-
       <div class="section-title">Website / SEO</div>
-      <ul><li class="na">SEO / Website — available as add-on</li></ul>
-
+      <ul><li class="na" data-lang="en" style="display:list-item">Available as add-on</li><li class="na" data-lang="bn" style="display:none">অ্যাড-অন হিসাবে উপলব্ধ</li><li class="na" data-lang="cn" style="display:none">可选附加服务</li></ul>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="en" style="display:block">Activate Growth →</a>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="bn" style="display:none">গ্রোথ অ্যাক্টিভেট →</a>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="cn" style="display:none">启动增长 →</a>
@@ -838,71 +1001,54 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
     <div class="price-card">
       <div class="tier">Scale</div>
       <div class="price-row"><span class="price">¥12,000</span><span class="mo">/month</span></div>
-      <div class="tagline">Full-funnel marketing with e-commerce integration</div>
+      <div class="tagline" data-lang="en" style="display:block">Full-funnel marketing with e-commerce</div>
+      <div class="tagline" data-lang="bn" style="display:none">ই-কমার্স সহ ফুল-ফানেল মার্কেটিং</div>
+      <div class="tagline" data-lang="cn" style="display:none">全漏斗营销 + 电商整合</div>
 
       <div class="section-title">Platform Management</div>
       <ul>
-        <li>4 Platforms: FB + IG + TikTok + Twitter/YT</li>
-        <li>30 Posts / month across platforms</li>
-        <li>8 Reels / month (IG + TikTok)</li>
-        <li>12 Stories / month</li>
-        <li>Professional design: graphics + short video + GIF</li>
-        <li>Platform-specific content adaptation</li>
+        <li data-lang="en" style="display:list-item">4 Platforms: FB + IG + TikTok + Twitter/YT</li><li data-lang="bn" style="display:none">৪ প্ল্যাটফর্ম</li><li data-lang="cn" style="display:none">4个平台: FB+IG+TikTok+推特/YT</li>
+        <li data-lang="en" style="display:list-item">30 Posts/month</li><li data-lang="bn" style="display:none">৩০ পোস্ট/মাস</li><li data-lang="cn" style="display:none">30条帖子/月</li>
+        <li data-lang="en" style="display:list-item">8 Reels/month</li><li data-lang="bn" style="display:none">৮ রিলস/মাস</li><li data-lang="cn" style="display:none">8条Reels/月</li>
+        <li data-lang="en" style="display:list-item">Platform-specific content</li><li data-lang="bn" style="display:none">প্ল্যাটফর্ম-নির্দিষ্ট কন্টেন্ট</li><li data-lang="cn" style="display:none">平台定制内容</li>
       </ul>
-
-      <div class="section-title">Community & Engagement</div>
+      <div class="section-title">Community</div>
       <ul>
-        <li>Full community management (all platforms)</li>
-        <li>Proactive growth campaigns</li>
-        <li>Crisis & reputation monitoring</li>
-        <li>UGC (User-Generated Content) campaigns</li>
+        <li data-lang="en" style="display:list-item">Full community management</li><li data-lang="bn" style="display:none">পূর্ণ কমিউনিটি ম্যানেজমেন্ট</li><li data-lang="cn" style="display:none">全社区管理</li>
+        <li data-lang="en" style="display:list-item">Crisis & reputation monitoring</li><li data-lang="bn" style="display:none">ক্রাইসিস মনিটরিং</li><li data-lang="cn" style="display:none">危机与声誉监控</li>
+        <li data-lang="en" style="display:list-item">UGC campaigns</li><li data-lang="bn" style="display:none">UGC ক্যাম্পেইন</li><li data-lang="cn" style="display:none">UGC活动</li>
       </ul>
-
-      <div class="section-title">Analytics & Reporting</div>
+      <div class="section-title">Analytics</div>
       <ul>
-        <li>Weekly performance dashboard (live)</li>
-        <li>Full-funnel tracking: Reach → Click → Conversion</li>
-        <li>Competitor benchmarking dashboard</li>
-        <li>Weekly strategy call (30 min)</li>
+        <li data-lang="en" style="display:list-item">Weekly live dashboard</li><li data-lang="bn" style="display:none">উইকলি লাইভ ড্যাশবোর্ড</li><li data-lang="cn" style="display:none">每周实时仪表盘</li>
+        <li data-lang="en" style="display:list-item">Full-funnel tracking</li><li data-lang="bn" style="display:none">ফুল-ফানেল ট্র্যাকিং</li><li data-lang="cn" style="display:none">全漏斗追踪</li>
+        <li data-lang="en" style="display:list-item">Weekly strategy call (30 min)</li><li data-lang="bn" style="display:none">উইকলি স্ট্র্যাটেজি কল</li><li data-lang="cn" style="display:none">每周策略会议</li>
       </ul>
-
-      <div class="section-title">Strategy & Research</div>
+      <div class="section-title">Strategy</div>
       <ul>
-        <li>Competitor analysis (3 competitors / month)</li>
-        <li>Content calendar + editorial strategy</li>
-        <li>Hashtag + keyword strategy (weekly optimization)</li>
-        <li>Audience segmentation + persona mapping</li>
-        <li>Market trend reports (monthly)</li>
+        <li data-lang="en" style="display:list-item">Competitor analysis (3/month)</li><li data-lang="bn" style="display:none">কম্পিটিটর বিশ্লেষণ (৩/মাস)</li><li data-lang="cn" style="display:none">竞品分析 (3个/月)</li>
+        <li data-lang="en" style="display:list-item">Audience segmentation</li><li data-lang="bn" style="display:none">অডিয়েন্স সেগমেন্টেশন</li><li data-lang="cn" style="display:none">受众细分</li>
+        <li data-lang="en" style="display:list-item">Market trend reports</li><li data-lang="bn" style="display:none">মার্কেট ট্রেন্ড রিপোর্ট</li><li data-lang="cn" style="display:none">市场趋势报告</li>
       </ul>
-
       <div class="section-title">KOL / Influencer</div>
       <ul>
-        <li>5 KOL collaborations / month</li>
-        <li>Mix of micro + mid-tier influencers (10K–500K)</li>
-        <li>Affiliate program setup + management</li>
-        <li>Influencer content calendar + briefing</li>
+        <li data-lang="en" style="display:list-item">5 KOL collaborations/month</li><li data-lang="bn" style="display:none">৫ KOL কোলাব/মাস</li><li data-lang="cn" style="display:none">5次KOL合作/月</li>
+        <li data-lang="en" style="display:list-item">Micro + mid-tier (10K–500K)</li><li data-lang="bn" style="display:none">মাইক্রো + মিড-টায়ার</li><li data-lang="cn" style="display:none">微型+中型网红</li>
+        <li data-lang="en" style="display:list-item">Affiliate program setup</li><li data-lang="bn" style="display:none">অ্যাফিলিয়েট প্রোগ্রাম</li><li data-lang="cn" style="display:none">联盟计划设置</li>
       </ul>
-
       <div class="section-title">Paid Advertising</div>
       <ul>
-        <li>Facebook + Instagram Ads management</li>
-        <li>Ad spend budget: <strong>¥3,000 / month</strong> (included)</li>
-        <li>5 ad creatives / month with A/B testing</li>
-        <li>Retargeting campaigns</li>
-        <li>Google Ads management (included)</li>
-        <li>Google Ads budget: <strong>¥2,000 / month</strong> (included)</li>
-        <li class="na">TikTok Ads — available as add-on</li>
+        <li data-lang="en" style="display:list-item">FB + IG Ads management</li><li data-lang="bn" style="display:none">FB + IG অ্যাড</li><li data-lang="cn" style="display:none">FB+IG广告管理</li>
+        <li data-lang="en" style="display:list-item">Ad budget: <strong>¥3,000/month</strong> incl.</li><li data-lang="bn" style="display:none">অ্যাড বাজেট: <strong>¥3,000/মাস</strong></li><li data-lang="cn" style="display:none">广告预算: <strong>¥3,000/月</strong> 含</li>
+        <li data-lang="en" style="display:list-item">Google Ads: <strong>¥2,000/month</strong> incl.</li><li data-lang="bn" style="display:none">গুগল অ্যাড: <strong>¥2,000/মাস</strong></li><li data-lang="cn" style="display:none">谷歌广告: <strong>¥2,000/月</strong> 含</li>
       </ul>
-
       <div class="section-title">Website / E-Commerce</div>
       <ul>
-        <li>Shopify store management + optimization</li>
-        <li>Product page optimization</li>
-        <li>Landing page creation (1 / month)</li>
-        <li>Basic SEO: on-page + meta + keyword</li>
-        <li class="na">Full website development</li>
+        <li data-lang="en" style="display:list-item">Shopify store management</li><li data-lang="bn" style="display:none">শপিফাই স্টোর ম্যানেজমেন্ট</li><li data-lang="cn" style="display:none">Shopify店铺管理</li>
+        <li data-lang="en" style="display:list-item">Product page optimization</li><li data-lang="bn" style="display:none">প্রোডাক্ট পেজ অপটিমাইজেশন</li><li data-lang="cn" style="display:none">产品页面优化</li>
+        <li data-lang="en" style="display:list-item">1 Landing page/month</li><li data-lang="bn" style="display:none">১ ল্যান্ডিং পেজ/মাস</li><li data-lang="cn" style="display:none">1个着陆页/月</li>
+        <li data-lang="en" style="display:list-item">Basic SEO: on-page + meta</li><li data-lang="bn" style="display:none">বেসিক SEO</li><li data-lang="cn" style="display:none">基础SEO: 页面+元数据</li>
       </ul>
-
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="en" style="display:block">Launch Scale →</a>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="bn" style="display:none">স্কেল লঞ্চ →</a>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="cn" style="display:none">启动扩展 →</a>
@@ -912,78 +1058,55 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
     <div class="price-card">
       <div class="tier">Enterprise</div>
       <div class="price-row"><span class="price">¥15,000</span><span class="mo">/month</span></div>
-      <div class="tagline">Full-stack digital command center — all channels, all markets</div>
+      <div class="tagline" data-lang="en" style="display:block">Full-stack command center — all channels</div>
+      <div class="tagline" data-lang="bn" style="display:none">ফুল-স্ট্যাক কমান্ড সেন্টার</div>
+      <div class="tagline" data-lang="cn" style="display:none">全栈指挥中心 — 全渠道覆盖</div>
 
       <div class="section-title">Platform Management</div>
       <ul>
-        <li>All Platforms: FB + IG + TikTok + Twitter + YouTube + Pinterest</li>
-        <li>Unlimited posts + reels + stories*</li>
-        <li>Professional creative team: graphics, video, animation</li>
-        <li>Platform-native content for every channel</li>
-        <li>Live content (streaming) coordination</li>
-        <li>*Up to 40 posts + 12 reels / month recommended</li>
+        <li data-lang="en" style="display:list-item">All: FB + IG + TT + Twitter + YT + Pinterest</li><li data-lang="bn" style="display:none">সব প্ল্যাটফর্ম</li><li data-lang="cn" style="display:none">全平台: FB+IG+TT+推特+YT+Pinterest</li>
+        <li data-lang="en" style="display:list-item">Unlimited posts + reels + stories*</li><li data-lang="bn" style="display:none">আনলিমিটেড পোস্ট</li><li data-lang="cn" style="display:none">不限量帖子+Reels+快拍*</li>
+        <li data-lang="en" style="display:list-item">Professional creative team</li><li data-lang="bn" style="display:none">প্রফেশনাল ক্রিয়েটিভ টিম</li><li data-lang="cn" style="display:none">专业创意团队</li>
+        <li data-lang="en" style="display:list-item">Live streaming coordination</li><li data-lang="bn" style="display:none">লাইভ স্ট্রিমিং</li><li data-lang="cn" style="display:none">直播协调</li>
+        <li data-lang="en" style="display:list-item">*Up to 40 posts + 12 reels/mo rec.</li><li data-lang="bn" style="display:none">*সর্বোচ্চ ৪০ পোস্ট + ১২ রিলস</li><li data-lang="cn" style="display:none">*建议最多40帖+12Reels/月</li>
       </ul>
-
-      <div class="section-title">Community & Engagement</div>
+      <div class="section-title">Community</div>
       <ul>
-        <li>24/7 community management across all platforms</li>
-        <li>Dedicated community manager</li>
-        <li>Crisis management protocol</li>
-        <li>Brand ambassador program development</li>
-        <li>Community growth campaigns (monthly)</li>
+        <li data-lang="en" style="display:list-item">24/7 community management</li><li data-lang="bn" style="display:none">২৪/৭ কমিউনিটি ম্যানেজমেন্ট</li><li data-lang="cn" style="display:none">24/7 社区管理</li>
+        <li data-lang="en" style="display:list-item">Dedicated community manager</li><li data-lang="bn" style="display:none">ডেডিকেটেড কমিউনিটি ম্যানেজার</li><li data-lang="cn" style="display:none">专属社区经理</li>
+        <li data-lang="en" style="display:list-item">Brand ambassador program</li><li data-lang="bn" style="display:none">ব্র্যান্ড অ্যাম্বাসেডর প্রোগ্রাম</li><li data-lang="cn" style="display:none">品牌大使计划</li>
       </ul>
-
-      <div class="section-title">Analytics & Reporting</div>
+      <div class="section-title">Analytics</div>
       <ul>
-        <li>Real-time live dashboard (custom-built)</li>
-        <li>Weekly + monthly deep-dive reports</li>
-        <li>Full attribution modeling</li>
-        <li>ROI / ROAS tracking per channel</li>
-        <li>Competitor intelligence dashboard</li>
-        <li>Weekly strategy call (60 min) + dedicated Slack/WeChat</li>
+        <li data-lang="en" style="display:list-item">Real-time custom dashboard</li><li data-lang="bn" style="display:none">রিয়েল-টাইম কাস্টম ড্যাশবোর্ড</li><li data-lang="cn" style="display:none">实时定制仪表盘</li>
+        <li data-lang="en" style="display:list-item">Full attribution modeling</li><li data-lang="bn" style="display:none">ফুল অ্যাট্রিবিউশন</li><li data-lang="cn" style="display:none">全归因模型</li>
+        <li data-lang="en" style="display:list-item">Weekly strategy call (60 min)</li><li data-lang="bn" style="display:none">উইকলি স্ট্র্যাটেজি কল (৬০ মিনিট)</li><li data-lang="cn" style="display:none">每周策略会议(60分钟)</li>
       </ul>
-
-      <div class="section-title">Strategy & Research</div>
+      <div class="section-title">Strategy</div>
       <ul>
-        <li>Full competitor analysis (5+ competitors / month)</li>
-        <li>Market entry strategy for new regions</li>
-        <li>Brand positioning + messaging framework</li>
-        <li>Audience deep-dive (demographic · psychographic · behavioral)</li>
-        <li>Quarterly strategy workshops</li>
-        <li>Trend forecasting + opportunity spotting</li>
+        <li data-lang="en" style="display:list-item">5+ competitor analysis/month</li><li data-lang="bn" style="display:none">৫+ কম্পিটিটর বিশ্লেষণ/মাস</li><li data-lang="cn" style="display:none">5+竞品分析/月</li>
+        <li data-lang="en" style="display:list-item">Market entry strategy</li><li data-lang="bn" style="display:none">মার্কেট এন্ট্রি স্ট্র্যাটেজি</li><li data-lang="cn" style="display:none">市场进入策略</li>
+        <li data-lang="en" style="display:list-item">Quarterly strategy workshops</li><li data-lang="bn" style="display:none">কোয়ার্টারলি ওয়ার্কশপ</li><li data-lang="cn" style="display:none">季度策略研讨会</li>
       </ul>
-
       <div class="section-title">KOL / Influencer</div>
       <ul>
-        <li>10+ KOL collaborations / month</li>
-        <li>All tiers: micro + mid + macro influencers</li>
-        <li>Full affiliate program build-out</li>
-        <li>Influencer gifting + seeding campaigns</li>
-        <li>Amazon Live + YouTube integration</li>
-        <li>KOL contract negotiation + legal support</li>
+        <li data-lang="en" style="display:list-item">10+ KOL collaborations/month</li><li data-lang="bn" style="display:none">১০+ KOL কোলাব/মাস</li><li data-lang="cn" style="display:none">10+次KOL合作/月</li>
+        <li data-lang="en" style="display:list-item">All tiers: micro + mid + macro</li><li data-lang="bn" style="display:none">সব টায়ার</li><li data-lang="cn" style="display:none">全层级: 微+中+大网红</li>
+        <li data-lang="en" style="display:list-item">Amazon Live + YouTube</li><li data-lang="bn" style="display:none">অ্যামাজন লাইভ + ইউটিউব</li><li data-lang="cn" style="display:none">Amazon直播+YouTube</li>
       </ul>
-
       <div class="section-title">Paid Advertising</div>
       <ul>
-        <li>Facebook + Instagram + TikTok + Google Ads</li>
-        <li>Ad spend budget: <strong>¥5,000 / month</strong> (included)</li>
-        <li>Unlimited ad creatives + A/B testing</li>
-        <li>Full-funnel campaigns: awareness → retargeting → conversion</li>
-        <li>Amazon PPC management</li>
-        <li>Programmatic / display ads</li>
+        <li data-lang="en" style="display:list-item">FB + IG + TikTok + Google Ads</li><li data-lang="bn" style="display:none">FB+IG+TikTok+গুগল অ্যাড</li><li data-lang="cn" style="display:none">FB+IG+TikTok+谷歌广告</li>
+        <li data-lang="en" style="display:list-item">Ad budget: <strong>¥5,000/month</strong> incl.</li><li data-lang="bn" style="display:none">অ্যাড বাজেট: <strong>¥5,000/মাস</strong></li><li data-lang="cn" style="display:none">广告预算: <strong>¥5,000/月</strong> 含</li>
+        <li data-lang="en" style="display:list-item">Amazon PPC management</li><li data-lang="bn" style="display:none">অ্যামাজন PPC</li><li data-lang="cn" style="display:none">Amazon PPC管理</li>
       </ul>
-
       <div class="section-title">Website / E-Commerce / SEO</div>
       <ul>
-        <li>Shopify store development + complete management</li>
-        <li>Amazon storefront management</li>
-        <li>Full SEO: on-page · off-page · technical · local</li>
-        <li>Landing pages (unlimited)</li>
-        <li>Conversion rate optimization (CRO)</li>
-        <li>Email marketing automation setup</li>
-        <li>Blog content strategy + writing (4 articles / month)</li>
+        <li data-lang="en" style="display:list-item">Shopify + Amazon management</li><li data-lang="bn" style="display:none">শপিফাই + অ্যামাজন</li><li data-lang="cn" style="display:none">Shopify+Amazon管理</li>
+        <li data-lang="en" style="display:list-item">Full SEO: on-page + off-page + technical</li><li data-lang="bn" style="display:none">ফুল SEO</li><li data-lang="cn" style="display:none">全SEO: 页面+站外+技术</li>
+        <li data-lang="en" style="display:list-item">Email marketing automation</li><li data-lang="bn" style="display:none">ইমেইল অটোমেশন</li><li data-lang="cn" style="display:none">邮件营销自动化</li>
+        <li data-lang="en" style="display:list-item">Blog: 4 articles/month</li><li data-lang="bn" style="display:none">ব্লগ: ৪ আর্টিকেল/মাস</li><li data-lang="cn" style="display:none">博客: 4篇文章/月</li>
       </ul>
-
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="en" style="display:block">Engage Enterprise →</a>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="bn" style="display:none">এন্টারপ্রাইজ এঙ্গেজ →</a>
       <a class="cta" href="mailto:studiomiragebd@gmail.com" data-lang="cn" style="display:none">启动企业版 →</a>
@@ -991,9 +1114,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica N
   </div>
 </div>
 
+<!-- ===== SECTION 24: FOOTER ===== -->
 <div class="footer">
-  <strong>Studio Mirage Limited</strong> · Digital Marketing Portfolio Dashboard · studiomiragecn.com · studiomiragebd@gmail.com · +880 1677 710485<br>
-  Data sources: Facebook Insights · Instagram Analytics · Shopify Analytics · Google Ads · TikTok Analytics · All figures from verified campaign analytics
+  <strong>Studio Mirage Limited</strong> · Full-Stack Digital Marketing Agency · Dhaka, Bangladesh<br>
+  🌐 studiomiragecn.com · 📧 studiomiragebd@gmail.com · 📱 +880 1677 710485<br>
+  <span style="color:var(--text-muted)">Data sources: Facebook Insights · Instagram Analytics · Shopify Analytics · Google Ads · TikTok Analytics · Amazon Ads Console · All figures from verified campaign analytics</span><br>
+  <span style="color:var(--text-muted)">© 2024 Studio Mirage Limited. All rights reserved. Dashboard compiled by Susmita Biswas — Cross-Border Digital Marketing Expert.</span>
 </div>
 
 <script>
@@ -1004,35 +1130,38 @@ Chart.defaults.plugins.legend.labels.boxWidth=8;
 Chart.defaults.plugins.legend.labels.padding=12;
 const gc='#e8e6df';
 
-// 1. Reach
+// Chart 1: Cross-Platform Reach (log scale horizontal bar)
 new Chart(document.getElementById('chartReach'),{type:'bar',data:{labels:['FB Sunaofe','IG Sunaofe','FB RQ','FB Rainbow','FB Ads','TikTok A','TikTok B'],datasets:[{data:[2192814,246219,91820,5708,461000,7000000,25598],backgroundColor:['#1a3a5c','#2d6a4f','#5b3a8c','#2d6a4f','#c25a2e','#888','#aaa'],borderRadius:3}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{type:'logarithmic',grid:{color:gc},ticks:{callback:v=>v>=1e6?(v/1e6).toFixed(1)+'M':v>=1e3?(v/1e3).toFixed(0)+'K':v}},y:{grid:{display:false}}}}});
 
-// 2. Audience
+// Chart 2: Audience Growth by Platform (bar)
 new Chart(document.getElementById('chartAudience'),{type:'bar',data:{labels:['FB Sunaofe','IG Sunaofe','FB RQ','FB Rainbow','IG A','IG B','IG Sunaofe','TikTok'],datasets:[{data:[66780,49985,1300,6631,39000,4600,117000,124000],backgroundColor:['#1a3a5c','#2d6a4f','#5b3a8c','#2d6a4f','#5b3a8c','#5b3a8c','#c25a2e','#888'],borderRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:gc},ticks:{callback:v=>v>=1e3?(v/1e3).toFixed(0)+'K':v}},x:{grid:{display:false},ticks:{font:{size:7}}}}}});
 
-// 3. E-com
+// Chart 3: E-Commerce Revenue vs Sessions (dual-axis bar)
 new Chart(document.getElementById('chartEcom'),{type:'bar',data:{labels:['DUCO Glasses','CarCarez'],datasets:[{label:'Sessions',data:[166476,128651],backgroundColor:'#1a3a5c',borderRadius:4,yAxisID:'y'},{label:'Revenue ($)',data:[12809,27397],backgroundColor:'#2d6a4f',borderRadius:4,yAxisID:'y1'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:10,font:{size:9}}}},scales:{y:{position:'left',beginAtZero:true,grid:{color:gc},ticks:{callback:v=>v>=1e3?(v/1e3).toFixed(0)+'K':v}},y1:{position:'right',beginAtZero:true,grid:{drawOnChartArea:false},ticks:{callback:v=>'$'+(v/1e3).toFixed(0)+'K'}},x:{grid:{display:false}}}}});
 
-// 4. Amazon Ads Timeline
+// Chart 4: Amazon Sales+Spend Timeline (line)
 new Chart(document.getElementById('chartAmazon'),{type:'line',data:{labels:['Sep 17','Sep 25','Oct 3','Oct 11','Oct 19','Oct 27','Nov 4','Nov 12','Nov 20','Nov 28','Dec 6','Dec 14','Dec 22','Dec 29'],datasets:[{label:'Sales ($)',data:[15000,18000,19500,21000,22500,23800,25000,26200,27800,29000,30500,31800,33000,34304],borderColor:'#1a3a5c',backgroundColor:'rgba(26,58,92,0.05)',fill:true,tension:0.3,pointRadius:3,pointBackgroundColor:'#1a3a5c',borderWidth:2,yAxisID:'y'},{label:'Spend ($)',data:[4800,5000,5100,5300,5600,6000,6400,6800,7200,7600,8000,8300,8600,8791],borderColor:'#c25a2e',backgroundColor:'rgba(194,90,46,0.05)',fill:true,tension:0.3,pointRadius:3,pointBackgroundColor:'#c25a2e',borderWidth:2,yAxisID:'y'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:10,font:{size:9}}}},scales:{y:{beginAtZero:true,grid:{color:gc},ticks:{callback:v=>'$'+(v/1e3).toFixed(0)+'K'}},x:{grid:{display:false},ticks:{font:{size:7}}}}}});
 
+// Language Switcher
 function switchLang(lang){
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
   event.target.classList.add('active');
   document.querySelectorAll('[data-lang]').forEach(el=>{
     const isActive=el.dataset.lang===lang;
-    if(el.tagName==='LI')el.style.display=isActive?'list-item':'none';
-    else if(el.classList.contains('inline'))el.style.display=isActive?'inline':'none';
+    if(el.tagName==='LI') el.style.display=isActive?'list-item':'none';
+    else if(el.classList.contains('inline')) el.style.display=isActive?'inline':'none';
     else el.style.display=isActive?'block':'none';
   });
 }
-// init: show all [data-lang=en]
-document.querySelectorAll('[data-lang="en"]').forEach(el=>{
-  if(el.tagName==='LI')el.style.display='list-item';
-  else if(el.classList.contains('inline'))el.style.display='inline';
-  else el.style.display='block';
+// Init: show EN
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('[data-lang="en"]').forEach(el=>{
+    if(el.tagName==='LI') el.style.display='list-item';
+    else if(el.classList.contains('inline')) el.style.display='inline';
+    else el.style.display='block';
+  });
+  document.querySelectorAll('[data-lang="bn"],[data-lang="cn"]').forEach(el=>el.style.display='none');
 });
-document.querySelectorAll('[data-lang="bn"],[data-lang="cn"]').forEach(el=>el.style.display='none');
 </script>
 </body>
 </html>
