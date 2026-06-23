@@ -46,7 +46,7 @@ a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
 .company-info .icon{font-size:1.1rem}
 
 /* ===== KPI ROW ===== */
-.kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--gap);margin-bottom:24px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-bottom:24px}
 .kpi-card{background:var(--card-bg);border-radius:var(--radius);border-left:4px solid var(--navy);padding:16px 20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
 .kpi-card:nth-child(2){border-left-color:var(--warm)}
 .kpi-card:nth-child(3){border-left-color:var(--green)}
@@ -175,12 +175,20 @@ a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
     <div class="kpi-label">Brands Managed</div>
   </div>
   <div class="kpi-card">
-    <div class="kpi-value">58+</div>
+    <div class="kpi-value">500+</div>
     <div class="kpi-label">KOLs Managed</div>
   </div>
   <div class="kpi-card">
+    <div class="kpi-value">5,000+</div>
+    <div class="kpi-label">KOLs Listed & Contacted</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">~4,800</div>
+    <div class="kpi-label">SNS Posts & Media Design</div>
+  </div>
+  <div class="kpi-card">
     <div class="kpi-value">120</div>
-    <div class="kpi-label">SNS Posts /Month/Brand</div>
+    <div class="kpi-label">SNS Posts/Mo/Brand</div>
     <div class="kpi-sub">5 posts/day × 6 days × 4 weeks</div>
   </div>
   <div class="kpi-card">
@@ -271,8 +279,31 @@ a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
 
       <!-- 23 Client Logos -->
       <div class="section-heading"><h3>🏢 Client Logos</h3></div>
-      <div class="logo-grid" id="logoGrid">
-        <!-- Filled via JS -->
+      <div class="logo-grid">
+        <div class="logo-item"><img src="client-logos/sunaofe_f.jpg" alt="Sunaofe"><span>Sunaofe</span></div>
+        <div class="logo-item"><img src="client-logos/FOGY_GARAGE.jfif" alt="Fogy Garage"><span>Fogy Garage</span></div>
+        <div class="logo-item"><img src="client-logos/HGLRC.png" alt="HGLRC"><span>HGLRC</span></div>
+        <div class="logo-item"><img src="client-logos/CROWN_MICRO.jpg" alt="Crown Micro"><span>Crown Micro</span></div>
+        <div class="logo-item"><img src="client-logos/Excelite_Domes.png" alt="Excelite"><span>Excelite</span></div>
+        <div class="logo-item"><img src="client-logos/LAHOMA_WINDS.png" alt="Lahoma Winds"><span>Lahoma Winds</span></div>
+        <div class="logo-item"><img src="client-logos/MELONI_HOMES.jpg" alt="Meloni Homes"><span>Meloni Homes</span></div>
+        <div class="logo-item"><img src="client-logos/POCCI_HOME.png" alt="Pocci Home"><span>Pocci Home</span></div>
+        <div class="logo-item"><img src="client-logos/staresso.jpeg" alt="Staresso"><span>Staresso</span></div>
+        <div class="logo-item"><img src="client-logos/TDONE_FAN.png" alt="TDONE Fan"><span>TDONE Fan</span></div>
+        <div class="logo-item"><img src="client-logos/HEMOYMILLER.png" alt="Hemoymiller"><span>Hemoymiller</span></div>
+        <div class="logo-item"><img src="client-logos/CEVAPRO_SPORTS.png" alt="Cevapro Sports"><span>Cevapro Sports</span></div>
+        <div class="logo-item"><img src="client-logos/LUMBENCY_LIGHTING.jfif" alt="Lumbency"><span>Lumbency</span></div>
+        <div class="logo-item"><img src="client-logos/WILLAI_SLEEP.jfif" alt="Willai Sleep"><span>Willai Sleep</span></div>
+        <div class="logo-item"><img src="client-logos/nekmit.jpeg" alt="Nekmit"><span>Nekmit</span></div>
+        <div class="logo-item"><img src="client-logos/unicco.png" alt="Unicco"><span>Unicco</span></div>
+        <div class="logo-item"><img src="client-logos/infansys.png" alt="Infansys"><span>Infansys</span></div>
+        <div class="logo-item"><img src="client-logos/baoshutang.png" alt="Baoshutang"><span>Baoshutang</span></div>
+        <div class="logo-item"><img src="client-logos/dinrail.webp" alt="Dinrail"><span>Dinrail</span></div>
+        <div class="logo-item"><img src="client-logos/ccobato.png" alt="Ccobato"><span>Ccobato</span></div>
+        <div class="logo-item"><img src="client-logos/Excelite_Plastics.png" alt="Excelite Plastics"><span>Excelite Plastics</span></div>
+        <div class="logo-item"><img src="client-logos/KXK_SHOP.jpg" alt="KXK Shop"><span>KXK Shop</span></div>
+        <div class="logo-item"><img src="client-logos/WhatsApp_2024.jpg" alt="DUCO"><span>DUCO</span></div>
+        <div class="logo-item"><img src="client-logos/download.png" alt="More"><span>+ More</span></div>
       </div>
 
       <!-- Brand Attribution Table -->
@@ -364,15 +395,6 @@ a{color:var(--warm);text-decoration:none}a:hover{text-decoration:underline}
         </tbody>
       </table>
       <p style="font-size:0.82rem;color:var(--light-text);margin:4px 0 16px">* Table shows per-ad-set illustrative metrics. Total Facebook spend across all campaigns: ~$18.5K with 620 total conversions.</p>
-
-      <!-- Facebook CPA: Skateboarding -->
-      <div class="highlight-box">
-        <div class="big-number">$0.08</div>
-        <div class="highlight-details">
-          <strong>Facebook CPA — Skateboarding Campaign</strong><br>
-          1.5M impressions · $0.08 CPC · $301 total spend · High-engagement niche targeting
-        </div>
-      </div>
 
       <!-- Google Ads -->
       <div class="section-heading"><h3>🔍 Google Ads</h3></div>
@@ -889,29 +911,6 @@ function initAllCharts() {
     });
   }
 }
-
-// Generate client logo placeholders
-(function() {
-  var brands = [
-    'Sunaofe','DUCO','CarCarez','RQ Machinery','Xi\'an Rainbow','Fogy Garage',
-    'Infansys','HGLRC','CCOBATO','Staresso','TNTOR','Cevaprosports',
-    'TDONE','Vital Mobility','Cwxwei','JJsHouse','GOMaybeauty',
-    'LahomaWinds','Kickstarter','Amazon','Shopify','Facebook','Google'
-  ];
-  var colors = ['#1a3a5c','#2d6a4f','#c25a2e','#5b3a8c','#1a3a5c','#2d6a4f',
-    '#c25a2e','#5b3a8c','#1a3a5c','#2d6a4f','#c25a2e','#5b3a8c',
-    '#1a3a5c','#2d6a4f','#c25a2e','#5b3a8c','#c25a2e',
-    '#1a3a5c','#5b3a8c','#c25a2e','#2d6a4f','#1a3a5c','#c25a2e'];
-  var grid = document.getElementById('logoGrid');
-  if (!grid) return;
-  brands.forEach(function(b, i) {
-    var div = document.createElement('div');
-    div.className = 'logo-item';
-    div.style.borderTop = '3px solid ' + colors[i];
-    div.innerHTML = '<span style="color:' + colors[i] + '">' + b + '</span>';
-    grid.appendChild(div);
-  });
-})();
 
 // Initialize charts on load (first accordion is open)
 window.addEventListener('DOMContentLoaded', function() {
