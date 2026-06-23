@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Mirage — Data Inventory & Processing Status</title>
+<style>
+:root{--bg:#f4f3ef;--card-bg:#fff;--text:#1a1a1a;--muted:#888;--border:#dfded8;--navy:#1a3a5c;--green:#2d6a4f;--warm:#c25a2e;--purple:#5b3a8c;--radius:5px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+.header{background:#fff;border-bottom:3px solid var(--navy);padding:16px 24px}
+.header h1{font-size:20px;color:var(--navy)}
+.header p{font-size:11px;color:var(--muted);margin-top:2px}
+.container{max-width:1200px;margin:0 auto;padding:16px 20px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px}
+.card-header{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;background:#fafaf8}
+.card-header h3{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.badge{font-size:8px;padding:2px 8px;border-radius:10px;font-weight:700}
+.b-ok{background:#eaf5ef;color:var(--green)}.b-miss{background:#fdf3ed;color:var(--warm)}.b-part{background:#f3eef9;color:var(--purple)}
+.card-body{padding:12px}
+table{width:100%;border-collapse:collapse;font-size:10px}
+th{text-align:left;padding:6px 8px;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);border-bottom:2px solid var(--border);background:#fafaf8}
+td{padding:6px 8px;border-bottom:1px solid #f0efe9}
+tr:hover td{background:#f8f8f5}
+td.status{font-weight:700;font-size:10px}
+.s-ok{color:var(--green)}.s-miss{color:var(--warm)}.s-part{color:var(--purple)}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:14px}
+.sum{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:12px;text-align:center}
+.sum .n{font-size:24px;font-weight:800;color:var(--navy)}
+.sum .l{font-size:9px;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.action{background:#fdf3ed;border:1px solid var(--warm);border-radius:var(--radius);padding:12px;font-size:11px;margin-top:12px}
+.action strong{color:var(--warm)}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📋 Studio Mirage — Portfolio Data Inventory</h1>
+  <p>Complete processing status across all sources · Last updated: 2026-06-23</p>
+</div>
+<div class="container">
+
+<div class="summary">
+  <div class="sum"><div class="n">7</div><div class="l">Case Studies</div></div>
+  <div class="sum"><div class="n">4</div><div class="l">Chat Batches</div></div>
+  <div class="sum"><div class="n">4</div><div class="l">Drive Folders</div></div>
+  <div class="sum"><div class="n" style="color:var(--green)">58</div><div class="l">Files Processed ✓</div></div>
+  <div class="sum"><div class="n" style="color:var(--warm)">72</div><div class="l">Files Pending ✗</div></div>
+</div>
+
+<!-- BATCH 1 -->
+<div class="card">
+  <div class="card-header"><h3>Batch 1 — Initial Chat Files</h3><span class="badge b-ok">6 files · ALL DONE ✓</span></div>
+  <div class="card-body"><table>
+    <tr><th>#</th><th>File</th><th>Type</th><th>Data Extracted</th><th>Status</th></tr>
+    <tr><td>1</td><td>CASE STUDY 01(7).docx</td><td>DOCX</td><td>Sunaofe: 2.44M reach, 116.8K followers, 83.9K clicks</td><td class="status s-ok">✓ Done</td></tr>
+    <tr><td>2</td><td>CASE STUDY 03(1).docx</td><td>DOCX</td><td>CarCarez: 128.7K sessions, $27.4K revenue, 293 orders</td><td class="status s-ok">✓ Done</td></tr>
+    <tr><td>3</td><td>CASE STUDY 05(1).docx</td><td>DOCX</td><td>Xi'an Rainbow: 16.6K views, 6.6K followers, 177% growth</td><td class="status s-ok">✓ Done</td></tr>
+    <tr><td>4</td><td>KOL Collaboration -TNTOR(1).docx</td><td>DOCX</td><td>TNTOR: 50+ KOLs, 6 top profiles, YouTube links</td><td class="status s-ok">✓ Done</td></tr>
+    <tr><td>5</td><td>Studio Mirage Limited.pptx</td><td>PPTX</td><td>Company intro, services, TikTok/Shopify/FB metrics</td><td class="status s-ok">✓ Done</td></tr>
+    <tr><td>6</td><td>Facebook Promotional data-Suanofe.docx</td><td>DOCX</td><td>7.3K reach (+28%), 70K visitors (+27.5%), 2K clicks</td><td class="status s-ok">✓ Done</td></tr>
+  </table></div>
+</div>
+
+<!-- BATCH 2 -->
+<div class="card">
+  <div class="card-header"><h3>Batch 2 — Extended Case Study Files</h3><span class="badge b-part">37 files · PARTIAL</span></div>
+  <div class="card-body"><table>
+    <tr><th>#</th><th>File</th><th>Type</th><th>Data Extracted</th><th>Status</th></tr>
+    <tr><td>7</td><td>CASE STUDY 02.docx / 02(1).docx</td><td>DOCX</td><td>DUCO Glasses: 166K sessions, $12.8K rev, 0.21% CR</td><td class="status s-ok">✓ Done</td></tr>
+    <tr><td>8</td><td>CASE STUDY 04.docx / 04(1).docx</td><td>DOCX</td><td>RQ Machinery: 91.8K reach, 23.2K engage, B2B</td><td class="status s-ok">✓ Done</td></tr>
+    <tr><td>9</td><td>Duco Website.docx</td><td>DOCX</td><td>Large file (3.1MB) — mostly images/screenshots</td><td class="status s-miss">✗ Not analyzed</td></tr>
+    <tr><td>10</td><td>Carcarez Website.docx</td><td>DOCX</td><td>Large file (2.4MB) — mostly images/screenshots</td><td class="status s-miss">✗ Not analyzed</td></tr>
+    <tr><td>11</td><td>RQ Machinery.docx</td><td>DOCX</td><td>508KB — RQ Machinery detail</td><td class="status s-miss">✗ Not analyzed</td></tr>
+    <tr><td>12</td><td>Xi'an Rainbow Foldable Tanks.docx</td><td>DOCX</td><td>287KB — Rainbow detail</td><td class="status s-part">⚠ Partial</td></tr>
+    <tr><td>13</td><td>SUNAOFE成功KOL合作案例.pdf</td><td>PDF</td><td>Sunaofe KOL Chinese case study</td><td class="status s-miss">✗ Not extracted</td></tr>
+    <tr><td>14</td><td>KOL Collaboration -TNTOR.pdf</td><td>PDF</td><td>TNTOR KOL PDF version</td><td class="status s-miss">✗ Not extracted</td></tr>
+    <tr><td>15</td><td>CASE STUDY 01 .docx (×8 duplicates)</td><td>DOCX</td><td>Same as #1 — already processed</td><td class="status s-ok">✓ Duplicate</td></tr>
+    <tr><td>16</td><td>4 images (962aadd, 11b049, a24d32, 3e8a82)</td><td>JPG</td><td>Screenshots — not OCR'd</td><td class="status s-miss">✗ Not analyzed</td></tr>
+    <tr><td>17</td><td>image(1130).png ×2</td><td>PNG</td><td>Screenshots — not OCR'd</td><td class="status s-miss">✗ Not analyzed</td></tr>
+  </table></div>
+</div>
+
+<!-- BATCH 3 -->
+<div class="card">
+  <div class="card-header"><h3>Batch 3 — Portfolio Files</h3><span class="badge b-ok">2 files · DONE ✓</span></div>
+  <div class="card-body"><table>
+    <tr><th>#</th><th>File</th><th>Type</th><th>Data Extracted</th><th>Status</th></tr>
+    <tr><td>18</td><td>Portfolio of Influencer Communication...docx</td><td>DOCX</td><td>Fogy Garage (8 influencers) + Sunaofe KOL (122K FB, 117K IG)</td><td class="status s-ok">✓ Done</td></tr>
+    <tr><td>19</td><td>Portfolio of Digital Communication...docx</td><td>DOCX</td><td>Sunaofe + DUCO detailed, same data as CS01/CS02</td><td class="status s-ok">✓ Done</td></tr>
+  </table></div>
+</div>
+
+<!-- DRIVE 1 -->
+<div class="card">
+  <div class="card-header"><h3>Google Drive #1 — Aamzon USA</h3><span class="badge b-ok">9 files · DONE ✓</span></div>
+  <div class="card-body"><table>
+    <tr><th>#</th><th>File</th><th>Type</th><th>Data Extracted</th><th>Status</th></tr>
+    <tr><td>D1.1</td><td>WhatsApp Image 2023-12-16 at 2.53.22 AM</td><td>JPG</td><td>Main dashboard: $31,694 sales, $9,084 spend, 28.66% ACOS, 1,151 orders</td><td class="status s-ok">✓ OCR Done</td></tr>
+    <tr><td>D1.2</td><td>WhatsApp Image 2023-12-16 at 2.54.43 AM</td><td>JPG</td><td>Portfolio view confirming metrics</td><td class="status s-ok">✓ OCR Done</td></tr>
+    <tr><td>D1.3</td><td>WhatsApp Image 2023-12-16 at 2.58.06 AM</td><td>JPG</td><td>Campaign overview matching</td><td class="status s-ok">✓ OCR Done</td></tr>
+    <tr><td>D1.4</td><td>WhatsApp Image 2023-12-16 at 3.11.54 AM</td><td>JPG</td><td>Sponsored ads view</td><td class="status s-ok">✓ OCR Done</td></tr>
+    <tr><td>D1.5</td><td>WhatsApp Image 2023-12-16 at 3.31.05 AM</td><td>JPG</td><td>3-campaign breakdown: $8,053 + $6,233 + $2,358 spend, 1,169 orders</td><td class="status s-ok">✓ OCR Done</td></tr>
+    <tr><td>D1.6</td><td>WhatsApp Image 2023-12-16 at 3.48.43 AM</td><td>JPG</td><td>Updated: $31,794 sales, $9,096 spend, 1,156 orders, Sep-Dec chart</td><td class="status s-ok">✓ OCR Done</td></tr>
+    <tr><td>D1.7</td><td>WhatsApp Image 2023-12-16 at 3.57.00 AM</td><td>JPG</td><td>Product view: $21.99 item, 496 stock</td><td class="status s-ok">✓ OCR Done</td></tr>
+    <tr><td>D1.8</td><td>WhatsApp Image 2023-12-29 at 9.23.59 PM</td><td>JPG</td><td>3-month: $34,304 sales, $8,791 spend, 25.63% ACOS, 1,210 orders</td><td class="status s-ok">✓ OCR Done</td></tr>
+    <tr><td>D1.9</td><td>WhatsApp Image 2023-12-29 at 9.27.20 PM</td><td>JPG</td><td>Filtered view confirming metrics</td><td class="status s-ok">✓ OCR Done</td></tr>
+  </table></div>
+</div>
+
+<!-- DRIVE 2 -->
+<div class="card">
+  <div class="card-header"><h3>Google Drive #2 — All Case Studies</h3><span class="badge b-part">48 files · PARTIAL</span></div>
+  <div class="card-body"><table>
+    <tr><th>#</th><th>File</th><th>Type</th><th>Status</th></tr>
+    <tr><td>D2.1</td><td>Amazon CA — 8 WhatsApp Images (Dec 26, 2023)</td><td>JPG</td><td class="status s-ok">✓ OCR Done — CA$6,167 sales, CA$1,993 spend</td></tr>
+    <tr><td>D2.2</td><td>Sunaofe Website Screenshots — 26 images (Feb 21, 2024)</td><td>JPG</td><td class="status s-miss">✗ Downloaded but NOT OCR'd</td></tr>
+    <tr><td>D2.3</td><td>Amazon Case Study-Susmita (EN + CN PDF + PPTX)</td><td>PDF/PPTX</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.4</td><td>Amazon PPC Case Study — TNTOR CA Store (PDF + PPTX)</td><td>PDF/PPTX</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.5</td><td>Google Ads Case.pptx</td><td>PPTX</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.6</td><td>SEO Case-Abhijit.pdf + SEO Case-Susmita.pdf</td><td>PDF</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.7</td><td>SEO成功案例研究 (Chinese SEO case ×3)</td><td>PDF/PPTX</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.8</td><td>SUNAOFE成功KOL合作案例 (PDF + PPTX)</td><td>PDF/PPTX</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.9</td><td>谷歌广告成功案例-Euromallusa (PDF + PPTX)</td><td>PDF/PPTX</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.10</td><td>通过FB广告-Sunaofe Furniture (PDF + PPTX)</td><td>PDF/PPTX</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.11</td><td>TrySquare Google Ads case study (PDF)</td><td>PDF</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.12</td><td>天星传媒最新 (Tianxing Media)</td><td>PDF</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.13</td><td>Work Time & Task Management.xlsx ×2</td><td>XLSX</td><td class="status s-miss">✗ Download failed — rate limit</td></tr>
+    <tr><td>D2.14</td><td>MotionFurni folder</td><td>—</td><td class="status s-miss">✗ Empty — no files downloaded</td></tr>
+    <tr><td>D2.15</td><td>Facebook full course folder</td><td>—</td><td class="status s-miss">✗ Empty — no files downloaded</td></tr>
+  </table></div>
+</div>
+
+<!-- DRIVE 3 -->
+<div class="card">
+  <div class="card-header"><h3>Google Drive #3 — Client Logos</h3><span class="badge b-part">26 files · PARTIAL</span></div>
+  <div class="card-body"><table>
+    <tr><th>#</th><th>File</th><th>Type</th><th>Status</th></tr>
+    <tr><td>D3.1</td><td>24 Client logos (Sunaofe, Fogy Garage, HGLRC, etc.)</td><td>PNG/JPG</td><td class="status s-ok">✓ Downloaded + added to dashboard</td></tr>
+    <tr><td>D3.2</td><td>ccobato-removebg-preview.png</td><td>PNG</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D3.3</td><td>Partnership folder</td><td>—</td><td class="status s-miss">✗ No files downloaded</td></tr>
+  </table></div>
+</div>
+
+<!-- DRIVE 4 -->
+<div class="card">
+  <div class="card-header"><h3>Google Drive #4 — Marketing Tools & Templates</h3><span class="badge b-part">26 files · PARTIAL</span></div>
+  <div class="card-body"><table>
+    <tr><th>#</th><th>File</th><th>Type</th><th>Status</th></tr>
+    <tr><td>D4.1</td><td>KOL,Blog & SEO Management KPI.xlsx</td><td>XLSX</td><td class="status s-ok">✓ Extracted — added to dashboard</td></tr>
+    <tr><td>D4.2</td><td>Social Media Masterplan v1.2.3.xlsx</td><td>XLSX</td><td class="status s-part">⚠ Downloaded but not fully analyzed (5MB)</td></tr>
+    <tr><td>D4.3</td><td>6 Month Shopify Work Plan (EN + CN).xlsx</td><td>XLSX</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.4</td><td>Detail Budget Sheet.xls</td><td>XLS</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.5</td><td>Work Time & Task Management.xlsx</td><td>XLSX</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.6</td><td>1000+ Negative Keywords + General Niche.xlsx</td><td>XLSX</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.7</td><td>E-Commerce CRO + SEO Toolkits.xlsx</td><td>XLSX</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.8</td><td>CRO Blueprint + Conversion Triangle.xlsx</td><td>XLSX</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.9</td><td>SEO/Link Building Checklists (×3).xlsx</td><td>XLSX</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.10</td><td>Landing Page Briefing + ScaleYourOutreach.xlsx</td><td>XLSX</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.11</td><td>FB Ad Checklist + Content Year eBook + SEO eBook.pdf</td><td>PDF</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.12</td><td>Web Analytics Guide + Untapped Customers.pdf</td><td>PDF</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.13</td><td>colorful-social-media.pptx</td><td>PPTX</td><td class="status s-miss">✗ Download failed</td></tr>
+    <tr><td>D4.14</td><td>Avoline-Growth-Kit-Premium.zip (16MB)</td><td>ZIP</td><td class="status s-miss">✗ Download failed</td></tr>
+  </table></div>
+</div>
+
+<!-- ACTION REQUIRED -->
+<div class="action">
+  <strong>🔴 Action Required — 72 files pending:</strong><br><br>
+  <strong>Option A (fastest):</strong> Directly attach the following files in chat — individual file uploads bypass Google Drive rate limits:<br>
+  ▸ All PDFs from Drive #2: Amazon Case Study, Amazon PPC, Google Ads Case, SEO Cases, Sunaofe KOL Chinese, Euromallusa, TrySquare, Tianxing Media<br>
+  ▸ All PPTXs from Drive #2: same files in PPTX format<br>
+  ▸ All XLSXs from Drive #4: Shopify Plans, Budget Sheet, Keywords, CRO/SEO Toolkits, Checklists<br>
+  ▸ All PDFs from Drive #4: FB Ad Checklist, Content eBook, SEO eBook, Analytics Guide<br>
+  <br>
+  <strong>Option B:</strong> Re-share individual file links (not folder links) from Google Drive<br>
+  <br>
+  <strong>Option C:</strong> I can OCR the 26 Sunaofe Website screenshots (already downloaded) right now
+</div>
+
+</div>
+</body>
+</html>
